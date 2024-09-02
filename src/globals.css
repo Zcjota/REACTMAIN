@@ -1,0 +1,64 @@
+/* Reset global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --transition: cubic-bezier(0.1, 0.7, 0, 1);
+}
+
+/* Common styles for body */
+body {
+  background: linear-gradient(90deg, rgb(161, 189, 243), #5a3939);
+}
+
+/* Container for the menu */
+.dropdown-menu {
+  @apply absolute bg-black text-white rounded-lg p-4 shadow-lg z-20;
+  perspective: 1000px; /* Allows 3D effect */
+}
+
+/* Menu items styling */
+.menu-item {
+  @apply px-4 py-2 cursor-pointer transition-transform duration-500 ease-in-out;
+  filter: grayscale(1) brightness(0.6);
+  transform-style: preserve-3d;
+}
+
+/* When hovered */
+.menu-item:hover {
+  transform: translateZ(20px) rotateY(5deg);
+  filter: grayscale(0) brightness(6);
+}
+
+/* Style for previous and next items */
+.menu-item + .menu-item {
+  transform: translateZ(30px) rotateY(10deg);
+}
+
+.menu-item + .menu-item + .menu-item {
+  transform: translateZ(25px) rotateY(15deg);
+}
+
+.menu-item + .menu-item + .menu-item + .menu-item {
+  transform: translateZ(20px) rotateY(20deg);
+}
+
+/* CSS for keeping item in focus when hovered */
+.menu-item:hover ~ .menu-item {
+  transform: translateZ(25px) rotateY(10deg);
+}
+
+/* Animation for the menu container when the menu is visible */
+.dropdown-menu.open {
+  transform: translateZ(35px);
+  filter: brightness(3);
+}
+
+/* Ensure a smooth 3D transition */
+.menu-item,
+.dropdown-menu {
+  transition: transform 0.5s var(--transition), filter 0.5s var(--transition);
+}
