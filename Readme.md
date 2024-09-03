@@ -2,6 +2,8 @@
 
 Este proyecto es una aplicación web desarrollada en React que proporciona una vista 3D interactiva de los objetos y las instalaciones de la Universidad Domingo Savio. Utilizando las librerías `@react-three/fiber` y `@react-three/drei`, se ofrece una experiencia inmersiva que permite a los usuarios explorar el campus y sus elementos en un entorno tridimensional.
 
+Demo del sitio : https://reactmain-livid.vercel.app/
+
 ## Licencia
 
 Proyecto realizado por estudiantes de la Universidad Domingo Savio.
