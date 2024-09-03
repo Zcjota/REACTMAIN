@@ -5,6 +5,7 @@ import { Button } from "@material-tailwind/react";
 import { useNavigate } from "react-router-dom";
 import { Modelo3D_Universidad } from "../../Materiales/Modelo3D_Universidad";
 import * as THREE from "three";
+import back_ico from "../../assets/icons/back_ico.png";
 
 export default function Vista_Auditorio() {
   const controlsRef = useRef();
@@ -14,8 +15,9 @@ export default function Vista_Auditorio() {
 
   // Posiciones de cámara predefinidas
   const positions = {
-    entradaPrincipal: [325, 10, -160],
-    entradaSecundaria: [-35, 10, -330],
+    entradaPrincipal: [230, 5, -140],
+    entradaSecundaria: [-35, -20, -400],
+    patio: [71, 18, 17],
   };
 
   const handleRedirect = () => {
@@ -38,12 +40,12 @@ export default function Vista_Auditorio() {
 
       // Mover la cámara a la posición seleccionada
       object.position.set(...position);
-      object.lookAt(new THREE.Vector3(0, 0, 0)); // Ajusta la cámara para mirar al origen o al punto deseado
+      object.lookAt(new THREE.Vector3(325, 10, -160)); // Ajusta la cámara para mirar al origen o al punto deseado
       controls.update();
 
-      console.log(
-        `Camera moved to position: x=${object.position.x}, y=${object.position.y}, z=${object.position.z}`
-      );
+      // console.log(
+      //   Camera moved to position: x=${object.position.x}, y=${object.position.y}, z=${object.position.z}
+      // );
     }
   };
 
@@ -51,7 +53,7 @@ export default function Vista_Auditorio() {
     if (controlsRef.current) {
       const controls = controlsRef.current;
       controls.object.position.set(...positions.entradaPrincipal); // Posición inicial
-      controls.object.lookAt(new THREE.Vector3(0, 0, 0)); // Ajusta la cámara para mirar al origen o al punto deseado
+      controls.object.lookAt(new THREE.Vector3(325, 10, -160)); // Ajusta la cámara para mirar al origen o al punto deseado
       controls.update();
     }
 
@@ -78,7 +80,7 @@ export default function Vista_Auditorio() {
 
           <Canvas
             camera={{
-              position: positions.entradaPrincipal,
+              position: (325, 10, -160),
               fov: 50,
               near: 0.1,
               far: 1000,
@@ -101,8 +103,19 @@ export default function Vista_Auditorio() {
               autoRotate={autoRotate}
               enableRotate={true}
               autoRotateSpeed={1}
+              target={[325, 10, -160]} // Eleva el punto focal de los controles
             />
           </Canvas>
+          <div className="relative bottom-16 ">
+            <Button
+              variant="text"
+              className="flex items-center gap-3"
+              onClick={() => moveToPosition(positions.patio)}
+            >
+              {" "}
+              PATIO
+            </Button>
+          </div>
 
           {/* Botón para mover la cámara a la entrada principal */}
           <div className="relative bottom-16 ">
@@ -134,11 +147,7 @@ export default function Vista_Auditorio() {
               className="flex items-center gap-3"
               onClick={handleRedirect}
             >
-              <img
-                src="https://cdn.icon-icons.com/icons2/3908/PNG/512/cube_viewport_icon_246706.png"
-                className="h-[30px] w-[30px] bg-blue-300"
-                alt="icon"
-              />
+              <img src={back_ico} className="h-[30px] w-[30px]" alt="icon" />
             </Button>
           </div>
         </div>
