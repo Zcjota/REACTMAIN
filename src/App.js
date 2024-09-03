@@ -20,6 +20,7 @@ export default function App() {
   return (
     <Router>
       <Navbar />
+
       <Routes>
         <Route path="/" element={<Inicio />} />
         <Route path="/Inicio" element={<Inicio />} />

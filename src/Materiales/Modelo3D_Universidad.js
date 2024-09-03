@@ -4,9 +4,9 @@ import { useGLTF } from "@react-three/drei";
 export function Modelo3D_Universidad(props) {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF("/Modelo3D_Universidad.glb");
-  return ( 
+  return (
     <group ref={group} {...props} dispose={null}>
-      <group name="Scene">
+      <group name="Scene" position={[0, 0, 0]}>
         <group
           name="Universidad001"
           position={[-169.811, 33.036, 32.08]}
@@ -32417,4 +32417,4 @@ export function Modelo3D_Universidad(props) {
   );
 }
 
-useGLTF.preload('/Modelo3D_Universidad.glb');
+useGLTF.preload("/Modelo3D_Universidad.glb");

@@ -6,13 +6,9 @@ import Carousel from "./Carousel";
 import { Button } from "@material-tailwind/react";
 import { useNavigate } from "react-router-dom";
 import { Modelo3D_Universidad } from "../Materiales/Modelo3D_Universidad.js";
+import cube_ico from "../assets/icons/cube_ico.png";
+import back_ico from "../assets/icons/back_ico.png";
 
-// import { useFrame } from '@react-three/fiber'; // Asegúrate de importar el hook
-// useFrame(() => {
-//   if (canvasRef.current) {
-//     console.log('Camera position:', canvasRef.current.camera.position);
-//   }
-// });
 export default function Inicio() {
   const [autoRotate, setAutoRotate] = useState(true);
   const [activeModel, setActiveModel] = useState("Modelo3D_Universidad");
@@ -35,40 +31,41 @@ export default function Inicio() {
   ];
 
   const handleRedirect = () => {
-    navigate("/Modelo3D_Universidad");
+    navigate("/Modelo3D-Auditorio");
   };
 
   return (
     <>
-      <div className="canvas-container  flex flex-col h-screen">
-        <div className="flex-1 h-4/5 bg-blue-400 relative">
-          {/* Texto centrado verticalmente en el lado izquierdo */}
-          <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white sm:text-sm xl:text-lg sm:w-11/12 sm:h-auto lg:w-1/4 sm:bottom-0 sm:top-auto sm:transform-none sm:translate-y-0">
-            <div className="flex flex-col justify-end h-80 p-8 m-2 rounded-md bg-black opacity-55 text-white overflow-y-auto sm:h-auto">
-              <h1 className="text-2xl font-bold mb-2">
-                Proyecto de Modelado 3D
-              </h1>
-              <p className="mb-2">
-                En este proyecto, el grupo de estudiantes de la universidad ha
-                creado un modelo 3D detallado de las instalaciones
-                universitarias.
-              </p>
-              <p className="mb-2">
-                El modelo permite una exploración interactiva y proporciona una
-                visión completa de los edificios y espacios importantes de la
-                universidad.
-              </p>
-              <p className="mb-2">
-                Este proyecto fue desarrollado como parte de la asignatura de
-                Modelado 3D y Visualización. Agradecemos a todos los miembros
-                del equipo por su dedicación y esfuerzo.
-              </p>
-            </div>
+      <div className="absolute flex h-screen w-full">
+        {/* Sección de texto, ocupa el 30% del ancho */}
+        <div className="relative flex flex-col items-center justify-center w-1/3 overflow-x-hidden lg:pt-40 lg:pb-40 xl:pt-40 xl:pb-64">
+          <div className="z-30 flex flex-col items-center w-full max-w-xl pt-48 text-center lg:items-start lg:w-full lg:pt-20 xl:pt-40 lg:text-left">
+            <h1 className="relative mb-4 text-3xl font-black leading-tight text-gray-900 sm:text-6xl xl:mb-8">
+              Universidad Privada Domingo Savio
+            </h1>
+            <p className="pr-0 mb-8 text-base text-gray-600 sm:text-lg xl:text-xl lg:pr-20">
+              Modelado 3D de la Universidad
+            </p>
+            <Button
+              variant="text"
+              className="flex items-center gap-3"
+              onClick={handleRedirect}
+            >
+              Vista Exterior
+            </Button>
           </div>
+        </div>
 
+        {/* Sección del Canvas, ocupa el 70% del ancho */}
+        <div className="w-2/3 h-full">
           <Canvas
             ref={canvasRef}
-            camera={{ position: [0, 50, 100], fov: 50, near: 0.1, far: 1000 }}
+            camera={{
+              position: [0, 100, 0],
+              fov: 45,
+              near: 0.1,
+              far: 1000,
+            }}
             shadows
             dpr={[1, 2]}
           >
@@ -89,6 +86,7 @@ export default function Inicio() {
               autoRotate={autoRotate}
               enableRotate={true}
               autoRotateSpeed={1}
+              target={[0, 100, 0]} // Eleva el punto focal de los controles
             />
           </Canvas>
 
@@ -100,15 +98,12 @@ export default function Inicio() {
               onClick={handleRedirect}
             >
               <img
-                src="https://cdn.icon-icons.com/icons2/3908/PNG/512/cube_viewport_icon_246706.png"
-                className="h-[30px] w-[30px] bg-blue-300"
+                src={cube_ico}
+                className="h-[30px] w-[30px] bg-blue-200"
                 alt="icon"
               />
             </Button>
           </div>
-        </div>
-        <div className="flex-none h-1/5 w-11/12 sm:mx-4 xl:mx-12 relative">
-          <Carousel links={links} />
         </div>
       </div>
     </>
