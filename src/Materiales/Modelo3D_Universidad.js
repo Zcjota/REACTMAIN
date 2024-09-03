@@ -4,15 +4,15 @@ import { useGLTF } from "@react-three/drei";
 export function Modelo3D_Universidad(props) {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF("/Modelo3D_Universidad.glb");
+  const { actions } = useAnimations(animations, group)
   return (
     <group ref={group} {...props} dispose={null}>
-      <group name="Scene" position={[0, 0, 0]}>
+      <group name="Scene">
         <group
           name="Universidad001"
           position={[-169.811, 33.036, 32.08]}
           rotation={[0, -0.257, 0]}
-          scale={[1.171, 0.669, 1.171]}
-        >
+          scale={[1.171, 0.669, 1.171]}>
           <mesh
             name="Plano004"
             castShadow
@@ -32,15 +32,28 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Plano004_2.geometry}
-            material={materials["Material.001"]}
+            material={materials['Material.001']}
+          />
+          <mesh
+            name="Plano004_3"
+            castShadow
+            receiveShadow
+            geometry={nodes.Plano004_3.geometry}
+            material={materials.PlomoFachadEnt1}
+          />
+          <mesh
+            name="Plano004_4"
+            castShadow
+            receiveShadow
+            geometry={nodes.Plano004_4.geometry}
+            material={materials.Laterales}
           />
         </group>
         <group
           name="Molinete_Tarjeta"
-          position={[257.036, 0, -74.454]}
+          position={[257.339, 0.004, -74.555]}
           rotation={[0, -0.824, 0]}
-          scale={[0.506, 0.506, 1.984]}
-        >
+          scale={[0.588, 0.588, 2.304]}>
           <mesh
             name="Plane_1"
             castShadow
@@ -72,65 +85,63 @@ export function Modelo3D_Universidad(props) {
         </group>
         <group
           name="Molinete_Tarjeta001"
-          position={[255.172, -0.082, -76.436]}
+          position={[255.176, -0.09, -76.435]}
           rotation={[0, -0.824, 0]}
-          scale={[0.506, 0.506, 1.984]}
-        >
+          scale={[0.588, 0.588, 2.304]}>
           <mesh
             name="Plane001_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane001_1.geometry}
-            material={materials["Molino.001"]}
+            material={materials['Molino.001']}
           />
           <mesh
             name="Plane001_2"
             castShadow
             receiveShadow
             geometry={nodes.Plane001_2.geometry}
-            material={materials["Base.001"]}
+            material={materials['Base.001']}
           />
           <mesh
             name="Plane001_3"
             castShadow
             receiveShadow
             geometry={nodes.Plane001_3.geometry}
-            material={materials["IndicadorPase.001"]}
+            material={materials['IndicadorPase.001']}
           />
           <mesh
             name="Plane001_4"
             castShadow
             receiveShadow
             geometry={nodes.Plane001_4.geometry}
-            material={materials["TargetaPase.001"]}
+            material={materials['TargetaPase.001']}
           />
         </group>
         <group
           name="Molinete_Huella"
-          position={[253.252, 0, -78.433]}
+          position={[252.945, 0.004, -78.46]}
           rotation={[0, -0.824, 0]}
-          scale={[0.506, 0.506, 1.984]}
-        >
+          scale={[0.588, 0.588, 2.304]}>
           <mesh
             name="Plane003_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane003_1.geometry}
-            material={materials["Molino.002"]}
+            material={materials['Molino.002']}
           />
           <mesh
             name="Plane003_2"
             castShadow
             receiveShadow
             geometry={nodes.Plane003_2.geometry}
-            material={materials["TargetaPase.002"]}
+            material={materials['TargetaPase.002']}
           />
           <mesh
             name="Plane003_3"
             castShadow
             receiveShadow
             geometry={nodes.Plane003_3.geometry}
-            material={materials["IndicadorPase.002"]}
+            material={materials['IndicadorPase.002']}
           />
           <mesh
             name="Plane003_4"
@@ -144,7 +155,7 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Plane003_5.geometry}
-            material={materials["Base.002"]}
+            material={materials['Base.002']}
           />
         </group>
         <group name="sillaEspera4">
@@ -167,28 +178,23 @@ export function Modelo3D_Universidad(props) {
           name="sillaEspera3"
           position={[227.227, 0.139, -52.953]}
           rotation={[Math.PI, -0.759, Math.PI]}
-          scale={[1.43, 1.621, 1.621]}
-        >
+          scale={[1.43, 1.621, 1.621]}>
           <mesh
             name="Vert006"
             castShadow
             receiveShadow
             geometry={nodes.Vert006.geometry}
-            material={materials["Espaldar.001"]}
+            material={materials['Espaldar.001']}
           />
           <mesh
             name="Vert006_1"
             castShadow
             receiveShadow
             geometry={nodes.Vert006_1.geometry}
-            material={materials["Fierro.001"]}
+            material={materials['Fierro.001']}
           />
         </group>
-        <group
-          name="sillaGuardia"
-          position={[234.133, 2.886, -66.267]}
-          scale={0.613}
-        >
+        <group name="sillaGuardia" position={[234.133, 2.886, -66.267]} scale={0.613}>
           <mesh
             name="Circle_1"
             castShadow
@@ -256,8 +262,7 @@ export function Modelo3D_Universidad(props) {
           name="Plane"
           position={[252.604, 29.954, -81.95]}
           rotation={[Math.PI / 2, 0, -2.349]}
-          scale={3.967}
-        >
+          scale={3.967}>
           <mesh
             name="Plane007_1"
             castShadow
@@ -363,8 +368,7 @@ export function Modelo3D_Universidad(props) {
           name="Universidad002"
           position={[-169.811, 33.036, 32.08]}
           rotation={[0, -0.257, 0]}
-          scale={[1.171, 0.669, 1.171]}
-        >
+          scale={[1.171, 0.669, 1.171]}>
           <mesh
             name="Plano003"
             castShadow
@@ -384,7 +388,7 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Plano003_2.geometry}
-            material={materials["Material.001"]}
+            material={materials['Material.001']}
           />
         </group>
         <group name="sillaEspera4006">
@@ -455,8 +459,7 @@ export function Modelo3D_Universidad(props) {
           name="Molinete_Tarjeta002"
           position={[4.525, -0.491, -39.432]}
           rotation={[0, -0.015, 0]}
-          scale={[0.506, 0.506, 1.984]}
-        >
+          scale={[0.506, 0.506, 1.984]}>
           <mesh
             name="Plane015_1"
             castShadow
@@ -490,28 +493,27 @@ export function Modelo3D_Universidad(props) {
           name="Molinete_Huella001"
           position={[0.882, -0.491, -39.441]}
           rotation={[0, -0.015, 0]}
-          scale={[0.506, 0.506, 1.984]}
-        >
+          scale={[0.506, 0.506, 1.984]}>
           <mesh
             name="Plane017_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane017_1.geometry}
-            material={materials["Molino.002"]}
+            material={materials['Molino.002']}
           />
           <mesh
             name="Plane017_2"
             castShadow
             receiveShadow
             geometry={nodes.Plane017_2.geometry}
-            material={materials["TargetaPase.002"]}
+            material={materials['TargetaPase.002']}
           />
           <mesh
             name="Plane017_3"
             castShadow
             receiveShadow
             geometry={nodes.Plane017_3.geometry}
-            material={materials["IndicadorPase.002"]}
+            material={materials['IndicadorPase.002']}
           />
           <mesh
             name="Plane017_4"
@@ -525,50 +527,48 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Plane017_5.geometry}
-            material={materials["Base.002"]}
+            material={materials['Base.002']}
           />
         </group>
         <group
           name="Molinete_Tarjeta005"
           position={[8.004, -0.572, -39.452]}
           rotation={[0, -0.015, 0]}
-          scale={[0.506, 0.506, 1.984]}
-        >
+          scale={[0.506, 0.506, 1.984]}>
           <mesh
             name="Plane019_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane019_1.geometry}
-            material={materials["Molino.001"]}
+            material={materials['Molino.001']}
           />
           <mesh
             name="Plane019_2"
             castShadow
             receiveShadow
             geometry={nodes.Plane019_2.geometry}
-            material={materials["Base.001"]}
+            material={materials['Base.001']}
           />
           <mesh
             name="Plane019_3"
             castShadow
             receiveShadow
             geometry={nodes.Plane019_3.geometry}
-            material={materials["IndicadorPase.001"]}
+            material={materials['IndicadorPase.001']}
           />
           <mesh
             name="Plane019_4"
             castShadow
             receiveShadow
             geometry={nodes.Plane019_4.geometry}
-            material={materials["TargetaPase.001"]}
+            material={materials['TargetaPase.001']}
           />
         </group>
         <group
           name="Molinete_Tarjeta006"
           position={[14.726, -0.491, -39.432]}
           rotation={[0, -0.015, 0]}
-          scale={[0.506, 0.506, 1.984]}
-        >
+          scale={[0.506, 0.506, 1.984]}>
           <mesh
             name="Plane021_1"
             castShadow
@@ -602,28 +602,27 @@ export function Modelo3D_Universidad(props) {
           name="Molinete_Huella003"
           position={[11.369, -0.491, -39.441]}
           rotation={[0, -0.015, 0]}
-          scale={[0.506, 0.506, 1.984]}
-        >
+          scale={[0.506, 0.506, 1.984]}>
           <mesh
             name="Plane023_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane023_1.geometry}
-            material={materials["Molino.002"]}
+            material={materials['Molino.002']}
           />
           <mesh
             name="Plane023_2"
             castShadow
             receiveShadow
             geometry={nodes.Plane023_2.geometry}
-            material={materials["TargetaPase.002"]}
+            material={materials['TargetaPase.002']}
           />
           <mesh
             name="Plane023_3"
             castShadow
             receiveShadow
             geometry={nodes.Plane023_3.geometry}
-            material={materials["IndicadorPase.002"]}
+            material={materials['IndicadorPase.002']}
           />
           <mesh
             name="Plane023_4"
@@ -637,7 +636,7 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Plane023_5.geometry}
-            material={materials["Base.002"]}
+            material={materials['Base.002']}
           />
         </group>
         <mesh
@@ -645,7 +644,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.rejitaEntrada.geometry}
-          material={materials["Material.006"]}
+          material={materials['Material.006']}
           position={[33.349, -0.303, -39.213]}
           rotation={[0, 0, -Math.PI / 2]}
           scale={0.246}
@@ -654,8 +653,7 @@ export function Modelo3D_Universidad(props) {
           name="Molinete_Tarjeta003"
           position={[21.736, -0.491, -39.432]}
           rotation={[0, -0.015, 0]}
-          scale={[0.506, 0.506, 1.984]}
-        >
+          scale={[0.506, 0.506, 1.984]}>
           <mesh
             name="Plane027_1"
             castShadow
@@ -689,28 +687,27 @@ export function Modelo3D_Universidad(props) {
           name="Molinete_Huella002"
           position={[18.093, -0.491, -39.441]}
           rotation={[0, -0.015, 0]}
-          scale={[0.506, 0.506, 1.984]}
-        >
+          scale={[0.506, 0.506, 1.984]}>
           <mesh
             name="Plane028_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane028_1.geometry}
-            material={materials["Molino.002"]}
+            material={materials['Molino.002']}
           />
           <mesh
             name="Plane028_2"
             castShadow
             receiveShadow
             geometry={nodes.Plane028_2.geometry}
-            material={materials["TargetaPase.002"]}
+            material={materials['TargetaPase.002']}
           />
           <mesh
             name="Plane028_3"
             castShadow
             receiveShadow
             geometry={nodes.Plane028_3.geometry}
-            material={materials["IndicadorPase.002"]}
+            material={materials['IndicadorPase.002']}
           />
           <mesh
             name="Plane028_4"
@@ -724,42 +721,41 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Plane028_5.geometry}
-            material={materials["Base.002"]}
+            material={materials['Base.002']}
           />
         </group>
         <group
           name="Molinete_Tarjeta004"
           position={[25.214, -0.572, -39.452]}
           rotation={[0, -0.015, 0]}
-          scale={[0.506, 0.506, 1.984]}
-        >
+          scale={[0.506, 0.506, 1.984]}>
           <mesh
             name="Plane029_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane029_1.geometry}
-            material={materials["Molino.001"]}
+            material={materials['Molino.001']}
           />
           <mesh
             name="Plane029_2"
             castShadow
             receiveShadow
             geometry={nodes.Plane029_2.geometry}
-            material={materials["Base.001"]}
+            material={materials['Base.001']}
           />
           <mesh
             name="Plane029_3"
             castShadow
             receiveShadow
             geometry={nodes.Plane029_3.geometry}
-            material={materials["IndicadorPase.001"]}
+            material={materials['IndicadorPase.001']}
           />
           <mesh
             name="Plane029_4"
             castShadow
             receiveShadow
             geometry={nodes.Plane029_4.geometry}
-            material={materials["TargetaPase.001"]}
+            material={materials['TargetaPase.001']}
           />
         </group>
         <mesh
@@ -767,7 +763,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.rejitaEntrada001.geometry}
-          material={materials["Material.006"]}
+          material={materials['Material.006']}
           position={[28.911, -0.303, -39.213]}
           rotation={[0, 0, -Math.PI / 2]}
           scale={0.246}
@@ -777,7 +773,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.rejitaEntrada002.geometry}
-          material={materials["Material.006"]}
+          material={materials['Material.006']}
           position={[33.349, -0.303, -39.213]}
           rotation={[0, 0, -Math.PI / 2]}
           scale={0.246}
@@ -786,8 +782,7 @@ export function Modelo3D_Universidad(props) {
           name="Plane001"
           position={[33.296, 1.841, -49.026]}
           rotation={[0, 1.564, 0]}
-          scale={[1.052, 0.226, 0.226]}
-        >
+          scale={[1.052, 0.226, 0.226]}>
           <mesh
             name="Plane032_1"
             castShadow
@@ -803,17 +798,13 @@ export function Modelo3D_Universidad(props) {
             material={materials.Teclas}
           />
         </group>
-        <group
-          name="dispensadorAlchol"
-          position={[-0.41, 3.353, -37.747]}
-          scale={0.011}
-        >
+        <group name="dispensadorAlchol" position={[-0.41, 3.353, -37.747]} scale={0.011}>
           <mesh
             name="Sphere001_1"
             castShadow
             receiveShadow
             geometry={nodes.Sphere001_1.geometry}
-            material={materials["Base.003"]}
+            material={materials['Base.003']}
           />
           <mesh
             name="Sphere001_2"
@@ -848,35 +839,33 @@ export function Modelo3D_Universidad(props) {
           name="Cubo001"
           position={[33.474, 1.951, -51.11]}
           rotation={[-Math.PI, 0.001, -Math.PI]}
-          scale={0.151}
-        >
+          scale={0.151}>
           <mesh
             name="Cubo001_1"
             castShadow
             receiveShadow
             geometry={nodes.Cubo001_1.geometry}
-            material={materials["Material.008"]}
+            material={materials['Material.008']}
           />
           <mesh
             name="Cubo001_2"
             castShadow
             receiveShadow
             geometry={nodes.Cubo001_2.geometry}
-            material={materials["Material.009"]}
+            material={materials['Material.009']}
           />
         </group>
         <group
           name="Focos"
           position={[28.699, 14.283, -44.724]}
           rotation={[Math.PI / 2, 0, -Math.PI / 2]}
-          scale={[-0.066, -1.268, -0.066]}
-        >
+          scale={[-0.066, -1.268, -0.066]}>
           <mesh
             name="Cilindro001_1"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro001_1.geometry}
-            material={materials["Plastico.001"]}
+            material={materials['Plastico.001']}
           />
           <mesh
             name="Cilindro001_2"
@@ -906,14 +895,13 @@ export function Modelo3D_Universidad(props) {
           name="Focos001"
           position={[28.699, 14.283, -36.667]}
           rotation={[Math.PI / 2, 0, -Math.PI / 2]}
-          scale={[-0.066, -1.268, -0.066]}
-        >
+          scale={[-0.066, -1.268, -0.066]}>
           <mesh
             name="Cilindro002"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro002.geometry}
-            material={materials["Plastico.001"]}
+            material={materials['Plastico.001']}
           />
           <mesh
             name="Cilindro002_1"
@@ -934,14 +922,13 @@ export function Modelo3D_Universidad(props) {
           name="Focos002"
           position={[7.76, 14.283, -31.89]}
           rotation={[Math.PI / 2, 0, -Math.PI / 2]}
-          scale={[-0.066, -1.268, -0.066]}
-        >
+          scale={[-0.066, -1.268, -0.066]}>
           <mesh
             name="Cilindro003"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro003.geometry}
-            material={materials["Plastico.001"]}
+            material={materials['Plastico.001']}
           />
           <mesh
             name="Cilindro003_1"
@@ -962,14 +949,13 @@ export function Modelo3D_Universidad(props) {
           name="Focos003"
           position={[7.76, 14.283, -23.832]}
           rotation={[Math.PI / 2, 0, -Math.PI / 2]}
-          scale={[-0.066, -1.268, -0.066]}
-        >
+          scale={[-0.066, -1.268, -0.066]}>
           <mesh
             name="Cilindro004"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro004.geometry}
-            material={materials["Plastico.001"]}
+            material={materials['Plastico.001']}
           />
           <mesh
             name="Cilindro004_1"
@@ -990,8 +976,7 @@ export function Modelo3D_Universidad(props) {
           name="Cylinder"
           position={[38.405, 2.622, -34.157]}
           rotation={[Math.PI, -1.443, Math.PI]}
-          scale={[0.266, 0.314, 0.263]}
-        >
+          scale={[0.266, 0.314, 0.263]}>
           <mesh
             name="Cylinder003_1"
             castShadow
@@ -1025,57 +1010,54 @@ export function Modelo3D_Universidad(props) {
           name="sillaGuardia1"
           position={[37.025, -1.238, -49.66]}
           rotation={[0, 1.528, -Math.PI]}
-          scale={[-0.78, -0.156, -0.156]}
-        >
+          scale={[-0.78, -0.156, -0.156]}>
           <mesh
             name="Plane034_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane034_1.geometry}
-            material={materials["Material.010"]}
+            material={materials['Material.010']}
           />
           <mesh
             name="Plane034_2"
             castShadow
             receiveShadow
             geometry={nodes.Plane034_2.geometry}
-            material={materials["Fierro.002"]}
+            material={materials['Fierro.002']}
           />
         </group>
         <group
           name="tv"
           position={[31.935, 2.85, -49.064]}
           rotation={[Math.PI / 2, 0, -1.517]}
-          scale={3.062}
-        >
+          scale={3.062}>
           <mesh
             name="Plane035_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane035_1.geometry}
-            material={materials["Material.012"]}
+            material={materials['Material.012']}
           />
           <mesh
             name="Plane035_2"
             castShadow
             receiveShadow
             geometry={nodes.Plane035_2.geometry}
-            material={materials["Material.013"]}
+            material={materials['Material.013']}
           />
           <mesh
             name="Plane035_3"
             castShadow
             receiveShadow
             geometry={nodes.Plane035_3.geometry}
-            material={materials["red light"]}
+            material={materials['red light']}
           />
         </group>
         <group
           name="Cylinder001"
           position={[38.119, 2.622, -32.814]}
           rotation={[Math.PI, -1.443, Math.PI]}
-          scale={[0.266, 0.314, 0.263]}
-        >
+          scale={[0.266, 0.314, 0.263]}>
           <mesh
             name="Cylinder004_1"
             castShadow
@@ -1108,70 +1090,67 @@ export function Modelo3D_Universidad(props) {
         <group
           name="BasureroDoble"
           position={[18.176, -0.47, -62.84]}
-          scale={[0.134, 0.486, 0.486]}
-        >
+          scale={[0.134, 0.486, 0.486]}>
           <mesh
             name="Plane036_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane036_1.geometry}
-            material={materials["basurero azul"]}
+            material={materials['basurero azul']}
           />
           <mesh
             name="Plane036_2"
             castShadow
             receiveShadow
             geometry={nodes.Plane036_2.geometry}
-            material={materials["basurero amarillo"]}
+            material={materials['basurero amarillo']}
           />
           <mesh
             name="Plane036_3"
             castShadow
             receiveShadow
             geometry={nodes.Plane036_3.geometry}
-            material={materials["base basurero"]}
+            material={materials['base basurero']}
           />
         </group>
         <group
           name="BasureroDoble001"
           position={[4.284, -0.532, -65.263]}
           rotation={[Math.PI, -0.001, Math.PI]}
-          scale={[0.134, 0.486, 0.486]}
-        >
+          scale={[0.199, 0.722, 0.722]}>
           <mesh
             name="Plane037_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane037_1.geometry}
-            material={materials["basurero azul"]}
+            material={materials['basurero azul']}
           />
           <mesh
             name="Plane037_2"
             castShadow
             receiveShadow
             geometry={nodes.Plane037_2.geometry}
-            material={materials["basurero amarillo"]}
+            material={materials['basurero amarillo']}
           />
           <mesh
             name="Plane037_3"
             castShadow
             receiveShadow
             geometry={nodes.Plane037_3.geometry}
-            material={materials["base basurero"]}
+            material={materials['base basurero']}
           />
         </group>
         <group
           name="dispensadorAlchol001"
           position={[1.611, 4.529, -34.49]}
           rotation={[Math.PI, -1.529, Math.PI]}
-          scale={0.004}
-        >
+          scale={0.004}>
           <mesh
             name="Sphere002"
             castShadow
             receiveShadow
             geometry={nodes.Sphere002.geometry}
-            material={materials["Base.003"]}
+            material={materials['Base.003']}
           />
           <mesh
             name="Sphere002_1"
@@ -1206,14 +1185,13 @@ export function Modelo3D_Universidad(props) {
           name="dispensadorAlchol002"
           position={[-14.964, 4.881, -36.548]}
           rotation={[0, 1.518, 0]}
-          scale={0.007}
-        >
+          scale={0.007}>
           <mesh
             name="Sphere003_1"
             castShadow
             receiveShadow
             geometry={nodes.Sphere003_1.geometry}
-            material={materials["Base.003"]}
+            material={materials['Base.003']}
           />
           <mesh
             name="Sphere003_2"
@@ -1248,14 +1226,13 @@ export function Modelo3D_Universidad(props) {
           name="dispensadorAlchol004"
           position={[-12.287, 4.881, -31.711]}
           rotation={[0, -1.42, 0]}
-          scale={0.006}
-        >
+          scale={0.006}>
           <mesh
             name="Sphere007"
             castShadow
             receiveShadow
             geometry={nodes.Sphere007.geometry}
-            material={materials["Base.003"]}
+            material={materials['Base.003']}
           />
           <mesh
             name="Sphere007_1"
@@ -1290,14 +1267,13 @@ export function Modelo3D_Universidad(props) {
           name="dispensadorAlchol003"
           position={[-45.394, 4.881, -36.459]}
           rotation={[0, 1.518, 0]}
-          scale={0.007}
-        >
+          scale={0.007}>
           <mesh
             name="Sphere008"
             castShadow
             receiveShadow
             geometry={nodes.Sphere008.geometry}
-            material={materials["Base.003"]}
+            material={materials['Base.003']}
           />
           <mesh
             name="Sphere008_1"
@@ -1332,14 +1308,13 @@ export function Modelo3D_Universidad(props) {
           name="dispensadorAlchol005"
           position={[-47.034, 4.881, -31.613]}
           rotation={[0, -1.42, 0]}
-          scale={0.006}
-        >
+          scale={0.006}>
           <mesh
             name="Sphere009"
             castShadow
             receiveShadow
             geometry={nodes.Sphere009.geometry}
-            material={materials["Base.003"]}
+            material={materials['Base.003']}
           />
           <mesh
             name="Sphere009_1"
@@ -1374,14 +1349,13 @@ export function Modelo3D_Universidad(props) {
           name="dispensadorAlchol006"
           position={[-90.837, 4.881, -36.554]}
           rotation={[0, 1.518, 0]}
-          scale={0.007}
-        >
+          scale={0.007}>
           <mesh
             name="Sphere010"
             castShadow
             receiveShadow
             geometry={nodes.Sphere010.geometry}
-            material={materials["Base.003"]}
+            material={materials['Base.003']}
           />
           <mesh
             name="Sphere010_1"
@@ -1416,14 +1390,13 @@ export function Modelo3D_Universidad(props) {
           name="dispensadorAlchol007"
           position={[-92.477, 4.881, -31.469]}
           rotation={[0, -1.42, 0]}
-          scale={0.006}
-        >
+          scale={0.006}>
           <mesh
             name="Sphere011"
             castShadow
             receiveShadow
             geometry={nodes.Sphere011.geometry}
-            material={materials["Base.003"]}
+            material={materials['Base.003']}
           />
           <mesh
             name="Sphere011_1"
@@ -1458,14 +1431,13 @@ export function Modelo3D_Universidad(props) {
           name="dispensadorAlchol008"
           position={[-116.316, 4.881, -36.554]}
           rotation={[0, 1.518, 0]}
-          scale={0.007}
-        >
+          scale={0.007}>
           <mesh
             name="Sphere012"
             castShadow
             receiveShadow
             geometry={nodes.Sphere012.geometry}
-            material={materials["Base.003"]}
+            material={materials['Base.003']}
           />
           <mesh
             name="Sphere012_1"
@@ -1500,14 +1472,13 @@ export function Modelo3D_Universidad(props) {
           name="dispensadorAlchol009"
           position={[-126.877, 4.881, -31.416]}
           rotation={[0, -1.42, 0]}
-          scale={0.006}
-        >
+          scale={0.006}>
           <mesh
             name="Sphere013"
             castShadow
             receiveShadow
             geometry={nodes.Sphere013.geometry}
-            material={materials["Base.003"]}
+            material={materials['Base.003']}
           />
           <mesh
             name="Sphere013_1"
@@ -1542,14 +1513,13 @@ export function Modelo3D_Universidad(props) {
           name="dispensadorAlchol010"
           position={[-116.316, 4.881, -36.554]}
           rotation={[0, 1.518, 0]}
-          scale={0.007}
-        >
+          scale={0.007}>
           <mesh
             name="Sphere014"
             castShadow
             receiveShadow
             geometry={nodes.Sphere014.geometry}
-            material={materials["Base.003"]}
+            material={materials['Base.003']}
           />
           <mesh
             name="Sphere014_1"
@@ -1584,14 +1554,13 @@ export function Modelo3D_Universidad(props) {
           name="dispensadorAlchol011"
           position={[-125.905, 4.881, -36.46]}
           rotation={[0, 1.518, 0]}
-          scale={0.007}
-        >
+          scale={0.007}>
           <mesh
             name="Sphere015"
             castShadow
             receiveShadow
             geometry={nodes.Sphere015.geometry}
-            material={materials["Base.003"]}
+            material={materials['Base.003']}
           />
           <mesh
             name="Sphere015_1"
@@ -1626,8 +1595,7 @@ export function Modelo3D_Universidad(props) {
           name="Universidad003"
           position={[-169.811, 33.036, 32.08]}
           rotation={[0, -0.257, 0]}
-          scale={[1.171, 0.669, 1.171]}
-        >
+          scale={[1.171, 0.669, 1.171]}>
           <mesh
             name="Plano001"
             castShadow
@@ -1647,15 +1615,14 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Plano001_2.geometry}
-            material={materials["Material.001"]}
+            material={materials['Material.001']}
           />
         </group>
         <group
           name="Universidad004"
           position={[-169.811, 33.036, 32.08]}
           rotation={[0, -0.257, 0]}
-          scale={[1.171, 0.669, 1.171]}
-        >
+          scale={[1.171, 0.669, 1.171]}>
           <mesh
             name="Plano002"
             castShadow
@@ -1675,105 +1642,102 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Plano002_2.geometry}
-            material={materials["Material.001"]}
+            material={materials['Material.001']}
           />
         </group>
         <group
           name="Molinete_Tarjeta007"
-          position={[257.036, 0, -74.454]}
+          position={[257.339, 0.004, -74.555]}
           rotation={[0, -0.824, 0]}
-          scale={[0.506, 0.506, 1.984]}
-        >
+          scale={[0.588, 0.588, 2.304]}>
+          <mesh
+            name="Plane008"
+            castShadow
+            receiveShadow
+            geometry={nodes.Plane008.geometry}
+            material={materials.Molino}
+          />
           <mesh
             name="Plane008_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane008_1.geometry}
-            material={materials.Molino}
+            material={materials.Base}
           />
           <mesh
             name="Plane008_2"
             castShadow
             receiveShadow
             geometry={nodes.Plane008_2.geometry}
-            material={materials.Base}
+            material={materials.IndicadorPase}
           />
           <mesh
             name="Plane008_3"
             castShadow
             receiveShadow
             geometry={nodes.Plane008_3.geometry}
-            material={materials.IndicadorPase}
-          />
-          <mesh
-            name="Plane008_4"
-            castShadow
-            receiveShadow
-            geometry={nodes.Plane008_4.geometry}
             material={materials.TargetaPase}
           />
         </group>
         <group
           name="Molinete_Tarjeta008"
-          position={[255.172, -0.082, -76.436]}
+          position={[255.176, -0.09, -76.435]}
           rotation={[0, -0.824, 0]}
-          scale={[0.506, 0.506, 1.984]}
-        >
+          scale={[0.588, 0.588, 2.304]}>
           <mesh
             name="Plane016_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane016_1.geometry}
-            material={materials["Molino.001"]}
+            material={materials['Molino.001']}
           />
           <mesh
             name="Plane016_2"
             castShadow
             receiveShadow
             geometry={nodes.Plane016_2.geometry}
-            material={materials["Base.001"]}
+            material={materials['Base.001']}
           />
           <mesh
             name="Plane016_3"
             castShadow
             receiveShadow
             geometry={nodes.Plane016_3.geometry}
-            material={materials["IndicadorPase.001"]}
+            material={materials['IndicadorPase.001']}
           />
           <mesh
             name="Plane016_4"
             castShadow
             receiveShadow
             geometry={nodes.Plane016_4.geometry}
-            material={materials["TargetaPase.001"]}
+            material={materials['TargetaPase.001']}
           />
         </group>
         <group
           name="Molinete_Huella004"
-          position={[253.252, 0, -78.433]}
+          position={[252.945, 0.004, -78.46]}
           rotation={[0, -0.824, 0]}
-          scale={[0.506, 0.506, 1.984]}
-        >
+          scale={[0.588, 0.588, 2.304]}>
           <mesh
             name="Plane018_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane018_1.geometry}
-            material={materials["Molino.002"]}
+            material={materials['Molino.002']}
           />
           <mesh
             name="Plane018_2"
             castShadow
             receiveShadow
             geometry={nodes.Plane018_2.geometry}
-            material={materials["TargetaPase.002"]}
+            material={materials['TargetaPase.002']}
           />
           <mesh
             name="Plane018_3"
             castShadow
             receiveShadow
             geometry={nodes.Plane018_3.geometry}
-            material={materials["IndicadorPase.002"]}
+            material={materials['IndicadorPase.002']}
           />
           <mesh
             name="Plane018_4"
@@ -1787,7 +1751,7 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Plane018_5.geometry}
-            material={materials["Base.002"]}
+            material={materials['Base.002']}
           />
         </group>
         <group name="sillaEspera4010">
@@ -1810,28 +1774,23 @@ export function Modelo3D_Universidad(props) {
           name="sillaEspera3001"
           position={[227.227, 0.139, -52.953]}
           rotation={[Math.PI, -0.759, Math.PI]}
-          scale={[1.43, 1.621, 1.621]}
-        >
+          scale={[1.43, 1.621, 1.621]}>
           <mesh
             name="Vert001"
             castShadow
             receiveShadow
             geometry={nodes.Vert001.geometry}
-            material={materials["Espaldar.001"]}
+            material={materials['Espaldar.001']}
           />
           <mesh
             name="Vert001_1"
             castShadow
             receiveShadow
             geometry={nodes.Vert001_1.geometry}
-            material={materials["Fierro.001"]}
+            material={materials['Fierro.001']}
           />
         </group>
-        <group
-          name="sillaGuardia001"
-          position={[234.133, 2.886, -66.267]}
-          scale={0.613}
-        >
+        <group name="sillaGuardia001" position={[234.133, 2.886, -66.267]} scale={0.613}>
           <mesh
             name="Circle001_1"
             castShadow
@@ -1899,8 +1858,7 @@ export function Modelo3D_Universidad(props) {
           name="Plane002"
           position={[252.604, 29.954, -81.95]}
           rotation={[Math.PI / 2, 0, -2.349]}
-          scale={3.967}
-        >
+          scale={3.967}>
           <mesh
             name="Plane026_1"
             castShadow
@@ -2006,8 +1964,7 @@ export function Modelo3D_Universidad(props) {
           name="Universidad005"
           position={[-169.811, 33.036, 32.08]}
           rotation={[0, -0.257, 0]}
-          scale={[1.171, 0.669, 1.171]}
-        >
+          scale={[1.171, 0.669, 1.171]}>
           <mesh
             name="Plano005"
             castShadow
@@ -2027,7 +1984,7 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Plano005_2.geometry}
-            material={materials["Material.001"]}
+            material={materials['Material.001']}
           />
         </group>
         <group name="sillaEspera4016">
@@ -2046,60 +2003,11 @@ export function Modelo3D_Universidad(props) {
             material={materials.Fierro}
           />
         </group>
-        <group name="sillaEspera4017">
-          <mesh
-            name="Plane039"
-            castShadow
-            receiveShadow
-            geometry={nodes.Plane039.geometry}
-            material={materials.Espaldar}
-          />
-          <mesh
-            name="Plane039_1"
-            castShadow
-            receiveShadow
-            geometry={nodes.Plane039_1.geometry}
-            material={materials.Fierro}
-          />
-        </group>
-        <group name="sillaEspera4018">
-          <mesh
-            name="Plane040"
-            castShadow
-            receiveShadow
-            geometry={nodes.Plane040.geometry}
-            material={materials.Espaldar}
-          />
-          <mesh
-            name="Plane040_1"
-            castShadow
-            receiveShadow
-            geometry={nodes.Plane040_1.geometry}
-            material={materials.Fierro}
-          />
-        </group>
-        <group name="sillaEspera4019">
-          <mesh
-            name="Plane041"
-            castShadow
-            receiveShadow
-            geometry={nodes.Plane041.geometry}
-            material={materials.Espaldar}
-          />
-          <mesh
-            name="Plane041_1"
-            castShadow
-            receiveShadow
-            geometry={nodes.Plane041_1.geometry}
-            material={materials.Fierro}
-          />
-        </group>
         <group
           name="Molinete_Tarjeta009"
           position={[4.525, -0.491, -39.432]}
           rotation={[0, -0.015, 0]}
-          scale={[0.506, 0.506, 1.984]}
-        >
+          scale={[0.506, 0.506, 1.984]}>
           <mesh
             name="Plane042"
             castShadow
@@ -2133,28 +2041,27 @@ export function Modelo3D_Universidad(props) {
           name="Molinete_Huella005"
           position={[0.882, -0.491, -39.441]}
           rotation={[0, -0.015, 0]}
-          scale={[0.506, 0.506, 1.984]}
-        >
+          scale={[0.506, 0.506, 1.984]}>
           <mesh
             name="Plane043"
             castShadow
             receiveShadow
             geometry={nodes.Plane043.geometry}
-            material={materials["Molino.002"]}
+            material={materials['Molino.002']}
           />
           <mesh
             name="Plane043_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane043_1.geometry}
-            material={materials["TargetaPase.002"]}
+            material={materials['TargetaPase.002']}
           />
           <mesh
             name="Plane043_2"
             castShadow
             receiveShadow
             geometry={nodes.Plane043_2.geometry}
-            material={materials["IndicadorPase.002"]}
+            material={materials['IndicadorPase.002']}
           />
           <mesh
             name="Plane043_3"
@@ -2168,50 +2075,48 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Plane043_4.geometry}
-            material={materials["Base.002"]}
+            material={materials['Base.002']}
           />
         </group>
         <group
           name="Molinete_Tarjeta010"
           position={[8.004, -0.572, -39.452]}
           rotation={[0, -0.015, 0]}
-          scale={[0.506, 0.506, 1.984]}
-        >
+          scale={[0.506, 0.506, 1.984]}>
           <mesh
             name="Plane044"
             castShadow
             receiveShadow
             geometry={nodes.Plane044.geometry}
-            material={materials["Molino.001"]}
+            material={materials['Molino.001']}
           />
           <mesh
             name="Plane044_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane044_1.geometry}
-            material={materials["Base.001"]}
+            material={materials['Base.001']}
           />
           <mesh
             name="Plane044_2"
             castShadow
             receiveShadow
             geometry={nodes.Plane044_2.geometry}
-            material={materials["IndicadorPase.001"]}
+            material={materials['IndicadorPase.001']}
           />
           <mesh
             name="Plane044_3"
             castShadow
             receiveShadow
             geometry={nodes.Plane044_3.geometry}
-            material={materials["TargetaPase.001"]}
+            material={materials['TargetaPase.001']}
           />
         </group>
         <group
           name="Molinete_Tarjeta011"
           position={[14.726, -0.491, -39.432]}
           rotation={[0, -0.015, 0]}
-          scale={[0.506, 0.506, 1.984]}
-        >
+          scale={[0.506, 0.506, 1.984]}>
           <mesh
             name="Plane045"
             castShadow
@@ -2245,28 +2150,27 @@ export function Modelo3D_Universidad(props) {
           name="Molinete_Huella006"
           position={[11.369, -0.491, -39.441]}
           rotation={[0, -0.015, 0]}
-          scale={[0.506, 0.506, 1.984]}
-        >
+          scale={[0.506, 0.506, 1.984]}>
           <mesh
             name="Plane046"
             castShadow
             receiveShadow
             geometry={nodes.Plane046.geometry}
-            material={materials["Molino.002"]}
+            material={materials['Molino.002']}
           />
           <mesh
             name="Plane046_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane046_1.geometry}
-            material={materials["TargetaPase.002"]}
+            material={materials['TargetaPase.002']}
           />
           <mesh
             name="Plane046_2"
             castShadow
             receiveShadow
             geometry={nodes.Plane046_2.geometry}
-            material={materials["IndicadorPase.002"]}
+            material={materials['IndicadorPase.002']}
           />
           <mesh
             name="Plane046_3"
@@ -2280,7 +2184,7 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Plane046_4.geometry}
-            material={materials["Base.002"]}
+            material={materials['Base.002']}
           />
         </group>
         <mesh
@@ -2288,7 +2192,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.rejitaEntrada003.geometry}
-          material={materials["Material.006"]}
+          material={materials['Material.006']}
           position={[33.349, -0.303, -39.213]}
           rotation={[0, 0, -Math.PI / 2]}
           scale={0.246}
@@ -2297,8 +2201,7 @@ export function Modelo3D_Universidad(props) {
           name="Molinete_Tarjeta012"
           position={[21.736, -0.491, -39.432]}
           rotation={[0, -0.015, 0]}
-          scale={[0.506, 0.506, 1.984]}
-        >
+          scale={[0.506, 0.506, 1.984]}>
           <mesh
             name="Plane047"
             castShadow
@@ -2332,28 +2235,27 @@ export function Modelo3D_Universidad(props) {
           name="Molinete_Huella007"
           position={[18.093, -0.491, -39.441]}
           rotation={[0, -0.015, 0]}
-          scale={[0.506, 0.506, 1.984]}
-        >
+          scale={[0.506, 0.506, 1.984]}>
           <mesh
             name="Plane048"
             castShadow
             receiveShadow
             geometry={nodes.Plane048.geometry}
-            material={materials["Molino.002"]}
+            material={materials['Molino.002']}
           />
           <mesh
             name="Plane048_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane048_1.geometry}
-            material={materials["TargetaPase.002"]}
+            material={materials['TargetaPase.002']}
           />
           <mesh
             name="Plane048_2"
             castShadow
             receiveShadow
             geometry={nodes.Plane048_2.geometry}
-            material={materials["IndicadorPase.002"]}
+            material={materials['IndicadorPase.002']}
           />
           <mesh
             name="Plane048_3"
@@ -2367,42 +2269,41 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Plane048_4.geometry}
-            material={materials["Base.002"]}
+            material={materials['Base.002']}
           />
         </group>
         <group
           name="Molinete_Tarjeta013"
           position={[25.214, -0.572, -39.452]}
           rotation={[0, -0.015, 0]}
-          scale={[0.506, 0.506, 1.984]}
-        >
+          scale={[0.506, 0.506, 1.984]}>
           <mesh
             name="Plane049"
             castShadow
             receiveShadow
             geometry={nodes.Plane049.geometry}
-            material={materials["Molino.001"]}
+            material={materials['Molino.001']}
           />
           <mesh
             name="Plane049_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane049_1.geometry}
-            material={materials["Base.001"]}
+            material={materials['Base.001']}
           />
           <mesh
             name="Plane049_2"
             castShadow
             receiveShadow
             geometry={nodes.Plane049_2.geometry}
-            material={materials["IndicadorPase.001"]}
+            material={materials['IndicadorPase.001']}
           />
           <mesh
             name="Plane049_3"
             castShadow
             receiveShadow
             geometry={nodes.Plane049_3.geometry}
-            material={materials["TargetaPase.001"]}
+            material={materials['TargetaPase.001']}
           />
         </group>
         <mesh
@@ -2410,7 +2311,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.rejitaEntrada004.geometry}
-          material={materials["Material.006"]}
+          material={materials['Material.006']}
           position={[28.911, -0.303, -39.213]}
           rotation={[0, 0, -Math.PI / 2]}
           scale={0.246}
@@ -2420,7 +2321,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.rejitaEntrada005.geometry}
-          material={materials["Material.006"]}
+          material={materials['Material.006']}
           position={[33.349, -0.303, -39.213]}
           rotation={[0, 0, -Math.PI / 2]}
           scale={0.246}
@@ -2429,8 +2330,7 @@ export function Modelo3D_Universidad(props) {
           name="Plane003"
           position={[33.296, 1.841, -49.026]}
           rotation={[0, 1.564, 0]}
-          scale={[1.052, 0.226, 0.226]}
-        >
+          scale={[1.052, 0.226, 0.226]}>
           <mesh
             name="Plane050"
             castShadow
@@ -2446,17 +2346,13 @@ export function Modelo3D_Universidad(props) {
             material={materials.Teclas}
           />
         </group>
-        <group
-          name="dispensadorAlchol012"
-          position={[-0.41, 3.353, -37.747]}
-          scale={0.011}
-        >
+        <group name="dispensadorAlchol012" position={[-0.41, 3.353, -37.747]} scale={0.011}>
           <mesh
             name="Sphere016"
             castShadow
             receiveShadow
             geometry={nodes.Sphere016.geometry}
-            material={materials["Base.003"]}
+            material={materials['Base.003']}
           />
           <mesh
             name="Sphere016_1"
@@ -2491,35 +2387,33 @@ export function Modelo3D_Universidad(props) {
           name="Cubo002"
           position={[33.474, 1.951, -51.11]}
           rotation={[-Math.PI, 0.001, -Math.PI]}
-          scale={0.151}
-        >
+          scale={0.151}>
           <mesh
             name="Cubo002_1"
             castShadow
             receiveShadow
             geometry={nodes.Cubo002_1.geometry}
-            material={materials["Material.008"]}
+            material={materials['Material.008']}
           />
           <mesh
             name="Cubo002_2"
             castShadow
             receiveShadow
             geometry={nodes.Cubo002_2.geometry}
-            material={materials["Material.009"]}
+            material={materials['Material.009']}
           />
         </group>
         <group
           name="Focos005"
           position={[28.699, 14.283, -44.724]}
           rotation={[Math.PI / 2, 0, -Math.PI / 2]}
-          scale={[-0.066, -1.268, -0.066]}
-        >
+          scale={[-0.066, -1.268, -0.066]}>
           <mesh
             name="Cilindro006"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro006.geometry}
-            material={materials["Plastico.001"]}
+            material={materials['Plastico.001']}
           />
           <mesh
             name="Cilindro006_1"
@@ -2549,14 +2443,13 @@ export function Modelo3D_Universidad(props) {
           name="Focos006"
           position={[28.699, 14.283, -36.667]}
           rotation={[Math.PI / 2, 0, -Math.PI / 2]}
-          scale={[-0.066, -1.268, -0.066]}
-        >
+          scale={[-0.066, -1.268, -0.066]}>
           <mesh
             name="Cilindro007"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro007.geometry}
-            material={materials["Plastico.001"]}
+            material={materials['Plastico.001']}
           />
           <mesh
             name="Cilindro007_1"
@@ -2577,14 +2470,13 @@ export function Modelo3D_Universidad(props) {
           name="Focos007"
           position={[7.76, 14.283, -31.89]}
           rotation={[Math.PI / 2, 0, -Math.PI / 2]}
-          scale={[-0.066, -1.268, -0.066]}
-        >
+          scale={[-0.066, -1.268, -0.066]}>
           <mesh
             name="Cilindro008"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro008.geometry}
-            material={materials["Plastico.001"]}
+            material={materials['Plastico.001']}
           />
           <mesh
             name="Cilindro008_1"
@@ -2605,14 +2497,13 @@ export function Modelo3D_Universidad(props) {
           name="Focos008"
           position={[7.76, 14.283, -23.832]}
           rotation={[Math.PI / 2, 0, -Math.PI / 2]}
-          scale={[-0.066, -1.268, -0.066]}
-        >
+          scale={[-0.066, -1.268, -0.066]}>
           <mesh
             name="Cilindro009"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro009.geometry}
-            material={materials["Plastico.001"]}
+            material={materials['Plastico.001']}
           />
           <mesh
             name="Cilindro009_1"
@@ -2633,8 +2524,7 @@ export function Modelo3D_Universidad(props) {
           name="Cylinder002"
           position={[38.405, 2.622, -34.157]}
           rotation={[Math.PI, -1.443, Math.PI]}
-          scale={[0.266, 0.314, 0.263]}
-        >
+          scale={[0.266, 0.314, 0.263]}>
           <mesh
             name="Cylinder008_1"
             castShadow
@@ -2668,57 +2558,54 @@ export function Modelo3D_Universidad(props) {
           name="sillaGuardia1001"
           position={[37.025, -1.238, -49.66]}
           rotation={[0, 1.528, -Math.PI]}
-          scale={[-0.78, -0.156, -0.156]}
-        >
+          scale={[-0.78, -0.156, -0.156]}>
           <mesh
             name="Plane052"
             castShadow
             receiveShadow
             geometry={nodes.Plane052.geometry}
-            material={materials["Material.010"]}
+            material={materials['Material.010']}
           />
           <mesh
             name="Plane052_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane052_1.geometry}
-            material={materials["Fierro.002"]}
+            material={materials['Fierro.002']}
           />
         </group>
         <group
           name="tv001"
           position={[31.935, 2.85, -49.064]}
           rotation={[Math.PI / 2, 0, -1.517]}
-          scale={3.062}
-        >
+          scale={3.062}>
           <mesh
             name="Plane053"
             castShadow
             receiveShadow
             geometry={nodes.Plane053.geometry}
-            material={materials["Material.012"]}
+            material={materials['Material.012']}
           />
           <mesh
             name="Plane053_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane053_1.geometry}
-            material={materials["Material.013"]}
+            material={materials['Material.013']}
           />
           <mesh
             name="Plane053_2"
             castShadow
             receiveShadow
             geometry={nodes.Plane053_2.geometry}
-            material={materials["red light"]}
+            material={materials['red light']}
           />
         </group>
         <group
           name="Cylinder003"
           position={[38.119, 2.622, -32.814]}
           rotation={[Math.PI, -1.443, Math.PI]}
-          scale={[0.266, 0.314, 0.263]}
-        >
+          scale={[0.266, 0.314, 0.263]}>
           <mesh
             name="Cylinder009_1"
             castShadow
@@ -2751,70 +2638,67 @@ export function Modelo3D_Universidad(props) {
         <group
           name="BasureroDoble002"
           position={[18.176, -0.47, -62.84]}
-          scale={[0.134, 0.486, 0.486]}
-        >
+          scale={[0.134, 0.486, 0.486]}>
           <mesh
             name="Plane054"
             castShadow
             receiveShadow
             geometry={nodes.Plane054.geometry}
-            material={materials["basurero azul"]}
+            material={materials['basurero azul']}
           />
           <mesh
             name="Plane054_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane054_1.geometry}
-            material={materials["basurero amarillo"]}
+            material={materials['basurero amarillo']}
           />
           <mesh
             name="Plane054_2"
             castShadow
             receiveShadow
             geometry={nodes.Plane054_2.geometry}
-            material={materials["base basurero"]}
+            material={materials['base basurero']}
           />
         </group>
         <group
           name="BasureroDoble003"
           position={[4.284, -0.532, -65.263]}
           rotation={[Math.PI, -0.001, Math.PI]}
-          scale={[0.134, 0.486, 0.486]}
-        >
+          scale={[0.199, 0.722, 0.722]}>
           <mesh
             name="Plane055"
             castShadow
             receiveShadow
             geometry={nodes.Plane055.geometry}
-            material={materials["basurero azul"]}
+            material={materials['basurero azul']}
           />
           <mesh
             name="Plane055_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane055_1.geometry}
-            material={materials["basurero amarillo"]}
+            material={materials['basurero amarillo']}
           />
           <mesh
             name="Plane055_2"
             castShadow
             receiveShadow
             geometry={nodes.Plane055_2.geometry}
-            material={materials["base basurero"]}
+            material={materials['base basurero']}
           />
         </group>
         <group
           name="dispensadorAlchol013"
           position={[-14.964, 4.881, -36.548]}
           rotation={[0, 1.518, 0]}
-          scale={0.007}
-        >
+          scale={0.007}>
           <mesh
             name="Sphere017"
             castShadow
             receiveShadow
             geometry={nodes.Sphere017.geometry}
-            material={materials["Base.003"]}
+            material={materials['Base.003']}
           />
           <mesh
             name="Sphere017_1"
@@ -2849,14 +2733,13 @@ export function Modelo3D_Universidad(props) {
           name="dispensadorAlchol014"
           position={[-12.287, 4.881, -31.711]}
           rotation={[0, -1.42, 0]}
-          scale={0.006}
-        >
+          scale={0.006}>
           <mesh
             name="Sphere018"
             castShadow
             receiveShadow
             geometry={nodes.Sphere018.geometry}
-            material={materials["Base.003"]}
+            material={materials['Base.003']}
           />
           <mesh
             name="Sphere018_1"
@@ -2891,14 +2774,13 @@ export function Modelo3D_Universidad(props) {
           name="dispensadorAlchol015"
           position={[-45.394, 4.881, -36.459]}
           rotation={[0, 1.518, 0]}
-          scale={0.007}
-        >
+          scale={0.007}>
           <mesh
             name="Sphere019"
             castShadow
             receiveShadow
             geometry={nodes.Sphere019.geometry}
-            material={materials["Base.003"]}
+            material={materials['Base.003']}
           />
           <mesh
             name="Sphere019_1"
@@ -2933,14 +2815,13 @@ export function Modelo3D_Universidad(props) {
           name="dispensadorAlchol016"
           position={[-47.034, 4.881, -31.613]}
           rotation={[0, -1.42, 0]}
-          scale={0.006}
-        >
+          scale={0.006}>
           <mesh
             name="Sphere020"
             castShadow
             receiveShadow
             geometry={nodes.Sphere020.geometry}
-            material={materials["Base.003"]}
+            material={materials['Base.003']}
           />
           <mesh
             name="Sphere020_1"
@@ -2975,14 +2856,13 @@ export function Modelo3D_Universidad(props) {
           name="dispensadorAlchol017"
           position={[-90.837, 4.881, -36.554]}
           rotation={[0, 1.518, 0]}
-          scale={0.007}
-        >
+          scale={0.007}>
           <mesh
             name="Sphere021"
             castShadow
             receiveShadow
             geometry={nodes.Sphere021.geometry}
-            material={materials["Base.003"]}
+            material={materials['Base.003']}
           />
           <mesh
             name="Sphere021_1"
@@ -3017,14 +2897,13 @@ export function Modelo3D_Universidad(props) {
           name="dispensadorAlchol018"
           position={[-92.477, 4.881, -31.469]}
           rotation={[0, -1.42, 0]}
-          scale={0.006}
-        >
+          scale={0.006}>
           <mesh
             name="Sphere022"
             castShadow
             receiveShadow
             geometry={nodes.Sphere022.geometry}
-            material={materials["Base.003"]}
+            material={materials['Base.003']}
           />
           <mesh
             name="Sphere022_1"
@@ -3059,14 +2938,13 @@ export function Modelo3D_Universidad(props) {
           name="dispensadorAlchol019"
           position={[-116.316, 4.881, -36.554]}
           rotation={[0, 1.518, 0]}
-          scale={0.007}
-        >
+          scale={0.007}>
           <mesh
             name="Sphere023"
             castShadow
             receiveShadow
             geometry={nodes.Sphere023.geometry}
-            material={materials["Base.003"]}
+            material={materials['Base.003']}
           />
           <mesh
             name="Sphere023_1"
@@ -3101,14 +2979,13 @@ export function Modelo3D_Universidad(props) {
           name="dispensadorAlchol020"
           position={[-126.877, 4.881, -31.416]}
           rotation={[0, -1.42, 0]}
-          scale={0.006}
-        >
+          scale={0.006}>
           <mesh
             name="Sphere024"
             castShadow
             receiveShadow
             geometry={nodes.Sphere024.geometry}
-            material={materials["Base.003"]}
+            material={materials['Base.003']}
           />
           <mesh
             name="Sphere024_1"
@@ -3143,14 +3020,13 @@ export function Modelo3D_Universidad(props) {
           name="dispensadorAlchol021"
           position={[-116.316, 4.881, -36.554]}
           rotation={[0, 1.518, 0]}
-          scale={0.007}
-        >
+          scale={0.007}>
           <mesh
             name="Sphere025"
             castShadow
             receiveShadow
             geometry={nodes.Sphere025.geometry}
-            material={materials["Base.003"]}
+            material={materials['Base.003']}
           />
           <mesh
             name="Sphere025_1"
@@ -3185,14 +3061,13 @@ export function Modelo3D_Universidad(props) {
           name="dispensadorAlchol022"
           position={[-125.905, 4.881, -36.46]}
           rotation={[0, 1.518, 0]}
-          scale={0.007}
-        >
+          scale={0.007}>
           <mesh
             name="Sphere026"
             castShadow
             receiveShadow
             geometry={nodes.Sphere026.geometry}
-            material={materials["Base.003"]}
+            material={materials['Base.003']}
           />
           <mesh
             name="Sphere026_1"
@@ -3227,14 +3102,13 @@ export function Modelo3D_Universidad(props) {
           name="Focos010"
           position={[-17.658, 14.13, -23.551]}
           rotation={[Math.PI / 2, 0, 3.113]}
-          scale={[-0.066, -1.268, -0.066]}
-        >
+          scale={[-0.066, -1.268, -0.066]}>
           <mesh
             name="Cilindro011"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro011.geometry}
-            material={materials["Plastico.001"]}
+            material={materials['Plastico.001']}
           />
           <mesh
             name="Cilindro011_1"
@@ -3255,14 +3129,13 @@ export function Modelo3D_Universidad(props) {
           name="Focos011"
           position={[-23.056, 14.13, -23.551]}
           rotation={[Math.PI / 2, 0, 3.113]}
-          scale={[-0.066, -1.268, -0.066]}
-        >
+          scale={[-0.066, -1.268, -0.066]}>
           <mesh
             name="Cilindro012"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro012.geometry}
-            material={materials["Plastico.001"]}
+            material={materials['Plastico.001']}
           />
           <mesh
             name="Cilindro012_1"
@@ -3283,8 +3156,7 @@ export function Modelo3D_Universidad(props) {
           name="Universidad006"
           position={[-169.811, 33.036, 32.08]}
           rotation={[0, -0.257, 0]}
-          scale={[1.171, 0.669, 1.171]}
-        >
+          scale={[1.171, 0.669, 1.171]}>
           <mesh
             name="Plano006"
             castShadow
@@ -3304,15 +3176,14 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Plano006_2.geometry}
-            material={materials["Material.001"]}
+            material={materials['Material.001']}
           />
         </group>
         <group
           name="Universidad007"
           position={[-169.811, 33.036, 32.08]}
           rotation={[0, -0.257, 0]}
-          scale={[1.171, 0.669, 1.171]}
-        >
+          scale={[1.171, 0.669, 1.171]}>
           <mesh
             name="Plano008"
             castShadow
@@ -3332,15 +3203,14 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Plano008_2.geometry}
-            material={materials["Material.001"]}
+            material={materials['Material.001']}
           />
         </group>
         <group
           name="Molinete_Tarjeta014"
-          position={[257.036, 0, -74.454]}
+          position={[257.339, 0.004, -74.555]}
           rotation={[0, -0.824, 0]}
-          scale={[0.506, 0.506, 1.984]}
-        >
+          scale={[0.588, 0.588, 2.304]}>
           <mesh
             name="Plane056"
             castShadow
@@ -3372,65 +3242,63 @@ export function Modelo3D_Universidad(props) {
         </group>
         <group
           name="Molinete_Tarjeta015"
-          position={[255.172, -0.082, -76.436]}
+          position={[255.176, -0.09, -76.435]}
           rotation={[0, -0.824, 0]}
-          scale={[0.506, 0.506, 1.984]}
-        >
+          scale={[0.588, 0.588, 2.304]}>
           <mesh
             name="Plane057"
             castShadow
             receiveShadow
             geometry={nodes.Plane057.geometry}
-            material={materials["Molino.001"]}
+            material={materials['Molino.001']}
           />
           <mesh
             name="Plane057_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane057_1.geometry}
-            material={materials["Base.001"]}
+            material={materials['Base.001']}
           />
           <mesh
             name="Plane057_2"
             castShadow
             receiveShadow
             geometry={nodes.Plane057_2.geometry}
-            material={materials["IndicadorPase.001"]}
+            material={materials['IndicadorPase.001']}
           />
           <mesh
             name="Plane057_3"
             castShadow
             receiveShadow
             geometry={nodes.Plane057_3.geometry}
-            material={materials["TargetaPase.001"]}
+            material={materials['TargetaPase.001']}
           />
         </group>
         <group
           name="Molinete_Huella008"
-          position={[253.252, 0, -78.433]}
+          position={[252.945, 0.004, -78.46]}
           rotation={[0, -0.824, 0]}
-          scale={[0.506, 0.506, 1.984]}
-        >
+          scale={[0.588, 0.588, 2.304]}>
           <mesh
             name="Plane058"
             castShadow
             receiveShadow
             geometry={nodes.Plane058.geometry}
-            material={materials["Molino.002"]}
+            material={materials['Molino.002']}
           />
           <mesh
             name="Plane058_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane058_1.geometry}
-            material={materials["TargetaPase.002"]}
+            material={materials['TargetaPase.002']}
           />
           <mesh
             name="Plane058_2"
             castShadow
             receiveShadow
             geometry={nodes.Plane058_2.geometry}
-            material={materials["IndicadorPase.002"]}
+            material={materials['IndicadorPase.002']}
           />
           <mesh
             name="Plane058_3"
@@ -3444,51 +3312,30 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Plane058_4.geometry}
-            material={materials["Base.002"]}
-          />
-        </group>
-        <group name="sillaEspera4020">
-          <mesh
-            name="Plane059"
-            castShadow
-            receiveShadow
-            geometry={nodes.Plane059.geometry}
-            material={materials.Espaldar}
-          />
-          <mesh
-            name="Plane059_1"
-            castShadow
-            receiveShadow
-            geometry={nodes.Plane059_1.geometry}
-            material={materials.Fierro}
+            material={materials['Base.002']}
           />
         </group>
         <group
           name="sillaEspera3002"
           position={[227.227, 0.139, -52.953]}
           rotation={[Math.PI, -0.759, Math.PI]}
-          scale={[1.43, 1.621, 1.621]}
-        >
+          scale={[1.43, 1.621, 1.621]}>
           <mesh
             name="Vert002"
             castShadow
             receiveShadow
             geometry={nodes.Vert002.geometry}
-            material={materials["Espaldar.001"]}
+            material={materials['Espaldar.001']}
           />
           <mesh
             name="Vert002_1"
             castShadow
             receiveShadow
             geometry={nodes.Vert002_1.geometry}
-            material={materials["Fierro.001"]}
+            material={materials['Fierro.001']}
           />
         </group>
-        <group
-          name="sillaGuardia002"
-          position={[234.133, 2.886, -66.267]}
-          scale={0.613}
-        >
+        <group name="sillaGuardia002" position={[234.133, 2.886, -66.267]} scale={0.613}>
           <mesh
             name="Circle002_1"
             castShadow
@@ -3556,8 +3403,7 @@ export function Modelo3D_Universidad(props) {
           name="Plane004"
           position={[252.604, 29.954, -81.95]}
           rotation={[Math.PI / 2, 0, -2.349]}
-          scale={3.967}
-        >
+          scale={3.967}>
           <mesh
             name="Plane063"
             castShadow
@@ -3663,8 +3509,7 @@ export function Modelo3D_Universidad(props) {
           name="Universidad008"
           position={[-169.811, 33.036, 32.08]}
           rotation={[0, -0.257, 0]}
-          scale={[1.171, 0.669, 1.171]}
-        >
+          scale={[1.171, 0.669, 1.171]}>
           <mesh
             name="Plano009"
             castShadow
@@ -3684,7 +3529,7 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Plano009_2.geometry}
-            material={materials["Material.001"]}
+            material={materials['Material.001']}
           />
         </group>
         <group name="sillaEspera4026">
@@ -3755,8 +3600,7 @@ export function Modelo3D_Universidad(props) {
           name="Molinete_Tarjeta016"
           position={[4.525, -0.491, -39.432]}
           rotation={[0, -0.015, 0]}
-          scale={[0.506, 0.506, 1.984]}
-        >
+          scale={[0.506, 0.506, 1.984]}>
           <mesh
             name="Plane070"
             castShadow
@@ -3790,28 +3634,27 @@ export function Modelo3D_Universidad(props) {
           name="Molinete_Huella009"
           position={[0.882, -0.491, -39.441]}
           rotation={[0, -0.015, 0]}
-          scale={[0.506, 0.506, 1.984]}
-        >
+          scale={[0.506, 0.506, 1.984]}>
           <mesh
             name="Plane071"
             castShadow
             receiveShadow
             geometry={nodes.Plane071.geometry}
-            material={materials["Molino.002"]}
+            material={materials['Molino.002']}
           />
           <mesh
             name="Plane071_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane071_1.geometry}
-            material={materials["TargetaPase.002"]}
+            material={materials['TargetaPase.002']}
           />
           <mesh
             name="Plane071_2"
             castShadow
             receiveShadow
             geometry={nodes.Plane071_2.geometry}
-            material={materials["IndicadorPase.002"]}
+            material={materials['IndicadorPase.002']}
           />
           <mesh
             name="Plane071_3"
@@ -3825,50 +3668,48 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Plane071_4.geometry}
-            material={materials["Base.002"]}
+            material={materials['Base.002']}
           />
         </group>
         <group
           name="Molinete_Tarjeta017"
           position={[8.004, -0.572, -39.452]}
           rotation={[0, -0.015, 0]}
-          scale={[0.506, 0.506, 1.984]}
-        >
+          scale={[0.506, 0.506, 1.984]}>
           <mesh
             name="Plane072"
             castShadow
             receiveShadow
             geometry={nodes.Plane072.geometry}
-            material={materials["Molino.001"]}
+            material={materials['Molino.001']}
           />
           <mesh
             name="Plane072_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane072_1.geometry}
-            material={materials["Base.001"]}
+            material={materials['Base.001']}
           />
           <mesh
             name="Plane072_2"
             castShadow
             receiveShadow
             geometry={nodes.Plane072_2.geometry}
-            material={materials["IndicadorPase.001"]}
+            material={materials['IndicadorPase.001']}
           />
           <mesh
             name="Plane072_3"
             castShadow
             receiveShadow
             geometry={nodes.Plane072_3.geometry}
-            material={materials["TargetaPase.001"]}
+            material={materials['TargetaPase.001']}
           />
         </group>
         <group
           name="Molinete_Tarjeta018"
           position={[14.726, -0.491, -39.432]}
           rotation={[0, -0.015, 0]}
-          scale={[0.506, 0.506, 1.984]}
-        >
+          scale={[0.506, 0.506, 1.984]}>
           <mesh
             name="Plane073"
             castShadow
@@ -3902,28 +3743,27 @@ export function Modelo3D_Universidad(props) {
           name="Molinete_Huella010"
           position={[11.369, -0.491, -39.441]}
           rotation={[0, -0.015, 0]}
-          scale={[0.506, 0.506, 1.984]}
-        >
+          scale={[0.506, 0.506, 1.984]}>
           <mesh
             name="Plane074"
             castShadow
             receiveShadow
             geometry={nodes.Plane074.geometry}
-            material={materials["Molino.002"]}
+            material={materials['Molino.002']}
           />
           <mesh
             name="Plane074_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane074_1.geometry}
-            material={materials["TargetaPase.002"]}
+            material={materials['TargetaPase.002']}
           />
           <mesh
             name="Plane074_2"
             castShadow
             receiveShadow
             geometry={nodes.Plane074_2.geometry}
-            material={materials["IndicadorPase.002"]}
+            material={materials['IndicadorPase.002']}
           />
           <mesh
             name="Plane074_3"
@@ -3937,7 +3777,7 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Plane074_4.geometry}
-            material={materials["Base.002"]}
+            material={materials['Base.002']}
           />
         </group>
         <mesh
@@ -3945,7 +3785,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.rejitaEntrada006.geometry}
-          material={materials["Material.006"]}
+          material={materials['Material.006']}
           position={[33.349, -0.303, -39.213]}
           rotation={[0, 0, -Math.PI / 2]}
           scale={0.246}
@@ -3954,8 +3794,7 @@ export function Modelo3D_Universidad(props) {
           name="Molinete_Tarjeta019"
           position={[21.736, -0.491, -39.432]}
           rotation={[0, -0.015, 0]}
-          scale={[0.506, 0.506, 1.984]}
-        >
+          scale={[0.506, 0.506, 1.984]}>
           <mesh
             name="Plane075"
             castShadow
@@ -3989,28 +3828,27 @@ export function Modelo3D_Universidad(props) {
           name="Molinete_Huella011"
           position={[18.093, -0.491, -39.441]}
           rotation={[0, -0.015, 0]}
-          scale={[0.506, 0.506, 1.984]}
-        >
+          scale={[0.506, 0.506, 1.984]}>
           <mesh
             name="Plane076"
             castShadow
             receiveShadow
             geometry={nodes.Plane076.geometry}
-            material={materials["Molino.002"]}
+            material={materials['Molino.002']}
           />
           <mesh
             name="Plane076_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane076_1.geometry}
-            material={materials["TargetaPase.002"]}
+            material={materials['TargetaPase.002']}
           />
           <mesh
             name="Plane076_2"
             castShadow
             receiveShadow
             geometry={nodes.Plane076_2.geometry}
-            material={materials["IndicadorPase.002"]}
+            material={materials['IndicadorPase.002']}
           />
           <mesh
             name="Plane076_3"
@@ -4024,42 +3862,41 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Plane076_4.geometry}
-            material={materials["Base.002"]}
+            material={materials['Base.002']}
           />
         </group>
         <group
           name="Molinete_Tarjeta020"
           position={[25.214, -0.572, -39.452]}
           rotation={[0, -0.015, 0]}
-          scale={[0.506, 0.506, 1.984]}
-        >
+          scale={[0.506, 0.506, 1.984]}>
           <mesh
             name="Plane077"
             castShadow
             receiveShadow
             geometry={nodes.Plane077.geometry}
-            material={materials["Molino.001"]}
+            material={materials['Molino.001']}
           />
           <mesh
             name="Plane077_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane077_1.geometry}
-            material={materials["Base.001"]}
+            material={materials['Base.001']}
           />
           <mesh
             name="Plane077_2"
             castShadow
             receiveShadow
             geometry={nodes.Plane077_2.geometry}
-            material={materials["IndicadorPase.001"]}
+            material={materials['IndicadorPase.001']}
           />
           <mesh
             name="Plane077_3"
             castShadow
             receiveShadow
             geometry={nodes.Plane077_3.geometry}
-            material={materials["TargetaPase.001"]}
+            material={materials['TargetaPase.001']}
           />
         </group>
         <mesh
@@ -4067,7 +3904,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.rejitaEntrada007.geometry}
-          material={materials["Material.006"]}
+          material={materials['Material.006']}
           position={[28.911, -0.303, -39.213]}
           rotation={[0, 0, -Math.PI / 2]}
           scale={0.246}
@@ -4077,7 +3914,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.rejitaEntrada008.geometry}
-          material={materials["Material.006"]}
+          material={materials['Material.006']}
           position={[33.349, -0.303, -39.213]}
           rotation={[0, 0, -Math.PI / 2]}
           scale={0.246}
@@ -4086,8 +3923,7 @@ export function Modelo3D_Universidad(props) {
           name="Plane005"
           position={[33.296, 1.841, -49.026]}
           rotation={[0, 1.564, 0]}
-          scale={[1.052, 0.226, 0.226]}
-        >
+          scale={[1.052, 0.226, 0.226]}>
           <mesh
             name="Plane078"
             castShadow
@@ -4103,17 +3939,13 @@ export function Modelo3D_Universidad(props) {
             material={materials.Teclas}
           />
         </group>
-        <group
-          name="dispensadorAlchol023"
-          position={[-0.41, 3.353, -37.747]}
-          scale={0.011}
-        >
+        <group name="dispensadorAlchol023" position={[-0.41, 3.353, -37.747]} scale={0.011}>
           <mesh
             name="Sphere027"
             castShadow
             receiveShadow
             geometry={nodes.Sphere027.geometry}
-            material={materials["Base.003"]}
+            material={materials['Base.003']}
           />
           <mesh
             name="Sphere027_1"
@@ -4148,35 +3980,33 @@ export function Modelo3D_Universidad(props) {
           name="Cubo003"
           position={[33.474, 1.951, -51.11]}
           rotation={[-Math.PI, 0.001, -Math.PI]}
-          scale={0.151}
-        >
+          scale={0.151}>
           <mesh
             name="Cubo003_1"
             castShadow
             receiveShadow
             geometry={nodes.Cubo003_1.geometry}
-            material={materials["Material.008"]}
+            material={materials['Material.008']}
           />
           <mesh
             name="Cubo003_2"
             castShadow
             receiveShadow
             geometry={nodes.Cubo003_2.geometry}
-            material={materials["Material.009"]}
+            material={materials['Material.009']}
           />
         </group>
         <group
           name="Focos012"
           position={[28.699, 14.283, -44.724]}
           rotation={[Math.PI / 2, 0, -Math.PI / 2]}
-          scale={[-0.066, -1.268, -0.066]}
-        >
+          scale={[-0.066, -1.268, -0.066]}>
           <mesh
             name="Cilindro013"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro013.geometry}
-            material={materials["Plastico.001"]}
+            material={materials['Plastico.001']}
           />
           <mesh
             name="Cilindro013_1"
@@ -4206,14 +4036,13 @@ export function Modelo3D_Universidad(props) {
           name="Focos013"
           position={[28.699, 14.283, -36.667]}
           rotation={[Math.PI / 2, 0, -Math.PI / 2]}
-          scale={[-0.066, -1.268, -0.066]}
-        >
+          scale={[-0.066, -1.268, -0.066]}>
           <mesh
             name="Cilindro014"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro014.geometry}
-            material={materials["Plastico.001"]}
+            material={materials['Plastico.001']}
           />
           <mesh
             name="Cilindro014_1"
@@ -4234,14 +4063,13 @@ export function Modelo3D_Universidad(props) {
           name="Focos014"
           position={[7.76, 14.283, -31.89]}
           rotation={[Math.PI / 2, 0, -Math.PI / 2]}
-          scale={[-0.066, -1.268, -0.066]}
-        >
+          scale={[-0.066, -1.268, -0.066]}>
           <mesh
             name="Cilindro015"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro015.geometry}
-            material={materials["Plastico.001"]}
+            material={materials['Plastico.001']}
           />
           <mesh
             name="Cilindro015_1"
@@ -4262,14 +4090,13 @@ export function Modelo3D_Universidad(props) {
           name="Focos015"
           position={[7.76, 14.283, -23.832]}
           rotation={[Math.PI / 2, 0, -Math.PI / 2]}
-          scale={[-0.066, -1.268, -0.066]}
-        >
+          scale={[-0.066, -1.268, -0.066]}>
           <mesh
             name="Cilindro016"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro016.geometry}
-            material={materials["Plastico.001"]}
+            material={materials['Plastico.001']}
           />
           <mesh
             name="Cilindro016_1"
@@ -4290,8 +4117,7 @@ export function Modelo3D_Universidad(props) {
           name="Cylinder004"
           position={[38.405, 2.622, -34.157]}
           rotation={[Math.PI, -1.443, Math.PI]}
-          scale={[0.266, 0.314, 0.263]}
-        >
+          scale={[0.266, 0.314, 0.263]}>
           <mesh
             name="Cylinder013_1"
             castShadow
@@ -4325,57 +4151,54 @@ export function Modelo3D_Universidad(props) {
           name="sillaGuardia1002"
           position={[37.025, -1.238, -49.66]}
           rotation={[0, 1.528, -Math.PI]}
-          scale={[-0.78, -0.156, -0.156]}
-        >
+          scale={[-0.78, -0.156, -0.156]}>
           <mesh
             name="Plane080"
             castShadow
             receiveShadow
             geometry={nodes.Plane080.geometry}
-            material={materials["Material.010"]}
+            material={materials['Material.010']}
           />
           <mesh
             name="Plane080_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane080_1.geometry}
-            material={materials["Fierro.002"]}
+            material={materials['Fierro.002']}
           />
         </group>
         <group
           name="tv002"
           position={[31.935, 2.85, -49.064]}
           rotation={[Math.PI / 2, 0, -1.517]}
-          scale={3.062}
-        >
+          scale={3.062}>
           <mesh
             name="Plane081"
             castShadow
             receiveShadow
             geometry={nodes.Plane081.geometry}
-            material={materials["Material.012"]}
+            material={materials['Material.012']}
           />
           <mesh
             name="Plane081_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane081_1.geometry}
-            material={materials["Material.013"]}
+            material={materials['Material.013']}
           />
           <mesh
             name="Plane081_2"
             castShadow
             receiveShadow
             geometry={nodes.Plane081_2.geometry}
-            material={materials["red light"]}
+            material={materials['red light']}
           />
         </group>
         <group
           name="Cylinder005"
           position={[38.119, 2.622, -32.814]}
           rotation={[Math.PI, -1.443, Math.PI]}
-          scale={[0.266, 0.314, 0.263]}
-        >
+          scale={[0.266, 0.314, 0.263]}>
           <mesh
             name="Cylinder014_1"
             castShadow
@@ -4408,70 +4231,67 @@ export function Modelo3D_Universidad(props) {
         <group
           name="BasureroDoble004"
           position={[18.176, -0.47, -62.84]}
-          scale={[0.134, 0.486, 0.486]}
-        >
+          scale={[0.134, 0.486, 0.486]}>
           <mesh
             name="Plane082"
             castShadow
             receiveShadow
             geometry={nodes.Plane082.geometry}
-            material={materials["basurero azul"]}
+            material={materials['basurero azul']}
           />
           <mesh
             name="Plane082_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane082_1.geometry}
-            material={materials["basurero amarillo"]}
+            material={materials['basurero amarillo']}
           />
           <mesh
             name="Plane082_2"
             castShadow
             receiveShadow
             geometry={nodes.Plane082_2.geometry}
-            material={materials["base basurero"]}
+            material={materials['base basurero']}
           />
         </group>
         <group
           name="BasureroDoble005"
           position={[4.284, -0.532, -65.263]}
           rotation={[Math.PI, -0.001, Math.PI]}
-          scale={[0.134, 0.486, 0.486]}
-        >
+          scale={[0.199, 0.722, 0.722]}>
           <mesh
             name="Plane083"
             castShadow
             receiveShadow
             geometry={nodes.Plane083.geometry}
-            material={materials["basurero azul"]}
+            material={materials['basurero azul']}
           />
           <mesh
             name="Plane083_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane083_1.geometry}
-            material={materials["basurero amarillo"]}
+            material={materials['basurero amarillo']}
           />
           <mesh
             name="Plane083_2"
             castShadow
             receiveShadow
             geometry={nodes.Plane083_2.geometry}
-            material={materials["base basurero"]}
+            material={materials['base basurero']}
           />
         </group>
         <group
           name="dispensadorAlchol024"
           position={[-14.964, 4.881, -36.548]}
           rotation={[0, 1.518, 0]}
-          scale={0.007}
-        >
+          scale={0.007}>
           <mesh
             name="Sphere028"
             castShadow
             receiveShadow
             geometry={nodes.Sphere028.geometry}
-            material={materials["Base.003"]}
+            material={materials['Base.003']}
           />
           <mesh
             name="Sphere028_1"
@@ -4506,14 +4326,13 @@ export function Modelo3D_Universidad(props) {
           name="dispensadorAlchol025"
           position={[-12.287, 4.881, -31.711]}
           rotation={[0, -1.42, 0]}
-          scale={0.006}
-        >
+          scale={0.006}>
           <mesh
             name="Sphere029"
             castShadow
             receiveShadow
             geometry={nodes.Sphere029.geometry}
-            material={materials["Base.003"]}
+            material={materials['Base.003']}
           />
           <mesh
             name="Sphere029_1"
@@ -4548,14 +4367,13 @@ export function Modelo3D_Universidad(props) {
           name="dispensadorAlchol026"
           position={[-45.394, 4.881, -36.459]}
           rotation={[0, 1.518, 0]}
-          scale={0.007}
-        >
+          scale={0.007}>
           <mesh
             name="Sphere030"
             castShadow
             receiveShadow
             geometry={nodes.Sphere030.geometry}
-            material={materials["Base.003"]}
+            material={materials['Base.003']}
           />
           <mesh
             name="Sphere030_1"
@@ -4590,14 +4408,13 @@ export function Modelo3D_Universidad(props) {
           name="dispensadorAlchol027"
           position={[-47.034, 4.881, -31.613]}
           rotation={[0, -1.42, 0]}
-          scale={0.006}
-        >
+          scale={0.006}>
           <mesh
             name="Sphere031"
             castShadow
             receiveShadow
             geometry={nodes.Sphere031.geometry}
-            material={materials["Base.003"]}
+            material={materials['Base.003']}
           />
           <mesh
             name="Sphere031_1"
@@ -4632,14 +4449,13 @@ export function Modelo3D_Universidad(props) {
           name="dispensadorAlchol028"
           position={[-90.837, 4.881, -36.554]}
           rotation={[0, 1.518, 0]}
-          scale={0.007}
-        >
+          scale={0.007}>
           <mesh
             name="Sphere032"
             castShadow
             receiveShadow
             geometry={nodes.Sphere032.geometry}
-            material={materials["Base.003"]}
+            material={materials['Base.003']}
           />
           <mesh
             name="Sphere032_1"
@@ -4674,14 +4490,13 @@ export function Modelo3D_Universidad(props) {
           name="dispensadorAlchol029"
           position={[-92.477, 4.881, -31.469]}
           rotation={[0, -1.42, 0]}
-          scale={0.006}
-        >
+          scale={0.006}>
           <mesh
             name="Sphere033"
             castShadow
             receiveShadow
             geometry={nodes.Sphere033.geometry}
-            material={materials["Base.003"]}
+            material={materials['Base.003']}
           />
           <mesh
             name="Sphere033_1"
@@ -4716,14 +4531,13 @@ export function Modelo3D_Universidad(props) {
           name="dispensadorAlchol030"
           position={[-116.316, 4.881, -36.554]}
           rotation={[0, 1.518, 0]}
-          scale={0.007}
-        >
+          scale={0.007}>
           <mesh
             name="Sphere034"
             castShadow
             receiveShadow
             geometry={nodes.Sphere034.geometry}
-            material={materials["Base.003"]}
+            material={materials['Base.003']}
           />
           <mesh
             name="Sphere034_1"
@@ -4758,14 +4572,13 @@ export function Modelo3D_Universidad(props) {
           name="dispensadorAlchol031"
           position={[-126.877, 4.881, -31.416]}
           rotation={[0, -1.42, 0]}
-          scale={0.006}
-        >
+          scale={0.006}>
           <mesh
             name="Sphere035"
             castShadow
             receiveShadow
             geometry={nodes.Sphere035.geometry}
-            material={materials["Base.003"]}
+            material={materials['Base.003']}
           />
           <mesh
             name="Sphere035_1"
@@ -4800,14 +4613,13 @@ export function Modelo3D_Universidad(props) {
           name="dispensadorAlchol032"
           position={[-116.316, 4.881, -36.554]}
           rotation={[0, 1.518, 0]}
-          scale={0.007}
-        >
+          scale={0.007}>
           <mesh
             name="Sphere036"
             castShadow
             receiveShadow
             geometry={nodes.Sphere036.geometry}
-            material={materials["Base.003"]}
+            material={materials['Base.003']}
           />
           <mesh
             name="Sphere036_1"
@@ -4842,14 +4654,13 @@ export function Modelo3D_Universidad(props) {
           name="dispensadorAlchol033"
           position={[-125.905, 4.881, -36.46]}
           rotation={[0, 1.518, 0]}
-          scale={0.007}
-        >
+          scale={0.007}>
           <mesh
             name="Sphere037"
             castShadow
             receiveShadow
             geometry={nodes.Sphere037.geometry}
-            material={materials["Base.003"]}
+            material={materials['Base.003']}
           />
           <mesh
             name="Sphere037_1"
@@ -4884,8 +4695,7 @@ export function Modelo3D_Universidad(props) {
           name="Universidad009"
           position={[-169.811, 33.036, 32.08]}
           rotation={[0, -0.257, 0]}
-          scale={[1.171, 0.669, 1.171]}
-        >
+          scale={[1.171, 0.669, 1.171]}>
           <mesh
             name="Plano010"
             castShadow
@@ -4905,15 +4715,14 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Plano010_2.geometry}
-            material={materials["Material.001"]}
+            material={materials['Material.001']}
           />
         </group>
         <group
           name="Universidad010"
           position={[-169.811, 33.036, 32.08]}
           rotation={[0, -0.257, 0]}
-          scale={[1.171, 0.669, 1.171]}
-        >
+          scale={[1.171, 0.669, 1.171]}>
           <mesh
             name="Plano011"
             castShadow
@@ -4933,15 +4742,14 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Plano011_2.geometry}
-            material={materials["Material.001"]}
+            material={materials['Material.001']}
           />
         </group>
         <group
           name="Molinete_Tarjeta021"
-          position={[257.036, 0, -74.454]}
+          position={[257.339, 0.004, -74.555]}
           rotation={[0, -0.824, 0]}
-          scale={[0.506, 0.506, 1.984]}
-        >
+          scale={[0.588, 0.588, 2.304]}>
           <mesh
             name="Plane084"
             castShadow
@@ -4973,65 +4781,63 @@ export function Modelo3D_Universidad(props) {
         </group>
         <group
           name="Molinete_Tarjeta022"
-          position={[255.172, -0.082, -76.436]}
+          position={[255.176, -0.09, -76.435]}
           rotation={[0, -0.824, 0]}
-          scale={[0.506, 0.506, 1.984]}
-        >
+          scale={[0.588, 0.588, 2.304]}>
           <mesh
             name="Plane085"
             castShadow
             receiveShadow
             geometry={nodes.Plane085.geometry}
-            material={materials["Molino.001"]}
+            material={materials['Molino.001']}
           />
           <mesh
             name="Plane085_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane085_1.geometry}
-            material={materials["Base.001"]}
+            material={materials['Base.001']}
           />
           <mesh
             name="Plane085_2"
             castShadow
             receiveShadow
             geometry={nodes.Plane085_2.geometry}
-            material={materials["IndicadorPase.001"]}
+            material={materials['IndicadorPase.001']}
           />
           <mesh
             name="Plane085_3"
             castShadow
             receiveShadow
             geometry={nodes.Plane085_3.geometry}
-            material={materials["TargetaPase.001"]}
+            material={materials['TargetaPase.001']}
           />
         </group>
         <group
           name="Molinete_Huella012"
-          position={[253.252, 0, -78.433]}
+          position={[252.945, 0.004, -78.46]}
           rotation={[0, -0.824, 0]}
-          scale={[0.506, 0.506, 1.984]}
-        >
+          scale={[0.588, 0.588, 2.304]}>
           <mesh
             name="Plane086"
             castShadow
             receiveShadow
             geometry={nodes.Plane086.geometry}
-            material={materials["Molino.002"]}
+            material={materials['Molino.002']}
           />
           <mesh
             name="Plane086_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane086_1.geometry}
-            material={materials["TargetaPase.002"]}
+            material={materials['TargetaPase.002']}
           />
           <mesh
             name="Plane086_2"
             castShadow
             receiveShadow
             geometry={nodes.Plane086_2.geometry}
-            material={materials["IndicadorPase.002"]}
+            material={materials['IndicadorPase.002']}
           />
           <mesh
             name="Plane086_3"
@@ -5045,7 +4851,7 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Plane086_4.geometry}
-            material={materials["Base.002"]}
+            material={materials['Base.002']}
           />
         </group>
         <group name="sillaEspera4030">
@@ -5068,28 +4874,23 @@ export function Modelo3D_Universidad(props) {
           name="sillaEspera3003"
           position={[227.227, 0.139, -52.953]}
           rotation={[Math.PI, -0.759, Math.PI]}
-          scale={[1.43, 1.621, 1.621]}
-        >
+          scale={[1.43, 1.621, 1.621]}>
           <mesh
             name="Vert003"
             castShadow
             receiveShadow
             geometry={nodes.Vert003.geometry}
-            material={materials["Espaldar.001"]}
+            material={materials['Espaldar.001']}
           />
           <mesh
             name="Vert003_1"
             castShadow
             receiveShadow
             geometry={nodes.Vert003_1.geometry}
-            material={materials["Fierro.001"]}
+            material={materials['Fierro.001']}
           />
         </group>
-        <group
-          name="sillaGuardia003"
-          position={[234.133, 2.886, -66.267]}
-          scale={0.613}
-        >
+        <group name="sillaGuardia003" position={[234.133, 2.886, -66.267]} scale={0.613}>
           <mesh
             name="Circle003_1"
             castShadow
@@ -5157,8 +4958,7 @@ export function Modelo3D_Universidad(props) {
           name="Plane006"
           position={[252.604, 29.954, -81.95]}
           rotation={[Math.PI / 2, 0, -2.349]}
-          scale={3.967}
-        >
+          scale={3.967}>
           <mesh
             name="Plane091"
             castShadow
@@ -5264,8 +5064,7 @@ export function Modelo3D_Universidad(props) {
           name="Universidad011"
           position={[-169.811, 33.036, 32.08]}
           rotation={[0, -0.257, 0]}
-          scale={[1.171, 0.669, 1.171]}
-        >
+          scale={[1.171, 0.669, 1.171]}>
           <mesh
             name="Plano012"
             castShadow
@@ -5285,7 +5084,7 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Plano012_2.geometry}
-            material={materials["Material.001"]}
+            material={materials['Material.001']}
           />
         </group>
         <group name="sillaEspera4036">
@@ -5304,60 +5103,11 @@ export function Modelo3D_Universidad(props) {
             material={materials.Fierro}
           />
         </group>
-        <group name="sillaEspera4037">
-          <mesh
-            name="Plane095"
-            castShadow
-            receiveShadow
-            geometry={nodes.Plane095.geometry}
-            material={materials.Espaldar}
-          />
-          <mesh
-            name="Plane095_1"
-            castShadow
-            receiveShadow
-            geometry={nodes.Plane095_1.geometry}
-            material={materials.Fierro}
-          />
-        </group>
-        <group name="sillaEspera4038">
-          <mesh
-            name="Plane096"
-            castShadow
-            receiveShadow
-            geometry={nodes.Plane096.geometry}
-            material={materials.Espaldar}
-          />
-          <mesh
-            name="Plane096_1"
-            castShadow
-            receiveShadow
-            geometry={nodes.Plane096_1.geometry}
-            material={materials.Fierro}
-          />
-        </group>
-        <group name="sillaEspera4039">
-          <mesh
-            name="Plane097"
-            castShadow
-            receiveShadow
-            geometry={nodes.Plane097.geometry}
-            material={materials.Espaldar}
-          />
-          <mesh
-            name="Plane097_1"
-            castShadow
-            receiveShadow
-            geometry={nodes.Plane097_1.geometry}
-            material={materials.Fierro}
-          />
-        </group>
         <group
           name="Molinete_Tarjeta023"
           position={[4.525, -0.491, -39.432]}
           rotation={[0, -0.015, 0]}
-          scale={[0.506, 0.506, 1.984]}
-        >
+          scale={[0.506, 0.506, 1.984]}>
           <mesh
             name="Plane098"
             castShadow
@@ -5391,28 +5141,27 @@ export function Modelo3D_Universidad(props) {
           name="Molinete_Huella013"
           position={[0.882, -0.491, -39.441]}
           rotation={[0, -0.015, 0]}
-          scale={[0.506, 0.506, 1.984]}
-        >
+          scale={[0.506, 0.506, 1.984]}>
           <mesh
             name="Plane099"
             castShadow
             receiveShadow
             geometry={nodes.Plane099.geometry}
-            material={materials["Molino.002"]}
+            material={materials['Molino.002']}
           />
           <mesh
             name="Plane099_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane099_1.geometry}
-            material={materials["TargetaPase.002"]}
+            material={materials['TargetaPase.002']}
           />
           <mesh
             name="Plane099_2"
             castShadow
             receiveShadow
             geometry={nodes.Plane099_2.geometry}
-            material={materials["IndicadorPase.002"]}
+            material={materials['IndicadorPase.002']}
           />
           <mesh
             name="Plane099_3"
@@ -5426,50 +5175,48 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Plane099_4.geometry}
-            material={materials["Base.002"]}
+            material={materials['Base.002']}
           />
         </group>
         <group
           name="Molinete_Tarjeta024"
           position={[8.004, -0.572, -39.452]}
           rotation={[0, -0.015, 0]}
-          scale={[0.506, 0.506, 1.984]}
-        >
+          scale={[0.506, 0.506, 1.984]}>
           <mesh
             name="Plane100"
             castShadow
             receiveShadow
             geometry={nodes.Plane100.geometry}
-            material={materials["Molino.001"]}
+            material={materials['Molino.001']}
           />
           <mesh
             name="Plane100_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane100_1.geometry}
-            material={materials["Base.001"]}
+            material={materials['Base.001']}
           />
           <mesh
             name="Plane100_2"
             castShadow
             receiveShadow
             geometry={nodes.Plane100_2.geometry}
-            material={materials["IndicadorPase.001"]}
+            material={materials['IndicadorPase.001']}
           />
           <mesh
             name="Plane100_3"
             castShadow
             receiveShadow
             geometry={nodes.Plane100_3.geometry}
-            material={materials["TargetaPase.001"]}
+            material={materials['TargetaPase.001']}
           />
         </group>
         <group
           name="Molinete_Tarjeta025"
           position={[14.726, -0.491, -39.432]}
           rotation={[0, -0.015, 0]}
-          scale={[0.506, 0.506, 1.984]}
-        >
+          scale={[0.506, 0.506, 1.984]}>
           <mesh
             name="Plane101"
             castShadow
@@ -5503,28 +5250,27 @@ export function Modelo3D_Universidad(props) {
           name="Molinete_Huella014"
           position={[11.369, -0.491, -39.441]}
           rotation={[0, -0.015, 0]}
-          scale={[0.506, 0.506, 1.984]}
-        >
+          scale={[0.506, 0.506, 1.984]}>
           <mesh
             name="Plane102"
             castShadow
             receiveShadow
             geometry={nodes.Plane102.geometry}
-            material={materials["Molino.002"]}
+            material={materials['Molino.002']}
           />
           <mesh
             name="Plane102_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane102_1.geometry}
-            material={materials["TargetaPase.002"]}
+            material={materials['TargetaPase.002']}
           />
           <mesh
             name="Plane102_2"
             castShadow
             receiveShadow
             geometry={nodes.Plane102_2.geometry}
-            material={materials["IndicadorPase.002"]}
+            material={materials['IndicadorPase.002']}
           />
           <mesh
             name="Plane102_3"
@@ -5538,7 +5284,7 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Plane102_4.geometry}
-            material={materials["Base.002"]}
+            material={materials['Base.002']}
           />
         </group>
         <mesh
@@ -5546,7 +5292,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.rejitaEntrada009.geometry}
-          material={materials["Material.006"]}
+          material={materials['Material.006']}
           position={[33.349, -0.303, -39.213]}
           rotation={[0, 0, -Math.PI / 2]}
           scale={0.246}
@@ -5555,8 +5301,7 @@ export function Modelo3D_Universidad(props) {
           name="Molinete_Tarjeta026"
           position={[21.736, -0.491, -39.432]}
           rotation={[0, -0.015, 0]}
-          scale={[0.506, 0.506, 1.984]}
-        >
+          scale={[0.506, 0.506, 1.984]}>
           <mesh
             name="Plane103"
             castShadow
@@ -5590,28 +5335,27 @@ export function Modelo3D_Universidad(props) {
           name="Molinete_Huella015"
           position={[18.093, -0.491, -39.441]}
           rotation={[0, -0.015, 0]}
-          scale={[0.506, 0.506, 1.984]}
-        >
+          scale={[0.506, 0.506, 1.984]}>
           <mesh
             name="Plane104"
             castShadow
             receiveShadow
             geometry={nodes.Plane104.geometry}
-            material={materials["Molino.002"]}
+            material={materials['Molino.002']}
           />
           <mesh
             name="Plane104_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane104_1.geometry}
-            material={materials["TargetaPase.002"]}
+            material={materials['TargetaPase.002']}
           />
           <mesh
             name="Plane104_2"
             castShadow
             receiveShadow
             geometry={nodes.Plane104_2.geometry}
-            material={materials["IndicadorPase.002"]}
+            material={materials['IndicadorPase.002']}
           />
           <mesh
             name="Plane104_3"
@@ -5625,42 +5369,41 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Plane104_4.geometry}
-            material={materials["Base.002"]}
+            material={materials['Base.002']}
           />
         </group>
         <group
           name="Molinete_Tarjeta027"
           position={[25.214, -0.572, -39.452]}
           rotation={[0, -0.015, 0]}
-          scale={[0.506, 0.506, 1.984]}
-        >
+          scale={[0.506, 0.506, 1.984]}>
           <mesh
             name="Plane105"
             castShadow
             receiveShadow
             geometry={nodes.Plane105.geometry}
-            material={materials["Molino.001"]}
+            material={materials['Molino.001']}
           />
           <mesh
             name="Plane105_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane105_1.geometry}
-            material={materials["Base.001"]}
+            material={materials['Base.001']}
           />
           <mesh
             name="Plane105_2"
             castShadow
             receiveShadow
             geometry={nodes.Plane105_2.geometry}
-            material={materials["IndicadorPase.001"]}
+            material={materials['IndicadorPase.001']}
           />
           <mesh
             name="Plane105_3"
             castShadow
             receiveShadow
             geometry={nodes.Plane105_3.geometry}
-            material={materials["TargetaPase.001"]}
+            material={materials['TargetaPase.001']}
           />
         </group>
         <mesh
@@ -5668,7 +5411,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.rejitaEntrada010.geometry}
-          material={materials["Material.006"]}
+          material={materials['Material.006']}
           position={[28.911, -0.303, -39.213]}
           rotation={[0, 0, -Math.PI / 2]}
           scale={0.246}
@@ -5678,7 +5421,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.rejitaEntrada011.geometry}
-          material={materials["Material.006"]}
+          material={materials['Material.006']}
           position={[33.349, -0.303, -39.213]}
           rotation={[0, 0, -Math.PI / 2]}
           scale={0.246}
@@ -5687,8 +5430,7 @@ export function Modelo3D_Universidad(props) {
           name="Plane007"
           position={[33.296, 1.841, -49.026]}
           rotation={[0, 1.564, 0]}
-          scale={[1.052, 0.226, 0.226]}
-        >
+          scale={[1.052, 0.226, 0.226]}>
           <mesh
             name="Plane106"
             castShadow
@@ -5704,17 +5446,13 @@ export function Modelo3D_Universidad(props) {
             material={materials.Teclas}
           />
         </group>
-        <group
-          name="dispensadorAlchol034"
-          position={[-0.41, 3.353, -37.747]}
-          scale={0.011}
-        >
+        <group name="dispensadorAlchol034" position={[-0.41, 3.353, -37.747]} scale={0.011}>
           <mesh
             name="Sphere038"
             castShadow
             receiveShadow
             geometry={nodes.Sphere038.geometry}
-            material={materials["Base.003"]}
+            material={materials['Base.003']}
           />
           <mesh
             name="Sphere038_1"
@@ -5749,35 +5487,33 @@ export function Modelo3D_Universidad(props) {
           name="Cubo004"
           position={[33.474, 1.951, -51.11]}
           rotation={[-Math.PI, 0.001, -Math.PI]}
-          scale={0.151}
-        >
+          scale={0.151}>
           <mesh
             name="Cubo004_1"
             castShadow
             receiveShadow
             geometry={nodes.Cubo004_1.geometry}
-            material={materials["Material.008"]}
+            material={materials['Material.008']}
           />
           <mesh
             name="Cubo004_2"
             castShadow
             receiveShadow
             geometry={nodes.Cubo004_2.geometry}
-            material={materials["Material.009"]}
+            material={materials['Material.009']}
           />
         </group>
         <group
           name="Focos017"
           position={[28.699, 14.283, -44.724]}
           rotation={[Math.PI / 2, 0, -Math.PI / 2]}
-          scale={[-0.066, -1.268, -0.066]}
-        >
+          scale={[-0.066, -1.268, -0.066]}>
           <mesh
             name="Cilindro018"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro018.geometry}
-            material={materials["Plastico.001"]}
+            material={materials['Plastico.001']}
           />
           <mesh
             name="Cilindro018_1"
@@ -5807,14 +5543,13 @@ export function Modelo3D_Universidad(props) {
           name="Focos018"
           position={[28.699, 14.283, -36.667]}
           rotation={[Math.PI / 2, 0, -Math.PI / 2]}
-          scale={[-0.066, -1.268, -0.066]}
-        >
+          scale={[-0.066, -1.268, -0.066]}>
           <mesh
             name="Cilindro019"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro019.geometry}
-            material={materials["Plastico.001"]}
+            material={materials['Plastico.001']}
           />
           <mesh
             name="Cilindro019_1"
@@ -5835,14 +5570,13 @@ export function Modelo3D_Universidad(props) {
           name="Focos019"
           position={[7.76, 14.283, -31.89]}
           rotation={[Math.PI / 2, 0, -Math.PI / 2]}
-          scale={[-0.066, -1.268, -0.066]}
-        >
+          scale={[-0.066, -1.268, -0.066]}>
           <mesh
             name="Cilindro020"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro020.geometry}
-            material={materials["Plastico.001"]}
+            material={materials['Plastico.001']}
           />
           <mesh
             name="Cilindro020_1"
@@ -5863,14 +5597,13 @@ export function Modelo3D_Universidad(props) {
           name="Focos020"
           position={[7.76, 14.283, -23.832]}
           rotation={[Math.PI / 2, 0, -Math.PI / 2]}
-          scale={[-0.066, -1.268, -0.066]}
-        >
+          scale={[-0.066, -1.268, -0.066]}>
           <mesh
             name="Cilindro021"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro021.geometry}
-            material={materials["Plastico.001"]}
+            material={materials['Plastico.001']}
           />
           <mesh
             name="Cilindro021_1"
@@ -5891,8 +5624,7 @@ export function Modelo3D_Universidad(props) {
           name="Cylinder006"
           position={[38.405, 2.622, -34.157]}
           rotation={[Math.PI, -1.443, Math.PI]}
-          scale={[0.266, 0.314, 0.263]}
-        >
+          scale={[0.266, 0.314, 0.263]}>
           <mesh
             name="Cylinder018_1"
             castShadow
@@ -5926,57 +5658,54 @@ export function Modelo3D_Universidad(props) {
           name="sillaGuardia1003"
           position={[37.025, -1.238, -49.66]}
           rotation={[0, 1.528, -Math.PI]}
-          scale={[-0.78, -0.156, -0.156]}
-        >
+          scale={[-0.78, -0.156, -0.156]}>
           <mesh
             name="Plane108"
             castShadow
             receiveShadow
             geometry={nodes.Plane108.geometry}
-            material={materials["Material.010"]}
+            material={materials['Material.010']}
           />
           <mesh
             name="Plane108_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane108_1.geometry}
-            material={materials["Fierro.002"]}
+            material={materials['Fierro.002']}
           />
         </group>
         <group
           name="tv003"
           position={[31.935, 2.85, -49.064]}
           rotation={[Math.PI / 2, 0, -1.517]}
-          scale={3.062}
-        >
+          scale={3.062}>
           <mesh
             name="Plane109"
             castShadow
             receiveShadow
             geometry={nodes.Plane109.geometry}
-            material={materials["Material.012"]}
+            material={materials['Material.012']}
           />
           <mesh
             name="Plane109_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane109_1.geometry}
-            material={materials["Material.013"]}
+            material={materials['Material.013']}
           />
           <mesh
             name="Plane109_2"
             castShadow
             receiveShadow
             geometry={nodes.Plane109_2.geometry}
-            material={materials["red light"]}
+            material={materials['red light']}
           />
         </group>
         <group
           name="Cylinder007"
           position={[38.119, 2.622, -32.814]}
           rotation={[Math.PI, -1.443, Math.PI]}
-          scale={[0.266, 0.314, 0.263]}
-        >
+          scale={[0.266, 0.314, 0.263]}>
           <mesh
             name="Cylinder019_1"
             castShadow
@@ -6009,70 +5738,67 @@ export function Modelo3D_Universidad(props) {
         <group
           name="BasureroDoble006"
           position={[18.176, -0.47, -62.84]}
-          scale={[0.134, 0.486, 0.486]}
-        >
+          scale={[0.134, 0.486, 0.486]}>
           <mesh
             name="Plane110"
             castShadow
             receiveShadow
             geometry={nodes.Plane110.geometry}
-            material={materials["basurero azul"]}
+            material={materials['basurero azul']}
           />
           <mesh
             name="Plane110_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane110_1.geometry}
-            material={materials["basurero amarillo"]}
+            material={materials['basurero amarillo']}
           />
           <mesh
             name="Plane110_2"
             castShadow
             receiveShadow
             geometry={nodes.Plane110_2.geometry}
-            material={materials["base basurero"]}
+            material={materials['base basurero']}
           />
         </group>
         <group
           name="BasureroDoble007"
           position={[4.284, -0.532, -65.263]}
           rotation={[Math.PI, -0.001, Math.PI]}
-          scale={[0.134, 0.486, 0.486]}
-        >
+          scale={[0.199, 0.722, 0.722]}>
           <mesh
             name="Plane111"
             castShadow
             receiveShadow
             geometry={nodes.Plane111.geometry}
-            material={materials["basurero azul"]}
+            material={materials['basurero azul']}
           />
           <mesh
             name="Plane111_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane111_1.geometry}
-            material={materials["basurero amarillo"]}
+            material={materials['basurero amarillo']}
           />
           <mesh
             name="Plane111_2"
             castShadow
             receiveShadow
             geometry={nodes.Plane111_2.geometry}
-            material={materials["base basurero"]}
+            material={materials['base basurero']}
           />
         </group>
         <group
           name="dispensadorAlchol035"
           position={[-14.964, 4.881, -36.548]}
           rotation={[0, 1.518, 0]}
-          scale={0.007}
-        >
+          scale={0.007}>
           <mesh
             name="Sphere039"
             castShadow
             receiveShadow
             geometry={nodes.Sphere039.geometry}
-            material={materials["Base.003"]}
+            material={materials['Base.003']}
           />
           <mesh
             name="Sphere039_1"
@@ -6107,14 +5833,13 @@ export function Modelo3D_Universidad(props) {
           name="dispensadorAlchol036"
           position={[-12.287, 4.881, -31.711]}
           rotation={[0, -1.42, 0]}
-          scale={0.006}
-        >
+          scale={0.006}>
           <mesh
             name="Sphere040"
             castShadow
             receiveShadow
             geometry={nodes.Sphere040.geometry}
-            material={materials["Base.003"]}
+            material={materials['Base.003']}
           />
           <mesh
             name="Sphere040_1"
@@ -6149,14 +5874,13 @@ export function Modelo3D_Universidad(props) {
           name="dispensadorAlchol037"
           position={[-45.394, 4.881, -36.459]}
           rotation={[0, 1.518, 0]}
-          scale={0.007}
-        >
+          scale={0.007}>
           <mesh
             name="Sphere041"
             castShadow
             receiveShadow
             geometry={nodes.Sphere041.geometry}
-            material={materials["Base.003"]}
+            material={materials['Base.003']}
           />
           <mesh
             name="Sphere041_1"
@@ -6191,14 +5915,13 @@ export function Modelo3D_Universidad(props) {
           name="dispensadorAlchol038"
           position={[-47.034, 4.881, -31.613]}
           rotation={[0, -1.42, 0]}
-          scale={0.006}
-        >
+          scale={0.006}>
           <mesh
             name="Sphere042"
             castShadow
             receiveShadow
             geometry={nodes.Sphere042.geometry}
-            material={materials["Base.003"]}
+            material={materials['Base.003']}
           />
           <mesh
             name="Sphere042_1"
@@ -6233,14 +5956,13 @@ export function Modelo3D_Universidad(props) {
           name="dispensadorAlchol039"
           position={[-90.837, 4.881, -36.554]}
           rotation={[0, 1.518, 0]}
-          scale={0.007}
-        >
+          scale={0.007}>
           <mesh
             name="Sphere043"
             castShadow
             receiveShadow
             geometry={nodes.Sphere043.geometry}
-            material={materials["Base.003"]}
+            material={materials['Base.003']}
           />
           <mesh
             name="Sphere043_1"
@@ -6275,14 +5997,13 @@ export function Modelo3D_Universidad(props) {
           name="dispensadorAlchol040"
           position={[-92.477, 4.881, -31.469]}
           rotation={[0, -1.42, 0]}
-          scale={0.006}
-        >
+          scale={0.006}>
           <mesh
             name="Sphere044"
             castShadow
             receiveShadow
             geometry={nodes.Sphere044.geometry}
-            material={materials["Base.003"]}
+            material={materials['Base.003']}
           />
           <mesh
             name="Sphere044_1"
@@ -6317,14 +6038,13 @@ export function Modelo3D_Universidad(props) {
           name="dispensadorAlchol041"
           position={[-116.316, 4.881, -36.554]}
           rotation={[0, 1.518, 0]}
-          scale={0.007}
-        >
+          scale={0.007}>
           <mesh
             name="Sphere045"
             castShadow
             receiveShadow
             geometry={nodes.Sphere045.geometry}
-            material={materials["Base.003"]}
+            material={materials['Base.003']}
           />
           <mesh
             name="Sphere045_1"
@@ -6359,14 +6079,13 @@ export function Modelo3D_Universidad(props) {
           name="dispensadorAlchol042"
           position={[-126.877, 4.881, -31.416]}
           rotation={[0, -1.42, 0]}
-          scale={0.006}
-        >
+          scale={0.006}>
           <mesh
             name="Sphere046"
             castShadow
             receiveShadow
             geometry={nodes.Sphere046.geometry}
-            material={materials["Base.003"]}
+            material={materials['Base.003']}
           />
           <mesh
             name="Sphere046_1"
@@ -6401,14 +6120,13 @@ export function Modelo3D_Universidad(props) {
           name="dispensadorAlchol043"
           position={[-116.316, 4.881, -36.554]}
           rotation={[0, 1.518, 0]}
-          scale={0.007}
-        >
+          scale={0.007}>
           <mesh
             name="Sphere047"
             castShadow
             receiveShadow
             geometry={nodes.Sphere047.geometry}
-            material={materials["Base.003"]}
+            material={materials['Base.003']}
           />
           <mesh
             name="Sphere047_1"
@@ -6443,14 +6161,13 @@ export function Modelo3D_Universidad(props) {
           name="dispensadorAlchol044"
           position={[-125.905, 4.881, -36.46]}
           rotation={[0, 1.518, 0]}
-          scale={0.007}
-        >
+          scale={0.007}>
           <mesh
             name="Sphere048"
             castShadow
             receiveShadow
             geometry={nodes.Sphere048.geometry}
-            material={materials["Base.003"]}
+            material={materials['Base.003']}
           />
           <mesh
             name="Sphere048_1"
@@ -6485,14 +6202,13 @@ export function Modelo3D_Universidad(props) {
           name="Focos021"
           position={[-10.551, 14.13, -23.551]}
           rotation={[Math.PI / 2, 0, 3.113]}
-          scale={[-0.066, -1.268, -0.066]}
-        >
+          scale={[-0.066, -1.268, -0.066]}>
           <mesh
             name="Cilindro022"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro022.geometry}
-            material={materials["Plastico.001"]}
+            material={materials['Plastico.001']}
           />
           <mesh
             name="Cilindro022_1"
@@ -6513,14 +6229,13 @@ export function Modelo3D_Universidad(props) {
           name="Focos024"
           position={[-29.352, 14.13, -23.551]}
           rotation={[Math.PI / 2, 0, 3.113]}
-          scale={[-0.066, -1.268, -0.066]}
-        >
+          scale={[-0.066, -1.268, -0.066]}>
           <mesh
             name="Cilindro025"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro025.geometry}
-            material={materials["Plastico.001"]}
+            material={materials['Plastico.001']}
           />
           <mesh
             name="Cilindro025_1"
@@ -6541,14 +6256,13 @@ export function Modelo3D_Universidad(props) {
           name="Focos025"
           position={[-17.658, 14.13, -12.505]}
           rotation={[Math.PI / 2, 0, 3.113]}
-          scale={[-0.066, -1.268, -0.066]}
-        >
+          scale={[-0.066, -1.268, -0.066]}>
           <mesh
             name="Cilindro026"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro026.geometry}
-            material={materials["Plastico.001"]}
+            material={materials['Plastico.001']}
           />
           <mesh
             name="Cilindro026_1"
@@ -6569,14 +6283,13 @@ export function Modelo3D_Universidad(props) {
           name="Focos026"
           position={[-23.056, 14.13, -12.505]}
           rotation={[Math.PI / 2, 0, 3.113]}
-          scale={[-0.066, -1.268, -0.066]}
-        >
+          scale={[-0.066, -1.268, -0.066]}>
           <mesh
             name="Cilindro027"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro027.geometry}
-            material={materials["Plastico.001"]}
+            material={materials['Plastico.001']}
           />
           <mesh
             name="Cilindro027_1"
@@ -6597,14 +6310,13 @@ export function Modelo3D_Universidad(props) {
           name="Focos027"
           position={[-10.551, 14.13, -12.505]}
           rotation={[Math.PI / 2, 0, 3.113]}
-          scale={[-0.066, -1.268, -0.066]}
-        >
+          scale={[-0.066, -1.268, -0.066]}>
           <mesh
             name="Cilindro028"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro028.geometry}
-            material={materials["Plastico.001"]}
+            material={materials['Plastico.001']}
           />
           <mesh
             name="Cilindro028_1"
@@ -6625,14 +6337,13 @@ export function Modelo3D_Universidad(props) {
           name="Focos028"
           position={[-29.352, 14.13, -12.505]}
           rotation={[Math.PI / 2, 0, 3.113]}
-          scale={[-0.066, -1.268, -0.066]}
-        >
+          scale={[-0.066, -1.268, -0.066]}>
           <mesh
             name="Cilindro029"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro029.geometry}
-            material={materials["Plastico.001"]}
+            material={materials['Plastico.001']}
           />
           <mesh
             name="Cilindro029_1"
@@ -6653,14 +6364,13 @@ export function Modelo3D_Universidad(props) {
           name="Focos029"
           position={[-17.658, 14.13, -18.202]}
           rotation={[Math.PI / 2, 0, 3.113]}
-          scale={[-0.066, -1.268, -0.066]}
-        >
+          scale={[-0.066, -1.268, -0.066]}>
           <mesh
             name="Cilindro030"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro030.geometry}
-            material={materials["Plastico.001"]}
+            material={materials['Plastico.001']}
           />
           <mesh
             name="Cilindro030_1"
@@ -6681,14 +6391,13 @@ export function Modelo3D_Universidad(props) {
           name="Focos030"
           position={[-23.056, 14.13, -18.202]}
           rotation={[Math.PI / 2, 0, 3.113]}
-          scale={[-0.066, -1.268, -0.066]}
-        >
+          scale={[-0.066, -1.268, -0.066]}>
           <mesh
             name="Cilindro031"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro031.geometry}
-            material={materials["Plastico.001"]}
+            material={materials['Plastico.001']}
           />
           <mesh
             name="Cilindro031_1"
@@ -6709,14 +6418,13 @@ export function Modelo3D_Universidad(props) {
           name="Focos031"
           position={[-10.551, 14.13, -18.202]}
           rotation={[Math.PI / 2, 0, 3.113]}
-          scale={[-0.066, -1.268, -0.066]}
-        >
+          scale={[-0.066, -1.268, -0.066]}>
           <mesh
             name="Cilindro032"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro032.geometry}
-            material={materials["Plastico.001"]}
+            material={materials['Plastico.001']}
           />
           <mesh
             name="Cilindro032_1"
@@ -6737,14 +6445,13 @@ export function Modelo3D_Universidad(props) {
           name="Focos032"
           position={[-29.352, 14.13, -18.202]}
           rotation={[Math.PI / 2, 0, 3.113]}
-          scale={[-0.066, -1.268, -0.066]}
-        >
+          scale={[-0.066, -1.268, -0.066]}>
           <mesh
             name="Cilindro033"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro033.geometry}
-            material={materials["Plastico.001"]}
+            material={materials['Plastico.001']}
           />
           <mesh
             name="Cilindro033_1"
@@ -6761,28 +6468,11 @@ export function Modelo3D_Universidad(props) {
             material={materials.Goma}
           />
         </group>
-        <group name="Plane008" scale={[4.654, 1, 1]}>
-          <mesh
-            name="Plane112"
-            castShadow
-            receiveShadow
-            geometry={nodes.Plane112.geometry}
-            material={materials["BAse.001"]}
-          />
-          <mesh
-            name="Plane112_1"
-            castShadow
-            receiveShadow
-            geometry={nodes.Plane112_1.geometry}
-            material={materials["Teclas.001"]}
-          />
-        </group>
         <group
           name="ventilador_cafeteria"
           position={[-13.667, 14.372, -15.476]}
           rotation={[Math.PI / 2, 0, -1.658]}
-          scale={[3.1, 3.485, 2.455]}
-        >
+          scale={[3.1, 3.485, 2.455]}>
           <mesh
             name="Black_Metallic_Ceiling_Fan"
             castShadow
@@ -6802,8 +6492,7 @@ export function Modelo3D_Universidad(props) {
           name="ventilador_cafeteria001"
           position={[-13.667, 14.372, -21.622]}
           rotation={[Math.PI / 2, 0, -1.658]}
-          scale={[3.1, 3.485, 2.455]}
-        >
+          scale={[3.1, 3.485, 2.455]}>
           <mesh
             name="Black_Metallic_Ceiling_Fan001"
             castShadow
@@ -6823,8 +6512,7 @@ export function Modelo3D_Universidad(props) {
           name="ventilador_cafeteria002"
           position={[-22.42, 14.372, -15.476]}
           rotation={[Math.PI / 2, 0, -1.658]}
-          scale={[3.1, 3.485, 2.455]}
-        >
+          scale={[3.1, 3.485, 2.455]}>
           <mesh
             name="Black_Metallic_Ceiling_Fan002"
             castShadow
@@ -6844,8 +6532,7 @@ export function Modelo3D_Universidad(props) {
           name="ventilador_cafeteria003"
           position={[-22.42, 14.372, -21.622]}
           rotation={[Math.PI / 2, 0, -1.658]}
-          scale={[3.1, 3.485, 2.455]}
-        >
+          scale={[3.1, 3.485, 2.455]}>
           <mesh
             name="Black_Metallic_Ceiling_Fan003"
             castShadow
@@ -6865,8 +6552,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask"
           position={[-11.861, 2.989, -24.154]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube002_1"
             castShadow
@@ -6937,7 +6623,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-11.876, 2.575, -23.636]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -6946,8 +6632,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask001"
           position={[-11.861, 2.989, -22.34]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube001_1"
             castShadow
@@ -7018,7 +6703,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve001.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-11.876, 2.575, -21.822]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -7027,8 +6712,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask002"
           position={[-11.861, 2.989, -20.474]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube004_1"
             castShadow
@@ -7099,7 +6783,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve002.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-11.876, 2.575, -19.956]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -7108,8 +6792,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask003"
           position={[-11.861, 2.989, -18.507]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube006_1"
             castShadow
@@ -7180,7 +6863,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve003.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-11.876, 2.575, -17.989]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -7189,8 +6872,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask004"
           position={[-11.861, 2.989, -16.582]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube008_1"
             castShadow
@@ -7261,7 +6943,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve004.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-11.876, 2.575, -16.065]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -7270,8 +6952,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask005"
           position={[-11.861, 2.989, -16.582]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube011_1"
             castShadow
@@ -7342,7 +7023,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve005.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-11.876, 2.575, -16.065]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -7351,8 +7032,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask006"
           position={[-11.861, 2.989, -14.397]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube013_1"
             castShadow
@@ -7423,7 +7103,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve006.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-11.876, 2.575, -13.88]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -7432,8 +7112,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask007"
           position={[-11.861, 2.989, -12.054]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube015_1"
             castShadow
@@ -7504,7 +7183,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve007.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-11.876, 2.575, -11.537]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -7513,8 +7192,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask008"
           position={[-14.686, 2.989, -12.054]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube017_1"
             castShadow
@@ -7585,7 +7263,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve008.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-14.7, 2.575, -11.537]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -7594,8 +7272,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask009"
           position={[-18.148, 2.989, -12.054]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube019_1"
             castShadow
@@ -7666,7 +7343,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve009.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-18.162, 2.575, -11.537]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -7675,8 +7352,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask010"
           position={[-21.814, 2.989, -12.054]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube021_1"
             castShadow
@@ -7747,7 +7423,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve010.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-21.828, 2.575, -11.537]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -7756,8 +7432,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask011"
           position={[-25.591, 2.989, -12.054]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube023_1"
             castShadow
@@ -7828,7 +7503,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve011.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-25.606, 2.575, -11.537]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -7837,8 +7512,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask012"
           position={[-25.591, 2.989, -14.525]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube025_1"
             castShadow
@@ -7909,17 +7583,16 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve012.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-25.606, 2.575, -14.008]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
         />
         <group
           name="Table_dask013"
-          position={[-21.759, 2.989, -14.525]}
+          position={[-21.76, 2.989, -14.525]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube027_1"
             castShadow
@@ -7990,7 +7663,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve013.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-21.774, 2.575, -14.008]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -7999,8 +7672,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask014"
           position={[-18.168, 2.989, -14.525]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube029_1"
             castShadow
@@ -8071,7 +7743,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve014.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-18.183, 2.575, -14.008]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -8080,8 +7752,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask015"
           position={[-14.935, 2.989, -14.525]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube031_1"
             castShadow
@@ -8152,7 +7823,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve015.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-14.949, 2.575, -14.008]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -8161,8 +7832,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask016"
           position={[-14.935, 2.989, -16.597]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube033_1"
             castShadow
@@ -8233,7 +7903,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve016.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-14.949, 2.575, -16.08]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -8242,8 +7912,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask017"
           position={[-18.317, 2.989, -16.597]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube035_1"
             castShadow
@@ -8314,7 +7983,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve017.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-18.332, 2.575, -16.08]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -8323,8 +7992,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask018"
           position={[-21.865, 2.989, -16.597]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube037_1"
             castShadow
@@ -8395,8 +8063,8 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve018.geometry}
-          material={materials["Material.014"]}
-          position={[-21.879, 2.575, -16.08]}
+          material={materials['Material.014']}
+          position={[-21.88, 2.575, -16.08]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
         />
@@ -8404,8 +8072,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask019"
           position={[-25.59, 2.989, -16.597]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube039_1"
             castShadow
@@ -8476,7 +8143,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve019.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-25.605, 2.575, -16.08]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -8485,8 +8152,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask020"
           position={[-25.59, 2.989, -18.592]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube041_1"
             castShadow
@@ -8557,7 +8223,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve020.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-25.605, 2.575, -18.075]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -8566,8 +8232,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask021"
           position={[-21.702, 2.989, -18.592]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube043_1"
             castShadow
@@ -8638,7 +8303,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve021.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-21.717, 2.575, -18.075]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -8647,8 +8312,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask022"
           position={[-18.296, 2.989, -18.592]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube045_1"
             castShadow
@@ -8719,7 +8383,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve022.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-18.31, 2.575, -18.075]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -8728,8 +8392,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask023"
           position={[-15.023, 2.989, -18.592]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube047_1"
             castShadow
@@ -8800,7 +8463,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve023.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-15.038, 2.575, -18.075]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -8809,8 +8472,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask024"
           position={[-15.023, 2.989, -20.503]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube049_1"
             castShadow
@@ -8881,7 +8543,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve024.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-15.038, 2.575, -19.986]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -8890,8 +8552,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask025"
           position={[-18.22, 2.989, -20.503]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube051_1"
             castShadow
@@ -8962,7 +8623,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve025.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-18.235, 2.575, -19.986]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -8971,8 +8632,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask026"
           position={[-21.644, 2.989, -20.503]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube053_1"
             castShadow
@@ -9043,7 +8703,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve026.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-21.659, 2.575, -19.986]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -9052,8 +8712,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask027"
           position={[-25.592, 2.989, -20.503]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube055_1"
             castShadow
@@ -9124,7 +8783,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve027.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-25.607, 2.575, -19.986]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -9133,8 +8792,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask028"
           position={[-25.592, 2.989, -22.403]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube057_1"
             castShadow
@@ -9205,7 +8863,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve028.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-25.607, 2.575, -21.886]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -9214,8 +8872,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask029"
           position={[-21.564, 2.989, -22.403]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube059_1"
             castShadow
@@ -9286,7 +8943,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve029.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-21.578, 2.575, -21.886]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -9295,8 +8952,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask030"
           position={[-18.225, 2.989, -22.403]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube061_1"
             castShadow
@@ -9367,7 +9023,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve030.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-18.24, 2.575, -21.886]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -9376,8 +9032,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask031"
           position={[-14.98, 2.989, -22.403]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube063_1"
             castShadow
@@ -9448,7 +9103,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve031.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-14.995, 2.575, -21.886]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -9457,8 +9112,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask032"
           position={[-14.98, 2.989, -24.213]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube065_1"
             castShadow
@@ -9529,7 +9183,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve032.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-14.995, 2.575, -23.696]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -9538,8 +9192,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask033"
           position={[-18.207, 2.989, -24.213]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube067_1"
             castShadow
@@ -9610,7 +9263,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve033.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-18.222, 2.575, -23.696]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -9619,8 +9272,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask034"
           position={[-18.207, 2.989, -24.213]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube069_1"
             castShadow
@@ -9691,7 +9343,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve034.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-18.222, 2.575, -23.696]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -9700,8 +9352,7 @@ export function Modelo3D_Universidad(props) {
           name="Cube036"
           position={[-22.124, 2.987, -24.224]}
           rotation={[0, 1.564, 0]}
-          scale={1.011}
-        >
+          scale={1.011}>
           <mesh
             name="Cube072_1"
             castShadow
@@ -9735,15 +9386,14 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Cube072_5.geometry}
-            material={materials["Material.014"]}
+            material={materials['Material.014']}
           />
         </group>
         <group
           name="Table_dask036"
           position={[-25.216, 2.989, -24.213]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube073_1"
             castShadow
@@ -9814,7 +9464,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve036.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-25.23, 2.575, -23.696]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -9823,8 +9473,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask037"
           position={[-58.737, 2.989, -24.213]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube075_1"
             castShadow
@@ -9895,7 +9544,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve037.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-58.752, 2.575, -23.696]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -9904,8 +9553,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask038"
           position={[-58.737, 2.989, -22.021]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube077_1"
             castShadow
@@ -9976,7 +9624,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve038.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-58.752, 2.575, -21.503]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -9985,8 +9633,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask039"
           position={[-58.737, 2.989, -19.586]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube079_1"
             castShadow
@@ -10057,7 +9704,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve039.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-58.752, 2.575, -19.068]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -10066,8 +9713,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask040"
           position={[-58.737, 2.989, -17.039]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube081_1"
             castShadow
@@ -10138,7 +9784,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve040.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-58.752, 2.575, -16.521]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -10147,8 +9793,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask041"
           position={[-58.737, 2.989, -17.039]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube083_1"
             castShadow
@@ -10219,7 +9864,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve041.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-58.752, 2.575, -16.521]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -10228,8 +9873,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask042"
           position={[-58.737, 2.989, -14.683]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube085_1"
             castShadow
@@ -10300,7 +9944,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve042.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-58.752, 2.575, -14.166]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -10309,8 +9953,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask043"
           position={[-58.737, 2.989, -11.989]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube087_1"
             castShadow
@@ -10381,7 +10024,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve043.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-58.752, 2.575, -11.471]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -10390,8 +10033,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask044"
           position={[-55.617, 2.989, -11.989]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube089_1"
             castShadow
@@ -10462,7 +10104,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve044.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-55.632, 2.575, -11.471]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -10471,8 +10113,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask045"
           position={[-52.887, 2.989, -11.989]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube091_1"
             castShadow
@@ -10543,7 +10184,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve045.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-52.902, 2.575, -11.471]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -10552,8 +10193,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask046"
           position={[-50.186, 2.989, -11.989]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube093_1"
             castShadow
@@ -10624,7 +10264,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve046.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-50.201, 2.575, -11.471]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -10633,8 +10273,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask047"
           position={[-47.555, 2.989, -11.989]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube095_1"
             castShadow
@@ -10705,7 +10344,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve047.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-47.57, 2.575, -11.471]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -10714,8 +10353,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask048"
           position={[-47.555, 2.989, -14.605]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube097_1"
             castShadow
@@ -10786,7 +10424,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve048.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-47.57, 2.575, -14.088]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -10795,8 +10433,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask049"
           position={[-47.555, 2.989, -16.984]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube099_1"
             castShadow
@@ -10867,7 +10504,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve049.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-47.57, 2.575, -16.467]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -10876,8 +10513,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask050"
           position={[-47.555, 2.989, -19.556]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube101_1"
             castShadow
@@ -10948,7 +10584,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve050.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-47.57, 2.575, -19.039]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -10957,8 +10593,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask051"
           position={[-47.555, 2.989, -21.863]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube103_1"
             castShadow
@@ -11029,7 +10664,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve051.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-47.57, 2.575, -21.345]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -11038,8 +10673,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask052"
           position={[-47.555, 2.989, -24.326]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube105_1"
             castShadow
@@ -11110,7 +10744,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve052.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-47.57, 2.575, -23.809]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -11119,8 +10753,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask053"
           position={[-50.137, 2.989, -24.326]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube107_1"
             castShadow
@@ -11191,7 +10824,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve053.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-50.152, 2.575, -23.809]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -11200,8 +10833,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask054"
           position={[-52.803, 2.989, -24.326]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube109_1"
             castShadow
@@ -11272,7 +10904,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve054.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-52.818, 2.575, -23.809]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -11281,8 +10913,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask055"
           position={[-55.693, 2.989, -24.326]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube111_1"
             castShadow
@@ -11353,7 +10984,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve055.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-55.708, 2.575, -23.809]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -11362,8 +10993,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask056"
           position={[-55.693, 2.989, -22.118]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube113_1"
             castShadow
@@ -11434,7 +11064,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve056.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-55.708, 2.575, -21.601]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -11443,8 +11073,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask057"
           position={[-55.693, 2.989, -19.575]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube115_1"
             castShadow
@@ -11515,7 +11144,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve057.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-55.708, 2.575, -19.058]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -11524,8 +11153,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask058"
           position={[-55.693, 2.989, -17.012]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube117_1"
             castShadow
@@ -11596,7 +11224,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve058.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-55.708, 2.575, -16.495]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -11605,8 +11233,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask059"
           position={[-55.693, 2.989, -14.621]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube119_1"
             castShadow
@@ -11677,7 +11304,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve059.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-55.708, 2.575, -14.103]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -11686,8 +11313,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask060"
           position={[-52.815, 2.989, -14.621]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube121_1"
             castShadow
@@ -11758,7 +11384,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve060.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-52.83, 2.575, -14.103]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -11767,8 +11393,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask061"
           position={[-50.117, 2.989, -14.621]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube123_1"
             castShadow
@@ -11839,7 +11464,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve061.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-50.132, 2.575, -14.103]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -11848,8 +11473,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask062"
           position={[-50.117, 2.989, -16.977]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube125_1"
             castShadow
@@ -11920,7 +11544,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve062.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-50.132, 2.575, -16.46]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -11929,8 +11553,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask063"
           position={[-50.117, 2.989, -19.6]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube127_1"
             castShadow
@@ -12001,7 +11624,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve063.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-50.132, 2.575, -19.082]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -12010,8 +11633,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask064"
           position={[-50.117, 2.989, -19.6]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube129_1"
             castShadow
@@ -12082,7 +11704,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve064.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-50.132, 2.575, -19.082]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -12091,8 +11713,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask065"
           position={[-52.797, 2.989, -19.6]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube131_1"
             castShadow
@@ -12163,7 +11784,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve065.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-52.811, 2.575, -19.082]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -12172,8 +11793,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask066"
           position={[-52.797, 2.989, -17.051]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube133_1"
             castShadow
@@ -12244,7 +11864,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve066.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-52.811, 2.575, -16.534]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -12253,8 +11873,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask067"
           position={[-52.797, 2.989, -22.083]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube135_1"
             castShadow
@@ -12325,7 +11944,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve067.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-52.811, 2.575, -21.566]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -12334,8 +11953,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask068"
           position={[-50.286, 2.989, -22.083]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube137_1"
             castShadow
@@ -12406,17 +12024,16 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve068.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-50.3, 2.575, -21.566]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
         />
         <group
           name="Table_dask069"
-          position={[-93.514, 2.989, -155.921]}
+          position={[-93.514, 2.989, -173.748]}
           rotation={[0, 1.564, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube139_1"
             castShadow
@@ -12438,7 +12055,7 @@ export function Modelo3D_Universidad(props) {
           receiveShadow
           geometry={nodes.support_pipe_3069.geometry}
           material={materials.Barra}
-          position={[-93.446, 1.982, -156.481]}
+          position={[-93.446, 1.982, -174.307]}
           rotation={[0, 1.564, 0]}
           scale={0.668}
         />
@@ -12448,7 +12065,7 @@ export function Modelo3D_Universidad(props) {
           receiveShadow
           geometry={nodes.Support_pipe_2069.geometry}
           material={materials.Barra}
-          position={[-93.264, 1.982, -156.479]}
+          position={[-93.264, 1.982, -174.306]}
           rotation={[0, 1.564, 0]}
           scale={1.011}
         />
@@ -12458,7 +12075,7 @@ export function Modelo3D_Universidad(props) {
           receiveShadow
           geometry={nodes.support_pipe_1138.geometry}
           material={materials.Barra}
-          position={[-93.556, 2.779, -155.797]}
+          position={[-93.556, 2.779, -173.624]}
           rotation={[0, 1.564, 0]}
           scale={0.668}
         />
@@ -12468,7 +12085,7 @@ export function Modelo3D_Universidad(props) {
           receiveShadow
           geometry={nodes.support_pipe_1139.geometry}
           material={materials.Barra}
-          position={[-93.556, 2.779, -155.797]}
+          position={[-93.556, 2.779, -173.624]}
           rotation={[0, 1.564, 0]}
           scale={0.668}
         />
@@ -12478,7 +12095,7 @@ export function Modelo3D_Universidad(props) {
           receiveShadow
           geometry={nodes.Cube070.geometry}
           material={materials.Plastico}
-          position={[-94.181, 2.987, -155.932]}
+          position={[-94.181, 2.987, -173.758]}
           rotation={[0, 1.564, 0]}
           scale={1.011}
         />
@@ -12487,7 +12104,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve069.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-93.529, 2.575, -155.404]}
           rotation={[Math.PI, 0.007, 2.689]}
           scale={0.668}
@@ -12496,8 +12113,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask070"
           position={[-84.53, 1.196, -65.958]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube141_1"
             castShadow
@@ -12568,7 +12184,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve070.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-85.048, 0.782, -65.962]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -12577,8 +12193,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask071"
           position={[-87.568, 1.196, -65.958]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube143_1"
             castShadow
@@ -12649,7 +12264,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve071.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-88.086, 0.782, -65.962]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -12658,8 +12273,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask072"
           position={[-90.526, 1.196, -65.958]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube145_1"
             castShadow
@@ -12721,7 +12335,7 @@ export function Modelo3D_Universidad(props) {
           receiveShadow
           geometry={nodes.Cube073.geometry}
           material={materials.Plastico}
-          position={[-90.529, 1.194, -66.625]}
+          position={[-90.528, 1.194, -66.625]}
           rotation={[0, 0.013, 0]}
           scale={1.011}
         />
@@ -12730,7 +12344,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve072.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-91.043, 0.782, -65.962]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -12739,8 +12353,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask073"
           position={[-93.589, 1.196, -65.958]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube147_1"
             castShadow
@@ -12762,7 +12375,7 @@ export function Modelo3D_Universidad(props) {
           receiveShadow
           geometry={nodes.support_pipe_3073.geometry}
           material={materials.Barra}
-          position={[-93.029, 0.189, -65.901]}
+          position={[-93.028, 0.189, -65.901]}
           rotation={[0, 0.013, 0]}
           scale={0.668}
         />
@@ -12811,7 +12424,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve073.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-94.107, 0.782, -65.962]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -12820,8 +12433,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask074"
           position={[-96.65, 1.196, -65.958]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube149_1"
             castShadow
@@ -12892,7 +12504,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve074.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-97.168, 0.782, -65.962]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -12901,8 +12513,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask075"
           position={[-99.679, 1.196, -65.958]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube151_1"
             castShadow
@@ -12973,7 +12584,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve075.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-100.197, 0.782, -65.962]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -12982,8 +12593,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask076"
           position={[-99.679, 1.196, -62.132]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube153_1"
             castShadow
@@ -13054,7 +12664,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve076.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-100.197, 0.782, -62.136]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -13063,8 +12673,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask077"
           position={[-99.679, 1.196, -58.485]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube155_1"
             castShadow
@@ -13135,7 +12744,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve077.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-100.197, 0.782, -58.489]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -13144,8 +12753,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask078"
           position={[-99.679, 1.196, -55.273]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube157_1"
             castShadow
@@ -13216,7 +12824,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve078.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-100.197, 0.782, -55.278]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -13225,8 +12833,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask079"
           position={[-99.679, 1.196, -52.476]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube159_1"
             castShadow
@@ -13297,7 +12904,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve079.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-100.197, 0.782, -52.48]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -13306,8 +12913,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask080"
           position={[-96.746, 1.196, -52.476]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube161_1"
             castShadow
@@ -13378,7 +12984,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve080.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-97.264, 0.782, -52.48]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -13387,8 +12993,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask081"
           position={[-96.746, 1.196, -55.33]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube163_1"
             castShadow
@@ -13459,7 +13064,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve081.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-97.264, 0.782, -55.335]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -13468,8 +13073,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask082"
           position={[-96.746, 1.196, -58.52]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube165_1"
             castShadow
@@ -13540,7 +13144,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve082.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-97.264, 0.782, -58.525]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -13549,8 +13153,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask083"
           position={[-96.746, 1.196, -62.251]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube167_1"
             castShadow
@@ -13621,7 +13224,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve083.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-97.264, 0.782, -62.255]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -13630,8 +13233,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask084"
           position={[-96.746, 1.196, -62.251]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube169_1"
             castShadow
@@ -13702,7 +13304,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve084.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-97.264, 0.782, -62.255]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -13711,8 +13313,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask085"
           position={[-93.427, 1.196, -62.251]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube171_1"
             castShadow
@@ -13783,7 +13384,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve085.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-93.944, 0.782, -62.255]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -13792,8 +13393,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask086"
           position={[-90.496, 1.196, -62.251]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube173_1"
             castShadow
@@ -13864,7 +13464,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve086.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-91.013, 0.782, -62.255]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -13873,8 +13473,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask087"
           position={[-87.542, 1.196, -62.251]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube175_1"
             castShadow
@@ -13945,7 +13544,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve087.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-88.06, 0.782, -62.255]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -13954,8 +13553,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask088"
           position={[-84.396, 1.196, -62.251]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube177_1"
             castShadow
@@ -14026,7 +13624,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve088.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-84.914, 0.782, -62.255]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -14035,8 +13633,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask089"
           position={[-84.396, 1.196, -58.486]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube179_1"
             castShadow
@@ -14107,7 +13704,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve089.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-84.914, 0.782, -58.49]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -14116,8 +13713,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask090"
           position={[-87.537, 1.196, -58.486]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube181_1"
             castShadow
@@ -14188,8 +13784,8 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve090.geometry}
-          material={materials["Material.014"]}
-          position={[-88.055, 0.782, -58.49]}
+          material={materials['Material.014']}
+          position={[-88.054, 0.782, -58.49]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
         />
@@ -14197,8 +13793,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask091"
           position={[-90.462, 1.196, -58.486]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube183_1"
             castShadow
@@ -14269,7 +13864,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve091.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-90.979, 0.782, -58.49]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -14278,8 +13873,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask092"
           position={[-93.444, 1.196, -58.486]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube185_1"
             castShadow
@@ -14350,7 +13944,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve092.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-93.962, 0.782, -58.49]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -14359,8 +13953,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask093"
           position={[-93.444, 1.196, -55.298]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube187_1"
             castShadow
@@ -14431,7 +14024,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve093.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-93.962, 0.782, -55.302]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -14440,8 +14033,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask094"
           position={[-93.444, 1.196, -52.532]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube189_1"
             castShadow
@@ -14512,7 +14104,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve094.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-93.962, 0.782, -52.537]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -14521,8 +14113,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask095"
           position={[-90.48, 1.196, -52.532]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube191_1"
             castShadow
@@ -14593,7 +14184,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve095.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-90.997, 0.782, -52.537]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -14602,8 +14193,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask096"
           position={[-90.48, 1.196, -55.33]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube193_1"
             castShadow
@@ -14674,7 +14264,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve096.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-90.997, 0.782, -55.335]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -14683,8 +14273,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask097"
           position={[-87.546, 1.196, -55.33]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube195_1"
             castShadow
@@ -14755,7 +14344,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve097.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-88.063, 0.782, -55.335]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -14764,8 +14353,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask098"
           position={[-84.434, 1.196, -55.33]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube197_1"
             castShadow
@@ -14836,7 +14424,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve098.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-84.951, 0.782, -55.335]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -14845,8 +14433,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask099"
           position={[-84.434, 1.196, -52.399]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube199_1"
             castShadow
@@ -14917,7 +14504,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve099.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-84.951, 0.782, -52.403]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -14926,8 +14513,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask100"
           position={[-87.487, 1.196, -52.399]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube201_1"
             castShadow
@@ -14998,7 +14584,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve100.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-88.004, 0.782, -52.403]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -15007,8 +14593,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask101"
           position={[-29.818, 1.196, -50.135]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube203_1"
             castShadow
@@ -15079,7 +14664,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve101.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-30.335, 0.782, -50.14]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -15088,8 +14673,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask102"
           position={[-32.45, 1.196, -50.135]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube205_1"
             castShadow
@@ -15160,7 +14744,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve102.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-32.967, 0.782, -50.14]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -15169,8 +14753,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask103"
           position={[-35.344, 1.196, -50.135]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube207_1"
             castShadow
@@ -15241,7 +14824,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve103.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-35.861, 0.782, -50.14]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -15250,8 +14833,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask104"
           position={[-38.229, 1.196, -50.135]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube209_1"
             castShadow
@@ -15322,7 +14904,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve104.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-38.746, 0.782, -50.14]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -15331,8 +14913,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask105"
           position={[-41.064, 1.196, -50.135]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube211_1"
             castShadow
@@ -15403,7 +14984,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve105.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-41.581, 0.782, -50.14]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -15412,8 +14993,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask106"
           position={[-43.927, 1.196, -50.135]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube213_1"
             castShadow
@@ -15484,7 +15064,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve106.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-44.444, 0.782, -50.14]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -15493,8 +15073,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask107"
           position={[-43.927, 1.196, -53.363]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube215_1"
             castShadow
@@ -15565,7 +15144,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve107.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-44.444, 0.782, -53.367]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -15574,8 +15153,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask108"
           position={[-43.927, 1.196, -56.907]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube217_1"
             castShadow
@@ -15646,7 +15224,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve108.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-44.444, 0.782, -56.911]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -15655,8 +15233,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask109"
           position={[-43.927, 1.196, -60.77]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube219_1"
             castShadow
@@ -15727,7 +15304,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve109.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-44.444, 0.782, -60.774]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -15736,8 +15313,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask110"
           position={[-43.927, 1.196, -65.42]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube221_1"
             castShadow
@@ -15808,7 +15384,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve110.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-44.444, 0.782, -65.425]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -15817,8 +15393,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask111"
           position={[-41.118, 1.196, -65.42]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube223_1"
             castShadow
@@ -15889,7 +15464,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve111.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-41.636, 0.782, -65.425]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -15898,8 +15473,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask112"
           position={[-41.118, 1.196, -60.547]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube225_1"
             castShadow
@@ -15970,8 +15544,8 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve112.geometry}
-          material={materials["Material.014"]}
-          position={[-41.636, 0.782, -60.551]}
+          material={materials['Material.014']}
+          position={[-41.636, 0.782, -60.552]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
         />
@@ -15979,8 +15553,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask113"
           position={[-41.118, 1.196, -56.775]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube227_1"
             castShadow
@@ -16051,7 +15624,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve113.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-41.636, 0.782, -56.779]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -16060,8 +15633,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask114"
           position={[-41.118, 1.196, -53.336]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube229_1"
             castShadow
@@ -16132,7 +15704,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve114.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-41.636, 0.782, -53.34]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -16141,8 +15713,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask115"
           position={[-38.236, 1.196, -53.336]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube231_1"
             castShadow
@@ -16213,7 +15784,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve115.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-38.753, 0.782, -53.34]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -16222,8 +15793,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask116"
           position={[-38.236, 1.196, -56.706]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube233_1"
             castShadow
@@ -16294,7 +15864,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve116.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-38.753, 0.782, -56.71]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -16303,8 +15873,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask117"
           position={[-38.236, 1.196, -60.561]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube235_1"
             castShadow
@@ -16375,7 +15944,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve117.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-38.753, 0.782, -60.566]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -16384,8 +15953,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask118"
           position={[-38.236, 1.196, -65.212]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube237_1"
             castShadow
@@ -16456,7 +16024,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve118.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-38.753, 0.782, -65.216]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -16465,8 +16033,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask119"
           position={[-38.236, 1.196, -65.212]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube239_1"
             castShadow
@@ -16537,7 +16104,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve119.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-38.753, 0.782, -65.216]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -16546,8 +16113,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask120"
           position={[-35.382, 1.196, -65.212]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube241_1"
             castShadow
@@ -16618,7 +16184,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve120.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-35.899, 0.782, -65.216]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -16627,8 +16193,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask121"
           position={[-35.382, 1.196, -60.313]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube243_1"
             castShadow
@@ -16699,7 +16264,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve121.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-35.899, 0.782, -60.318]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -16708,8 +16273,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask122"
           position={[-35.382, 1.196, -56.609]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube245_1"
             castShadow
@@ -16780,7 +16344,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve122.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-35.899, 0.782, -56.613]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -16789,8 +16353,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask123"
           position={[-35.382, 1.196, -53.283]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube247_1"
             castShadow
@@ -16861,7 +16424,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve123.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-35.899, 0.782, -53.288]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -16870,8 +16433,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask124"
           position={[-32.495, 1.196, -53.283]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube249_1"
             castShadow
@@ -16942,7 +16504,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve124.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-33.013, 0.782, -53.288]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -16951,8 +16513,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask125"
           position={[-32.495, 1.196, -56.67]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube251_1"
             castShadow
@@ -17023,7 +16584,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve125.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-33.013, 0.782, -56.674]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -17032,8 +16593,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask126"
           position={[-32.495, 1.196, -60.38]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube253_1"
             castShadow
@@ -17104,7 +16664,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve126.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-33.013, 0.782, -60.384]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -17113,8 +16673,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask127"
           position={[-32.495, 1.196, -64.804]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube255_1"
             castShadow
@@ -17185,7 +16744,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve127.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-33.013, 0.782, -64.809]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -17194,8 +16753,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask128"
           position={[-29.822, 1.196, -64.804]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube257_1"
             castShadow
@@ -17266,7 +16824,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve128.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-30.339, 0.782, -64.809]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -17275,8 +16833,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask129"
           position={[-29.822, 1.196, -60.364]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube259_1"
             castShadow
@@ -17347,7 +16904,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve129.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-30.339, 0.782, -60.369]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -17356,8 +16913,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask130"
           position={[-29.822, 1.196, -56.681]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube261_1"
             castShadow
@@ -17428,7 +16984,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve130.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-30.339, 0.782, -56.685]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -17437,8 +16993,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask131"
           position={[-29.822, 1.196, -53.256]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube263_1"
             castShadow
@@ -17509,7 +17064,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve131.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-30.339, 0.782, -53.261]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -17518,8 +17073,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask132"
           position={[-6.501, 1.196, -51.206]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube265_1"
             castShadow
@@ -17590,7 +17144,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve132.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-7.018, 0.782, -51.211]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -17599,8 +17153,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask133"
           position={[-9.441, 1.196, -51.206]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube267_1"
             castShadow
@@ -17671,7 +17224,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve133.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-9.958, 0.782, -51.211]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -17680,8 +17233,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask134"
           position={[-12.485, 1.196, -51.206]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube269_1"
             castShadow
@@ -17752,7 +17304,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve134.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-13.003, 0.782, -51.211]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -17761,8 +17313,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask135"
           position={[-15.328, 1.196, -51.206]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube271_1"
             castShadow
@@ -17833,7 +17384,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve135.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-15.846, 0.782, -51.211]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -17842,8 +17393,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask136"
           position={[-18.322, 1.196, -51.206]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube273_1"
             castShadow
@@ -17914,7 +17464,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve136.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-18.84, 0.782, -51.211]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -17923,8 +17473,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask137"
           position={[-21.043, 1.196, -51.206]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube275_1"
             castShadow
@@ -17966,7 +17515,7 @@ export function Modelo3D_Universidad(props) {
           receiveShadow
           geometry={nodes.support_pipe_1274.geometry}
           material={materials.Barra}
-          position={[-21.167, 0.986, -51.246]}
+          position={[-21.168, 0.986, -51.246]}
           rotation={[0, 0.013, 0]}
           scale={0.668}
         />
@@ -17976,7 +17525,7 @@ export function Modelo3D_Universidad(props) {
           receiveShadow
           geometry={nodes.support_pipe_1275.geometry}
           material={materials.Barra}
-          position={[-21.167, 0.986, -51.246]}
+          position={[-21.168, 0.986, -51.246]}
           rotation={[0, 0.013, 0]}
           scale={0.668}
         />
@@ -17995,7 +17544,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve137.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-21.56, 0.782, -51.211]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -18004,8 +17553,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask138"
           position={[-21.043, 1.196, -54.091]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube277_1"
             castShadow
@@ -18047,7 +17595,7 @@ export function Modelo3D_Universidad(props) {
           receiveShadow
           geometry={nodes.support_pipe_1276.geometry}
           material={materials.Barra}
-          position={[-21.167, 0.986, -54.13]}
+          position={[-21.168, 0.986, -54.13]}
           rotation={[0, 0.013, 0]}
           scale={0.668}
         />
@@ -18057,7 +17605,7 @@ export function Modelo3D_Universidad(props) {
           receiveShadow
           geometry={nodes.support_pipe_1277.geometry}
           material={materials.Barra}
-          position={[-21.167, 0.986, -54.13]}
+          position={[-21.168, 0.986, -54.13]}
           rotation={[0, 0.013, 0]}
           scale={0.668}
         />
@@ -18076,7 +17624,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve138.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-21.56, 0.782, -54.095]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -18085,8 +17633,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask139"
           position={[-21.043, 1.196, -57.23]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube279_1"
             castShadow
@@ -18128,7 +17675,7 @@ export function Modelo3D_Universidad(props) {
           receiveShadow
           geometry={nodes.support_pipe_1278.geometry}
           material={materials.Barra}
-          position={[-21.167, 0.986, -57.269]}
+          position={[-21.168, 0.986, -57.269]}
           rotation={[0, 0.013, 0]}
           scale={0.668}
         />
@@ -18138,7 +17685,7 @@ export function Modelo3D_Universidad(props) {
           receiveShadow
           geometry={nodes.support_pipe_1279.geometry}
           material={materials.Barra}
-          position={[-21.167, 0.986, -57.269]}
+          position={[-21.168, 0.986, -57.269]}
           rotation={[0, 0.013, 0]}
           scale={0.668}
         />
@@ -18157,7 +17704,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve139.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-21.56, 0.782, -57.234]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -18166,8 +17713,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask140"
           position={[-21.043, 1.196, -60.44]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube281_1"
             castShadow
@@ -18209,7 +17755,7 @@ export function Modelo3D_Universidad(props) {
           receiveShadow
           geometry={nodes.support_pipe_1280.geometry}
           material={materials.Barra}
-          position={[-21.167, 0.986, -60.48]}
+          position={[-21.168, 0.986, -60.48]}
           rotation={[0, 0.013, 0]}
           scale={0.668}
         />
@@ -18219,7 +17765,7 @@ export function Modelo3D_Universidad(props) {
           receiveShadow
           geometry={nodes.support_pipe_1281.geometry}
           material={materials.Barra}
-          position={[-21.167, 0.986, -60.48]}
+          position={[-21.168, 0.986, -60.48]}
           rotation={[0, 0.013, 0]}
           scale={0.668}
         />
@@ -18238,7 +17784,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve140.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-21.56, 0.782, -60.445]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -18247,8 +17793,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask141"
           position={[-21.043, 1.196, -60.44]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube283_1"
             castShadow
@@ -18290,7 +17835,7 @@ export function Modelo3D_Universidad(props) {
           receiveShadow
           geometry={nodes.support_pipe_1282.geometry}
           material={materials.Barra}
-          position={[-21.167, 0.986, -60.48]}
+          position={[-21.168, 0.986, -60.48]}
           rotation={[0, 0.013, 0]}
           scale={0.668}
         />
@@ -18300,7 +17845,7 @@ export function Modelo3D_Universidad(props) {
           receiveShadow
           geometry={nodes.support_pipe_1283.geometry}
           material={materials.Barra}
-          position={[-21.167, 0.986, -60.48]}
+          position={[-21.168, 0.986, -60.48]}
           rotation={[0, 0.013, 0]}
           scale={0.668}
         />
@@ -18319,7 +17864,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve141.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-21.56, 0.782, -60.445]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -18328,8 +17873,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask142"
           position={[-21.043, 1.196, -64.843]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube285_1"
             castShadow
@@ -18371,7 +17915,7 @@ export function Modelo3D_Universidad(props) {
           receiveShadow
           geometry={nodes.support_pipe_1284.geometry}
           material={materials.Barra}
-          position={[-21.167, 0.986, -64.883]}
+          position={[-21.168, 0.986, -64.883]}
           rotation={[0, 0.013, 0]}
           scale={0.668}
         />
@@ -18381,7 +17925,7 @@ export function Modelo3D_Universidad(props) {
           receiveShadow
           geometry={nodes.support_pipe_1285.geometry}
           material={materials.Barra}
-          position={[-21.167, 0.986, -64.883]}
+          position={[-21.168, 0.986, -64.883]}
           rotation={[0, 0.013, 0]}
           scale={0.668}
         />
@@ -18400,7 +17944,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve142.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-21.56, 0.782, -64.847]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -18409,8 +17953,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask143"
           position={[-18.371, 1.196, -64.843]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube287"
             castShadow
@@ -18481,7 +18024,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve143.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-18.889, 0.782, -64.847]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -18490,8 +18033,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask144"
           position={[-18.371, 1.196, -60.326]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube289"
             castShadow
@@ -18562,7 +18104,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve144.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-18.889, 0.782, -60.33]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -18571,8 +18113,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask145"
           position={[-18.371, 1.196, -57.21]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube291"
             castShadow
@@ -18643,8 +18184,8 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve145.geometry}
-          material={materials["Material.014"]}
-          position={[-18.889, 0.782, -57.214]}
+          material={materials['Material.014']}
+          position={[-18.889, 0.782, -57.215]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
         />
@@ -18652,8 +18193,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask146"
           position={[-18.371, 1.196, -54.074]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube293"
             castShadow
@@ -18724,7 +18264,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve146.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-18.889, 0.782, -54.078]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -18733,8 +18273,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask147"
           position={[-15.484, 1.196, -54.074]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube295"
             castShadow
@@ -18805,7 +18344,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve147.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-16.002, 0.782, -54.078]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -18814,8 +18353,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask148"
           position={[-15.484, 1.196, -57.121]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube297"
             castShadow
@@ -18886,7 +18424,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve148.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-16.002, 0.782, -57.125]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -18895,8 +18433,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask149"
           position={[-15.484, 1.196, -60.176]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube299"
             castShadow
@@ -18967,7 +18504,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve149.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-16.002, 0.782, -60.181]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -18976,8 +18513,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask150"
           position={[-15.484, 1.196, -64.874]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube301"
             castShadow
@@ -19048,7 +18584,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve150.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-16.002, 0.782, -64.878]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -19057,8 +18593,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask151"
           position={[-12.5, 1.196, -64.874]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube303"
             castShadow
@@ -19129,7 +18664,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve151.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-13.017, 0.782, -64.878]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -19138,8 +18673,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask152"
           position={[-12.5, 1.196, -60.066]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube305"
             castShadow
@@ -19210,7 +18744,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve152.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-13.017, 0.782, -60.071]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -19219,8 +18753,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask153"
           position={[-12.5, 1.196, -56.862]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube307"
             castShadow
@@ -19291,7 +18824,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve153.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-13.017, 0.782, -56.866]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -19300,8 +18833,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask154"
           position={[-12.5, 1.196, -54.075]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube309"
             castShadow
@@ -19372,7 +18904,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve154.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-13.017, 0.782, -54.079]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -19381,8 +18913,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask155"
           position={[-9.384, 1.196, -54.075]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube311"
             castShadow
@@ -19453,7 +18984,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve155.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-9.902, 0.782, -54.079]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -19462,8 +18993,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask156"
           position={[-9.384, 1.196, -56.851]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube313"
             castShadow
@@ -19534,7 +19064,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve156.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-9.902, 0.782, -56.856]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -19543,8 +19073,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask157"
           position={[-9.384, 1.196, -60.177]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube315"
             castShadow
@@ -19606,7 +19135,7 @@ export function Modelo3D_Universidad(props) {
           receiveShadow
           geometry={nodes.Cube158.geometry}
           material={materials.Plastico}
-          position={[-9.387, 1.194, -60.844]}
+          position={[-9.387, 1.194, -60.845]}
           rotation={[0, 0.013, 0]}
           scale={1.011}
         />
@@ -19615,7 +19144,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve157.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-9.902, 0.782, -60.181]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -19624,8 +19153,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask158"
           position={[-9.384, 1.196, -64.748]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube317"
             castShadow
@@ -19696,7 +19224,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve158.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-9.902, 0.782, -64.753]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -19705,8 +19233,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask159"
           position={[-6.486, 1.196, -64.748]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube319"
             castShadow
@@ -19777,7 +19304,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve159.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-7.004, 0.782, -64.753]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -19786,8 +19313,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask160"
           position={[-6.486, 1.196, -60.103]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube321"
             castShadow
@@ -19858,7 +19384,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve160.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-7.004, 0.782, -60.107]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -19867,8 +19393,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask161"
           position={[-6.486, 1.196, -56.925]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube323"
             castShadow
@@ -19939,7 +19464,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve161.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-7.004, 0.782, -56.929]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -19948,8 +19473,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask162"
           position={[-6.486, 1.196, -53.952]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube325"
             castShadow
@@ -20020,7 +19544,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve162.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-7.004, 0.782, -53.956]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -20029,8 +19553,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask163"
           position={[-53.037, 1.196, -48.971]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube327"
             castShadow
@@ -20101,7 +19624,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve163.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-53.554, 0.782, -48.976]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -20110,8 +19633,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask164"
           position={[-55.355, 1.196, -48.971]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube329"
             castShadow
@@ -20182,7 +19704,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve164.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-55.873, 0.782, -48.976]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -20191,8 +19713,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask165"
           position={[-58.044, 1.196, -48.971]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube331"
             castShadow
@@ -20263,7 +19784,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve165.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-58.562, 0.782, -48.976]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -20272,8 +19793,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask166"
           position={[-60.546, 1.196, -48.971]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube333"
             castShadow
@@ -20344,7 +19864,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve166.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-61.064, 0.782, -48.976]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -20353,8 +19873,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask167"
           position={[-63.221, 1.196, -48.971]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube335"
             castShadow
@@ -20425,7 +19944,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve167.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-63.739, 0.782, -48.976]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -20434,8 +19953,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask168"
           position={[-63.221, 1.196, -52.457]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube337"
             castShadow
@@ -20506,7 +20024,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve168.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-63.739, 0.782, -52.461]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -20515,8 +20033,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask169"
           position={[-60.616, 1.196, -52.457]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube339"
             castShadow
@@ -20587,7 +20104,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve169.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-61.133, 0.782, -52.461]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -20596,8 +20113,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask170"
           position={[-60.616, 1.196, -52.457]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube341"
             castShadow
@@ -20668,7 +20184,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve170.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-61.133, 0.782, -52.461]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -20677,8 +20193,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask171"
           position={[-58.112, 1.196, -52.457]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube343"
             castShadow
@@ -20749,7 +20264,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve171.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-58.63, 0.782, -52.461]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -20758,8 +20273,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask172"
           position={[-55.352, 1.196, -52.457]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube345"
             castShadow
@@ -20830,7 +20344,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve172.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-55.869, 0.782, -52.461]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -20839,8 +20353,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask173"
           position={[-52.91, 1.196, -52.457]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube347"
             castShadow
@@ -20911,7 +20424,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve173.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-53.428, 0.782, -52.461]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -20920,8 +20433,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask174"
           position={[-52.91, 1.196, -56.061]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube349"
             castShadow
@@ -20953,7 +20465,7 @@ export function Modelo3D_Universidad(props) {
           receiveShadow
           geometry={nodes.Support_pipe_2174.geometry}
           material={materials.Barra}
-          position={[-52.347, 0.189, -55.822]}
+          position={[-52.347, 0.189, -55.823]}
           rotation={[0, 0.013, 0]}
           scale={1.011}
         />
@@ -20992,7 +20504,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve174.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-53.428, 0.782, -56.066]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -21001,8 +20513,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask175"
           position={[-55.363, 1.196, -56.061]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube351"
             castShadow
@@ -21034,7 +20545,7 @@ export function Modelo3D_Universidad(props) {
           receiveShadow
           geometry={nodes.Support_pipe_2175.geometry}
           material={materials.Barra}
-          position={[-54.8, 0.189, -55.822]}
+          position={[-54.8, 0.189, -55.823]}
           rotation={[0, 0.013, 0]}
           scale={1.011}
         />
@@ -21073,7 +20584,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve175.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-55.881, 0.782, -56.066]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -21082,8 +20593,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask176"
           position={[-58.033, 1.196, -56.061]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube353"
             castShadow
@@ -21115,7 +20625,7 @@ export function Modelo3D_Universidad(props) {
           receiveShadow
           geometry={nodes.Support_pipe_2176.geometry}
           material={materials.Barra}
-          position={[-57.47, 0.189, -55.822]}
+          position={[-57.47, 0.189, -55.823]}
           rotation={[0, 0.013, 0]}
           scale={1.011}
         />
@@ -21154,7 +20664,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve176.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-58.55, 0.782, -56.066]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -21163,8 +20673,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask177"
           position={[-60.621, 1.196, -56.061]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube355"
             castShadow
@@ -21196,7 +20705,7 @@ export function Modelo3D_Universidad(props) {
           receiveShadow
           geometry={nodes.Support_pipe_2177.geometry}
           material={materials.Barra}
-          position={[-60.058, 0.189, -55.822]}
+          position={[-60.058, 0.189, -55.823]}
           rotation={[0, 0.013, 0]}
           scale={1.011}
         />
@@ -21235,7 +20744,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve177.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-61.138, 0.782, -56.066]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -21244,8 +20753,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask178"
           position={[-63.196, 1.196, -56.061]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube357"
             castShadow
@@ -21277,7 +20785,7 @@ export function Modelo3D_Universidad(props) {
           receiveShadow
           geometry={nodes.Support_pipe_2178.geometry}
           material={materials.Barra}
-          position={[-62.633, 0.189, -55.822]}
+          position={[-62.632, 0.189, -55.823]}
           rotation={[0, 0.013, 0]}
           scale={1.011}
         />
@@ -21316,7 +20824,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve178.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-63.713, 0.782, -56.066]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -21325,8 +20833,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask179"
           position={[-63.196, 1.196, -60.998]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube359"
             castShadow
@@ -21358,7 +20865,7 @@ export function Modelo3D_Universidad(props) {
           receiveShadow
           geometry={nodes.Support_pipe_2179.geometry}
           material={materials.Barra}
-          position={[-62.633, 0.189, -60.759]}
+          position={[-62.632, 0.189, -60.759]}
           rotation={[0, 0.013, 0]}
           scale={1.011}
         />
@@ -21397,7 +20904,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve179.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-63.713, 0.782, -61.003]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -21406,8 +20913,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask180"
           position={[-60.641, 1.196, -60.998]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube361"
             castShadow
@@ -21478,7 +20984,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve180.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-61.159, 0.782, -61.003]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -21487,8 +20993,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask181"
           position={[-58.117, 1.196, -60.998]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube363"
             castShadow
@@ -21559,7 +21064,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve181.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-58.634, 0.782, -61.003]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -21568,8 +21073,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask182"
           position={[-55.445, 1.196, -60.998]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube365"
             castShadow
@@ -21640,7 +21144,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve182.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-55.962, 0.782, -61.003]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -21649,8 +21153,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask183"
           position={[-52.808, 1.196, -60.998]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube367"
             castShadow
@@ -21721,7 +21224,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve183.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-53.326, 0.782, -61.003]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -21730,8 +21233,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask184"
           position={[-52.808, 1.196, -65.62]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube369"
             castShadow
@@ -21802,7 +21304,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve184.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-53.326, 0.782, -65.624]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -21811,8 +21313,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask185"
           position={[-55.453, 1.196, -65.62]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube371"
             castShadow
@@ -21883,7 +21384,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve185.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-55.97, 0.782, -65.624]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -21892,8 +21393,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask186"
           position={[-58.043, 1.196, -65.62]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube373"
             castShadow
@@ -21964,7 +21464,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve186.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-58.561, 0.782, -65.624]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -21973,8 +21473,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask187"
           position={[-60.7, 1.196, -65.62]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube375"
             castShadow
@@ -22045,7 +21544,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve187.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-61.218, 0.782, -65.624]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -22054,8 +21553,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask188"
           position={[-60.7, 1.196, -65.62]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube377"
             castShadow
@@ -22126,7 +21624,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve188.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-61.218, 0.782, -65.624]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -22135,8 +21633,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask189"
           position={[-109.499, 1.196, -65.62]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube379"
             castShadow
@@ -22207,7 +21704,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve189.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-110.016, 0.782, -65.624]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -22216,8 +21713,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask190"
           position={[-112.347, 1.196, -65.62]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube381"
             castShadow
@@ -22288,7 +21784,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve190.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-112.864, 0.782, -65.624]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -22297,8 +21793,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask191"
           position={[-115.52, 1.196, -65.62]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube383"
             castShadow
@@ -22369,7 +21864,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve191.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-116.038, 0.782, -65.624]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -22378,8 +21873,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask192"
           position={[-118.766, 1.196, -65.62]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube385"
             castShadow
@@ -22450,7 +21944,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve192.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-119.283, 0.782, -65.624]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -22459,8 +21953,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask193"
           position={[-121.761, 1.196, -65.62]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube387"
             castShadow
@@ -22531,7 +22024,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve193.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-122.278, 0.782, -65.624]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -22540,8 +22033,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask194"
           position={[-124.934, 1.196, -65.62]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube389"
             castShadow
@@ -22612,7 +22104,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve194.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-125.451, 0.782, -65.624]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -22621,8 +22113,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask195"
           position={[-124.934, 1.196, -61.613]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube391"
             castShadow
@@ -22693,7 +22184,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve195.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-125.451, 0.782, -61.617]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -22702,8 +22193,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask196"
           position={[-124.934, 1.196, -58.002]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube393"
             castShadow
@@ -22774,7 +22264,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve196.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-125.451, 0.782, -58.006]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -22783,8 +22273,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask197"
           position={[-124.934, 1.196, -55.114]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube395"
             castShadow
@@ -22855,7 +22344,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve197.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-125.451, 0.782, -55.118]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -22864,8 +22353,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask198"
           position={[-124.934, 1.196, -51.692]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube397"
             castShadow
@@ -22936,7 +22424,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve198.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-125.451, 0.782, -51.696]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -22945,8 +22433,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask199"
           position={[-121.773, 1.196, -51.692]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube399"
             castShadow
@@ -23017,7 +22504,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve199.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-122.29, 0.782, -51.696]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -23026,8 +22513,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask200"
           position={[-121.773, 1.196, -54.927]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube401"
             castShadow
@@ -23098,7 +22584,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve200.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-122.29, 0.782, -54.932]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -23107,8 +22593,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask201"
           position={[-121.773, 1.196, -57.993]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube403"
             castShadow
@@ -23179,7 +22664,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve201.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-122.29, 0.782, -57.997]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -23188,8 +22673,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask202"
           position={[-121.773, 1.196, -61.621]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube405"
             castShadow
@@ -23260,7 +22744,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve202.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-122.29, 0.782, -61.626]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -23269,8 +22753,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask203"
           position={[-118.739, 1.196, -61.621]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube407"
             castShadow
@@ -23341,7 +22824,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve203.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-119.257, 0.782, -61.626]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -23350,8 +22833,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask204"
           position={[-118.739, 1.196, -57.607]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube409"
             castShadow
@@ -23422,7 +22904,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve204.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-119.257, 0.782, -57.611]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -23431,8 +22913,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask205"
           position={[-118.739, 1.196, -54.896]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube411"
             castShadow
@@ -23503,7 +22984,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve205.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-119.257, 0.782, -54.901]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -23512,8 +22993,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask206"
           position={[-118.739, 1.196, -51.798]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube413"
             castShadow
@@ -23584,7 +23064,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve206.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-119.257, 0.782, -51.802]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -23593,8 +23073,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask207"
           position={[-115.551, 1.196, -51.798]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube415"
             castShadow
@@ -23665,7 +23144,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve207.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-116.068, 0.782, -51.802]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -23674,8 +23153,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask208"
           position={[-115.551, 1.196, -54.869]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube417"
             castShadow
@@ -23746,7 +23224,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve208.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-116.068, 0.782, -54.873]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -23755,8 +23233,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask209"
           position={[-115.551, 1.196, -57.606]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube419"
             castShadow
@@ -23827,7 +23304,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve209.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-116.068, 0.782, -57.611]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -23836,8 +23313,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask210"
           position={[-115.551, 1.196, -61.489]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube421"
             castShadow
@@ -23908,7 +23384,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve210.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-116.068, 0.782, -61.493]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -23917,8 +23393,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask211"
           position={[-112.377, 1.196, -61.489]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube423"
             castShadow
@@ -23989,7 +23464,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve211.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-112.894, 0.782, -61.493]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -23998,8 +23473,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask212"
           position={[-112.377, 1.196, -57.7]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube425"
             castShadow
@@ -24070,7 +23544,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve212.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-112.894, 0.782, -57.704]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -24079,8 +23553,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask213"
           position={[-112.377, 1.196, -54.695]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube427"
             castShadow
@@ -24151,7 +23624,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve213.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-112.894, 0.782, -54.7]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -24160,8 +23633,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask214"
           position={[-112.377, 1.196, -51.881]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube429"
             castShadow
@@ -24232,17 +23704,16 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve214.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-112.894, 0.782, -51.886]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
         />
         <group
           name="Table_dask215"
-          position={[-109.656, 1.196, -51.881]}
+          position={[-109.655, 1.196, -51.881]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube431"
             castShadow
@@ -24313,17 +23784,16 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve215.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-110.173, 0.782, -51.886]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
         />
         <group
           name="Table_dask216"
-          position={[-109.656, 1.196, -54.493]}
+          position={[-109.655, 1.196, -54.493]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube433"
             castShadow
@@ -24394,17 +23864,16 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve216.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-110.173, 0.782, -54.497]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
         />
         <group
           name="Table_dask217"
-          position={[-109.656, 1.196, -57.676]}
+          position={[-109.655, 1.196, -57.676]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube435"
             castShadow
@@ -24475,7 +23944,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve217.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-110.173, 0.782, -57.68]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -24484,8 +23953,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask218"
           position={[-133.502, 1.196, -49.969]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube437"
             castShadow
@@ -24556,7 +24024,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve218.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-134.019, 0.782, -49.974]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -24565,8 +24033,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask219"
           position={[-136.287, 1.196, -49.969]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube439"
             castShadow
@@ -24637,7 +24104,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve219.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-136.804, 0.782, -49.974]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -24646,8 +24113,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask220"
           position={[-139.427, 1.196, -49.969]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube441"
             castShadow
@@ -24718,7 +24184,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve220.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-139.945, 0.782, -49.974]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -24727,8 +24193,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask221"
           position={[-142.394, 1.196, -49.969]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube443"
             castShadow
@@ -24799,7 +24264,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve221.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-142.912, 0.782, -49.974]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -24808,8 +24273,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask222"
           position={[-145.548, 1.196, -49.969]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube445"
             castShadow
@@ -24880,7 +24344,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve222.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-146.065, 0.782, -49.974]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -24889,8 +24353,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask223"
           position={[-148.646, 1.196, -49.969]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube447"
             castShadow
@@ -24961,7 +24424,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve223.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-149.164, 0.782, -49.974]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -24970,8 +24433,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask224"
           position={[-148.646, 1.196, -53.079]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube449"
             castShadow
@@ -25042,7 +24504,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve224.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-149.164, 0.782, -53.084]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -25051,8 +24513,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask225"
           position={[-148.646, 1.196, -56.669]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube451"
             castShadow
@@ -25123,7 +24584,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve225.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-149.164, 0.782, -56.674]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -25132,8 +24593,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask226"
           position={[-148.646, 1.196, -60.679]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube453"
             castShadow
@@ -25204,7 +24664,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve226.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-149.164, 0.782, -60.684]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -25213,8 +24673,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask227"
           position={[-148.646, 1.196, -65.884]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube455"
             castShadow
@@ -25285,7 +24744,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve227.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-149.164, 0.782, -65.888]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -25294,8 +24753,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask228"
           position={[-145.605, 1.196, -65.884]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube457"
             castShadow
@@ -25366,7 +24824,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve228.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-146.122, 0.782, -65.888]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -25375,8 +24833,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask229"
           position={[-145.605, 1.196, -60.467]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube459"
             castShadow
@@ -25447,7 +24904,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve229.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-146.122, 0.782, -60.471]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -25456,8 +24913,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask230"
           position={[-145.605, 1.196, -56.547]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube461"
             castShadow
@@ -25528,7 +24984,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve230.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-146.122, 0.782, -56.552]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -25537,8 +24993,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask231"
           position={[-145.605, 1.196, -53.135]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube463"
             castShadow
@@ -25609,7 +25064,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve231.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-146.122, 0.782, -53.14]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -25618,8 +25073,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask232"
           position={[-142.471, 1.196, -53.135]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube465"
             castShadow
@@ -25690,7 +25144,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve232.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-142.989, 0.782, -53.14]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -25699,8 +25153,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask233"
           position={[-142.471, 1.196, -56.406]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube467"
             castShadow
@@ -25771,7 +25224,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve233.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-142.989, 0.782, -56.41]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -25780,8 +25233,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask234"
           position={[-142.471, 1.196, -60.318]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube469"
             castShadow
@@ -25852,7 +25304,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve234.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-142.989, 0.782, -60.323]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -25861,8 +25313,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask235"
           position={[-142.471, 1.196, -65.679]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube471"
             castShadow
@@ -25933,7 +25384,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve235.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-142.989, 0.782, -65.683]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -25942,8 +25393,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask236"
           position={[-139.391, 1.196, -65.679]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube473"
             castShadow
@@ -26014,7 +25464,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve236.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-139.909, 0.782, -65.683]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -26023,8 +25473,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask237"
           position={[-139.391, 1.196, -60.167]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube475"
             castShadow
@@ -26095,7 +25544,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve237.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-139.909, 0.782, -60.171]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -26104,8 +25553,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask238"
           position={[-139.391, 1.196, -56.41]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube477"
             castShadow
@@ -26176,7 +25624,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve238.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-139.909, 0.782, -56.415]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -26185,8 +25633,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask239"
           position={[-139.391, 1.196, -53.079]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube479"
             castShadow
@@ -26257,7 +25704,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve239.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-139.909, 0.782, -53.084]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -26266,8 +25713,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask240"
           position={[-136.243, 1.196, -53.079]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube481"
             castShadow
@@ -26338,7 +25784,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve240.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-136.761, 0.782, -53.084]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -26347,8 +25793,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask241"
           position={[-136.243, 1.196, -56.304]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube483"
             castShadow
@@ -26419,7 +25864,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve241.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-136.761, 0.782, -56.308]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -26428,8 +25873,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask242"
           position={[-136.243, 1.196, -60.103]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube485"
             castShadow
@@ -26500,7 +25944,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve242.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-136.761, 0.782, -60.108]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -26509,8 +25953,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask243"
           position={[-136.243, 1.196, -65.615]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube487"
             castShadow
@@ -26581,7 +26024,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve243.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-136.761, 0.782, -65.619]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -26590,8 +26033,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask244"
           position={[-133.326, 1.196, -65.615]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube489"
             castShadow
@@ -26662,7 +26104,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve244.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-133.844, 0.782, -65.619]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -26671,8 +26113,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask245"
           position={[-133.326, 1.196, -60.041]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube491"
             castShadow
@@ -26743,7 +26184,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve245.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-133.844, 0.782, -60.045]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -26752,8 +26193,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask246"
           position={[-133.326, 1.196, -56.293]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube493"
             castShadow
@@ -26824,7 +26264,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve246.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-133.844, 0.782, -56.298]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -26833,8 +26273,7 @@ export function Modelo3D_Universidad(props) {
           name="Table_dask247"
           position={[-133.326, 1.196, -53.098]}
           rotation={[0, 0.013, 0]}
-          scale={0.668}
-        >
+          scale={0.668}>
           <mesh
             name="Cube495"
             castShadow
@@ -26905,7 +26344,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.BezierCurve247.geometry}
-          material={materials["Material.014"]}
+          material={materials['Material.014']}
           position={[-133.844, 0.782, -53.102]}
           rotation={[Math.PI, 1.558, 2.689]}
           scale={0.668}
@@ -26914,35 +26353,30 @@ export function Modelo3D_Universidad(props) {
           name="Plastico"
           position={[-4.229, 2.148, -11.348]}
           rotation={[-Math.PI, 1.531, -Math.PI]}
-          scale={[1.232, 0.452, 0.606]}
-        >
+          scale={[1.232, 0.452, 0.606]}>
           <mesh
             name="Plane113"
             castShadow
             receiveShadow
             geometry={nodes.Plane113.geometry}
-            material={materials["Plastico.002"]}
+            material={materials['Plastico.002']}
           />
           <mesh
             name="Plane113_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane113_1.geometry}
-            material={materials["Fierro.004"]}
+            material={materials['Fierro.004']}
           />
           <mesh
             name="Plane113_2"
             castShadow
             receiveShadow
             geometry={nodes.Plane113_2.geometry}
-            material={materials["Patas.001"]}
+            material={materials['Patas.001']}
           />
         </group>
-        <group
-          name="Cube"
-          position={[-1.032, 9.789, -18.688]}
-          scale={[0.635, 0.635, 5.531]}
-        >
+        <group name="Cube" position={[-1.032, 9.789, -18.688]} scale={[0.635, 0.635, 5.531]}>
           <mesh
             name="Cube_1"
             castShadow
@@ -26962,28 +26396,27 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Cube_3.geometry}
-            material={materials["Material.015"]}
+            material={materials['Material.015']}
           />
           <mesh
             name="Cube_4"
             castShadow
             receiveShadow
             geometry={nodes.Cube_4.geometry}
-            material={materials["Borde.001"]}
+            material={materials['Borde.001']}
           />
         </group>
         <group
           name="Cilindro"
           position={[-16.746, 13.834, -18.385]}
           rotation={[0, 0.07, 0]}
-          scale={[0.169, 0.567, 0.111]}
-        >
+          scale={[0.169, 0.567, 0.111]}>
           <mesh
             name="Cilindro_1"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro_1.geometry}
-            material={materials["Material.016"]}
+            material={materials['Material.016']}
           />
           <mesh
             name="Cilindro_2"
@@ -27018,14 +26451,14 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Cilindro_6.geometry}
-            material={materials["Rojo.001"]}
+            material={materials['Rojo.001']}
           />
           <mesh
             name="Cilindro_7"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro_7.geometry}
-            material={materials["Amarillo.001"]}
+            material={materials['Amarillo.001']}
           />
           <mesh
             name="Cilindro_8"
@@ -27129,8 +26562,7 @@ export function Modelo3D_Universidad(props) {
           name="Down_Bin"
           position={[-12.429, 0.109, -29.624]}
           rotation={[Math.PI / 2, 0, 0.113]}
-          scale={0.015}
-        >
+          scale={0.015}>
           <mesh
             name="Mesh013"
             castShadow
@@ -27247,8 +26679,7 @@ export function Modelo3D_Universidad(props) {
           name="Plane019"
           position={[-60.054, -0.691, 10.178]}
           rotation={[-0.012, 0.006, 0]}
-          scale={2.402}
-        >
+          scale={2.402}>
           <mesh
             name="Plane115"
             castShadow
@@ -27298,8 +26729,7 @@ export function Modelo3D_Universidad(props) {
           name="Down_Bin002"
           position={[-58.132, -0.574, 11.945]}
           rotation={[Math.PI / 2, 0, 1.648]}
-          scale={0.026}
-        >
+          scale={0.026}>
           <mesh
             name="Mesh023"
             castShadow
@@ -27312,35 +26742,35 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Mesh023_1.geometry}
-            material={materials["BasureroBase.001"]}
+            material={materials['BasureroBase.001']}
           />
           <mesh
             name="Mesh023_2"
             castShadow
             receiveShadow
             geometry={nodes.Mesh023_2.geometry}
-            material={materials["BasureroCabeza.001"]}
+            material={materials['BasureroCabeza.001']}
           />
           <mesh
             name="Mesh023_3"
             castShadow
             receiveShadow
             geometry={nodes.Mesh023_3.geometry}
-            material={materials["BlackBack.001"]}
+            material={materials['BlackBack.001']}
           />
           <mesh
             name="Mesh023_4"
             castShadow
             receiveShadow
             geometry={nodes.Mesh023_4.geometry}
-            material={materials["Down_RecycleBin.001"]}
+            material={materials['Down_RecycleBin.001']}
           />
           <mesh
             name="Mesh023_5"
             castShadow
             receiveShadow
             geometry={nodes.Mesh023_5.geometry}
-            material={materials["ReflectBack.001"]}
+            material={materials['ReflectBack.001']}
           />
         </group>
         <mesh
@@ -27348,7 +26778,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.Cylinder008.geometry}
-          material={materials["Valve.001"]}
+          material={materials['Valve.001']}
           position={[-58.972, 3.828, 14.213]}
           rotation={[0, 1.547, 0]}
           scale={0.066}
@@ -27377,8 +26807,7 @@ export function Modelo3D_Universidad(props) {
           name="Plane009"
           position={[-64.937, -0.691, 10.178]}
           rotation={[-0.012, 0.006, 0]}
-          scale={2.402}
-        >
+          scale={2.402}>
           <mesh
             name="Plane116"
             castShadow
@@ -27529,7 +26958,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.Cylinder009.geometry}
-          material={materials["Valve.001"]}
+          material={materials['Valve.001']}
           position={[-58.972, 3.828, 17.106]}
           rotation={[0, 1.547, 0]}
           scale={0.066}
@@ -27538,8 +26967,7 @@ export function Modelo3D_Universidad(props) {
           name="Down_Bin001"
           position={[-69.008, -0.574, 12]}
           rotation={[Math.PI / 2, 0, 1.648]}
-          scale={0.026}
-        >
+          scale={0.026}>
           <mesh
             name="Mesh001"
             castShadow
@@ -27552,43 +26980,42 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Mesh001_1.geometry}
-            material={materials["BasureroBase.001"]}
+            material={materials['BasureroBase.001']}
           />
           <mesh
             name="Mesh001_2"
             castShadow
             receiveShadow
             geometry={nodes.Mesh001_2.geometry}
-            material={materials["BasureroCabeza.001"]}
+            material={materials['BasureroCabeza.001']}
           />
           <mesh
             name="Mesh001_3"
             castShadow
             receiveShadow
             geometry={nodes.Mesh001_3.geometry}
-            material={materials["BlackBack.001"]}
+            material={materials['BlackBack.001']}
           />
           <mesh
             name="Mesh001_4"
             castShadow
             receiveShadow
             geometry={nodes.Mesh001_4.geometry}
-            material={materials["Down_RecycleBin.001"]}
+            material={materials['Down_RecycleBin.001']}
           />
           <mesh
             name="Mesh001_5"
             castShadow
             receiveShadow
             geometry={nodes.Mesh001_5.geometry}
-            material={materials["ReflectBack.001"]}
+            material={materials['ReflectBack.001']}
           />
         </group>
         <group
           name="Down_Bin003"
           position={[-79.039, -0.574, 12]}
           rotation={[Math.PI / 2, 0, -1.53]}
-          scale={0.026}
-        >
+          scale={0.026}>
           <mesh
             name="Mesh002"
             castShadow
@@ -27601,43 +27028,42 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Mesh002_1.geometry}
-            material={materials["BasureroBase.001"]}
+            material={materials['BasureroBase.001']}
           />
           <mesh
             name="Mesh002_2"
             castShadow
             receiveShadow
             geometry={nodes.Mesh002_2.geometry}
-            material={materials["BasureroCabeza.001"]}
+            material={materials['BasureroCabeza.001']}
           />
           <mesh
             name="Mesh002_3"
             castShadow
             receiveShadow
             geometry={nodes.Mesh002_3.geometry}
-            material={materials["BlackBack.001"]}
+            material={materials['BlackBack.001']}
           />
           <mesh
             name="Mesh002_4"
             castShadow
             receiveShadow
             geometry={nodes.Mesh002_4.geometry}
-            material={materials["Down_RecycleBin.001"]}
+            material={materials['Down_RecycleBin.001']}
           />
           <mesh
             name="Mesh002_5"
             castShadow
             receiveShadow
             geometry={nodes.Mesh002_5.geometry}
-            material={materials["ReflectBack.001"]}
+            material={materials['ReflectBack.001']}
           />
         </group>
         <group
           name="Down_Bin004"
           position={[-79.039, -0.574, 12]}
           rotation={[Math.PI / 2, 0, -1.53]}
-          scale={0.026}
-        >
+          scale={0.026}>
           <mesh
             name="Mesh003"
             castShadow
@@ -27650,43 +27076,42 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Mesh003_1.geometry}
-            material={materials["BasureroBase.001"]}
+            material={materials['BasureroBase.001']}
           />
           <mesh
             name="Mesh003_2"
             castShadow
             receiveShadow
             geometry={nodes.Mesh003_2.geometry}
-            material={materials["BasureroCabeza.001"]}
+            material={materials['BasureroCabeza.001']}
           />
           <mesh
             name="Mesh003_3"
             castShadow
             receiveShadow
             geometry={nodes.Mesh003_3.geometry}
-            material={materials["BlackBack.001"]}
+            material={materials['BlackBack.001']}
           />
           <mesh
             name="Mesh003_4"
             castShadow
             receiveShadow
             geometry={nodes.Mesh003_4.geometry}
-            material={materials["Down_RecycleBin.001"]}
+            material={materials['Down_RecycleBin.001']}
           />
           <mesh
             name="Mesh003_5"
             castShadow
             receiveShadow
             geometry={nodes.Mesh003_5.geometry}
-            material={materials["ReflectBack.001"]}
+            material={materials['ReflectBack.001']}
           />
         </group>
         <group
           name="Down_Bin005"
           position={[-91.271, 0.16, 19.769]}
           rotation={[Math.PI / 2, 0, -3.103]}
-          scale={0.026}
-        >
+          scale={0.026}>
           <mesh
             name="Mesh004"
             castShadow
@@ -27699,35 +27124,35 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Mesh004_1.geometry}
-            material={materials["BasureroBase.001"]}
+            material={materials['BasureroBase.001']}
           />
           <mesh
             name="Mesh004_2"
             castShadow
             receiveShadow
             geometry={nodes.Mesh004_2.geometry}
-            material={materials["BasureroCabeza.001"]}
+            material={materials['BasureroCabeza.001']}
           />
           <mesh
             name="Mesh004_3"
             castShadow
             receiveShadow
             geometry={nodes.Mesh004_3.geometry}
-            material={materials["BlackBack.001"]}
+            material={materials['BlackBack.001']}
           />
           <mesh
             name="Mesh004_4"
             castShadow
             receiveShadow
             geometry={nodes.Mesh004_4.geometry}
-            material={materials["Down_RecycleBin.001"]}
+            material={materials['Down_RecycleBin.001']}
           />
           <mesh
             name="Mesh004_5"
             castShadow
             receiveShadow
             geometry={nodes.Mesh004_5.geometry}
-            material={materials["ReflectBack.001"]}
+            material={materials['ReflectBack.001']}
           />
         </group>
         <mesh
@@ -27784,8 +27209,7 @@ export function Modelo3D_Universidad(props) {
           name="Plane012"
           position={[-84.726, -0.691, 10.178]}
           rotation={[-0.012, 0.006, 0]}
-          scale={2.402}
-        >
+          scale={2.402}>
           <mesh
             name="Plane119"
             castShadow
@@ -27826,7 +27250,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.Cylinder010.geometry}
-          material={materials["Valve.001"]}
+          material={materials['Valve.001']}
           position={[-91.358, 3.828, 17.043]}
           rotation={[Math.PI, -1.565, Math.PI]}
           scale={0.066}
@@ -27835,8 +27259,7 @@ export function Modelo3D_Universidad(props) {
           name="Plane013"
           position={[-89.609, -0.691, 10.178]}
           rotation={[-0.012, 0.006, 0]}
-          scale={2.402}
-        >
+          scale={2.402}>
           <mesh
             name="Plane120"
             castShadow
@@ -27937,7 +27360,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.Cylinder011.geometry}
-          material={materials["Valve.001"]}
+          material={materials['Valve.001']}
           position={[-91.408, 3.828, 14.15]}
           rotation={[Math.PI, -1.565, Math.PI]}
           scale={0.066}
@@ -27946,28 +27369,27 @@ export function Modelo3D_Universidad(props) {
           name="Cabinet1001"
           position={[-60.759, 0.265, 19.716]}
           rotation={[Math.PI, -0.001, Math.PI]}
-          scale={[5.247, 1.639, 1.639]}
-        >
+          scale={[5.247, 1.639, 1.639]}>
           <mesh
             name="Cabinet1003"
             castShadow
             receiveShadow
             geometry={nodes.Cabinet1003.geometry}
-            material={materials["Mesa.001"]}
+            material={materials['Mesa.001']}
           />
           <mesh
             name="Cabinet1003_1"
             castShadow
             receiveShadow
             geometry={nodes.Cabinet1003_1.geometry}
-            material={materials["Color M00"]}
+            material={materials['Color M00']}
           />
           <mesh
             name="Cabinet1003_2"
             castShadow
             receiveShadow
             geometry={nodes.Cabinet1003_2.geometry}
-            material={materials["Vidrio.001"]}
+            material={materials['Vidrio.001']}
           />
           <mesh
             name="Cabinet1003_3"
@@ -27988,28 +27410,27 @@ export function Modelo3D_Universidad(props) {
           name="Cabinet1002"
           position={[-82.95, 0.265, 19.716]}
           rotation={[Math.PI, -0.001, Math.PI]}
-          scale={[5.247, 1.639, 1.639]}
-        >
+          scale={[5.247, 1.639, 1.639]}>
           <mesh
             name="Cabinet1001_1"
             castShadow
             receiveShadow
             geometry={nodes.Cabinet1001_1.geometry}
-            material={materials["Mesa.001"]}
+            material={materials['Mesa.001']}
           />
           <mesh
             name="Cabinet1001_2"
             castShadow
             receiveShadow
             geometry={nodes.Cabinet1001_2.geometry}
-            material={materials["Color M00"]}
+            material={materials['Color M00']}
           />
           <mesh
             name="Cabinet1001_3"
             castShadow
             receiveShadow
             geometry={nodes.Cabinet1001_3.geometry}
-            material={materials["Vidrio.001"]}
+            material={materials['Vidrio.001']}
           />
           <mesh
             name="Cabinet1001_4"
@@ -28030,14 +27451,13 @@ export function Modelo3D_Universidad(props) {
           name="Focos004"
           position={[126.938, 14.13, -23.551]}
           rotation={[Math.PI / 2, 0, 3.113]}
-          scale={[-0.066, -1.268, -0.066]}
-        >
+          scale={[-0.066, -1.268, -0.066]}>
           <mesh
             name="Cilindro005"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro005.geometry}
-            material={materials["Plastico.001"]}
+            material={materials['Plastico.001']}
           />
           <mesh
             name="Cilindro005_1"
@@ -28058,8 +27478,7 @@ export function Modelo3D_Universidad(props) {
           name="ventilador_cafeteria004"
           position={[123.822, 14.372, -21.622]}
           rotation={[Math.PI / 2, 0, -1.658]}
-          scale={[3.1, 3.485, 2.455]}
-        >
+          scale={[3.1, 3.485, 2.455]}>
           <mesh
             name="Black_Metallic_Ceiling_Fan004"
             castShadow
@@ -28079,8 +27498,7 @@ export function Modelo3D_Universidad(props) {
           name="Cube249"
           position={[135.875, 2.569, -13.903]}
           rotation={[0, -1.548, 0]}
-          scale={2.215}
-        >
+          scale={2.215}>
           <mesh
             name="Cube497"
             castShadow
@@ -28114,41 +27532,36 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Cube497_4.geometry}
-            material={materials["Material.014"]}
+            material={materials['Material.014']}
           />
         </group>
-        <group
-          name="Cube250"
-          position={[111.78, 9.789, -22.703]}
-          scale={[0.65, 0.65, 5.66]}
-        >
+        <group name="Cube250" position={[111.78, 9.789, -22.703]} scale={[0.65, 0.65, 5.66]}>
           <mesh
             name="Cube498"
             castShadow
             receiveShadow
             geometry={nodes.Cube498.geometry}
-            material={materials["Material.015"]}
+            material={materials['Material.015']}
           />
           <mesh
             name="Cube498_1"
             castShadow
             receiveShadow
             geometry={nodes.Cube498_1.geometry}
-            material={materials["Borde.001"]}
+            material={materials['Borde.001']}
           />
         </group>
         <group
           name="Cilindro001"
           position={[120.743, 13.834, -18.385]}
           rotation={[0, 0.07, 0]}
-          scale={[0.169, 0.567, 0.111]}
-        >
+          scale={[0.169, 0.567, 0.111]}>
           <mesh
             name="Cilindro010"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro010.geometry}
-            material={materials["Material.016"]}
+            material={materials['Material.016']}
           />
           <mesh
             name="Cilindro010_1"
@@ -28183,14 +27596,14 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Cilindro010_5.geometry}
-            material={materials["Rojo.001"]}
+            material={materials['Rojo.001']}
           />
           <mesh
             name="Cilindro010_6"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro010_6.geometry}
-            material={materials["Amarillo.001"]}
+            material={materials['Amarillo.001']}
           />
           <mesh
             name="Cilindro010_7"
@@ -28204,8 +27617,7 @@ export function Modelo3D_Universidad(props) {
           name="Down_Bin006"
           position={[125.06, 0.109, -29.624]}
           rotation={[Math.PI / 2, 0, 0.113]}
-          scale={0.015}
-        >
+          scale={0.015}>
           <mesh
             name="Mesh016"
             castShadow
@@ -28232,56 +27644,50 @@ export function Modelo3D_Universidad(props) {
           name="Plastico002"
           position={[115.065, 2.735, -14.068]}
           rotation={[Math.PI, -1.553, Math.PI]}
-          scale={[2.219, 0.814, 1.091]}
-        >
+          scale={[2.219, 0.814, 1.091]}>
           <mesh
             name="Plane123"
             castShadow
             receiveShadow
             geometry={nodes.Plane123.geometry}
-            material={materials["Plastico.002"]}
+            material={materials['Plastico.002']}
           />
           <mesh
             name="Plane123_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane123_1.geometry}
-            material={materials["Fierro.004"]}
+            material={materials['Fierro.004']}
           />
           <mesh
             name="Plane123_2"
             castShadow
             receiveShadow
             geometry={nodes.Plane123_2.geometry}
-            material={materials["Patas.001"]}
+            material={materials['Patas.001']}
           />
         </group>
-        <group
-          name="Cube251"
-          position={[111.78, 9.789, -34.757]}
-          scale={[0.65, 0.65, 5.66]}
-        >
+        <group name="Cube251" position={[111.78, 9.789, -34.757]} scale={[0.65, 0.65, 5.66]}>
           <mesh
             name="Cube500"
             castShadow
             receiveShadow
             geometry={nodes.Cube500.geometry}
-            material={materials["Material.015"]}
+            material={materials['Material.015']}
           />
           <mesh
             name="Cube500_1"
             castShadow
             receiveShadow
             geometry={nodes.Cube500_1.geometry}
-            material={materials["Borde.001"]}
+            material={materials['Borde.001']}
           />
         </group>
         <group
           name="Cube252"
           position={[133.134, 2.569, -13.903]}
           rotation={[0, -1.548, 0]}
-          scale={2.215}
-        >
+          scale={2.215}>
           <mesh
             name="Cube501"
             castShadow
@@ -28315,15 +27721,14 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Cube501_4.geometry}
-            material={materials["Material.014"]}
+            material={materials['Material.014']}
           />
         </group>
         <group
           name="Cube253"
           position={[130.446, 2.569, -13.903]}
           rotation={[0, -1.548, 0]}
-          scale={2.215}
-        >
+          scale={2.215}>
           <mesh
             name="Cube502"
             castShadow
@@ -28357,15 +27762,14 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Cube502_4.geometry}
-            material={materials["Material.014"]}
+            material={materials['Material.014']}
           />
         </group>
         <group
           name="Cube254"
           position={[127.761, 2.569, -13.903]}
           rotation={[0, -1.548, 0]}
-          scale={2.215}
-        >
+          scale={2.215}>
           <mesh
             name="Cube503"
             castShadow
@@ -28399,15 +27803,14 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Cube503_4.geometry}
-            material={materials["Material.014"]}
+            material={materials['Material.014']}
           />
         </group>
         <group
           name="Cube255"
           position={[125.117, 2.569, -13.903]}
           rotation={[0, -1.548, 0]}
-          scale={2.215}
-        >
+          scale={2.215}>
           <mesh
             name="Cube504"
             castShadow
@@ -28441,15 +27844,14 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Cube504_4.geometry}
-            material={materials["Material.014"]}
+            material={materials['Material.014']}
           />
         </group>
         <group
           name="Cube257"
           position={[135.875, 2.569, -19.546]}
           rotation={[0, -1.548, 0]}
-          scale={2.215}
-        >
+          scale={2.215}>
           <mesh
             name="Cube506"
             castShadow
@@ -28483,15 +27885,14 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Cube506_4.geometry}
-            material={materials["Material.014"]}
+            material={materials['Material.014']}
           />
         </group>
         <group
           name="Cube258"
           position={[133.134, 2.569, -19.546]}
           rotation={[0, -1.548, 0]}
-          scale={2.215}
-        >
+          scale={2.215}>
           <mesh
             name="Cube507"
             castShadow
@@ -28525,15 +27926,14 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Cube507_4.geometry}
-            material={materials["Material.014"]}
+            material={materials['Material.014']}
           />
         </group>
         <group
           name="Cube259"
           position={[130.446, 2.569, -19.546]}
           rotation={[0, -1.548, 0]}
-          scale={2.215}
-        >
+          scale={2.215}>
           <mesh
             name="Cube508"
             castShadow
@@ -28567,15 +27967,14 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Cube508_4.geometry}
-            material={materials["Material.014"]}
+            material={materials['Material.014']}
           />
         </group>
         <group
           name="Cube260"
           position={[127.761, 2.569, -19.546]}
           rotation={[0, -1.548, 0]}
-          scale={2.215}
-        >
+          scale={2.215}>
           <mesh
             name="Cube509"
             castShadow
@@ -28609,15 +28008,14 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Cube509_4.geometry}
-            material={materials["Material.014"]}
+            material={materials['Material.014']}
           />
         </group>
         <group
           name="Cube261"
           position={[125.117, 2.569, -19.546]}
           rotation={[0, -1.548, 0]}
-          scale={2.215}
-        >
+          scale={2.215}>
           <mesh
             name="Cube510"
             castShadow
@@ -28651,15 +28049,14 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Cube510_4.geometry}
-            material={materials["Material.014"]}
+            material={materials['Material.014']}
           />
         </group>
         <group
           name="Cube263"
           position={[135.875, 2.569, -25.528]}
           rotation={[0, -1.548, 0]}
-          scale={2.215}
-        >
+          scale={2.215}>
           <mesh
             name="Cube512"
             castShadow
@@ -28693,15 +28090,14 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Cube512_4.geometry}
-            material={materials["Material.014"]}
+            material={materials['Material.014']}
           />
         </group>
         <group
           name="Cube264"
           position={[133.134, 2.569, -25.528]}
           rotation={[0, -1.548, 0]}
-          scale={2.215}
-        >
+          scale={2.215}>
           <mesh
             name="Cube513"
             castShadow
@@ -28735,15 +28131,14 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Cube513_4.geometry}
-            material={materials["Material.014"]}
+            material={materials['Material.014']}
           />
         </group>
         <group
           name="Cube265"
           position={[130.446, 2.569, -25.528]}
           rotation={[0, -1.548, 0]}
-          scale={2.215}
-        >
+          scale={2.215}>
           <mesh
             name="Cube514"
             castShadow
@@ -28777,15 +28172,14 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Cube514_4.geometry}
-            material={materials["Material.014"]}
+            material={materials['Material.014']}
           />
         </group>
         <group
           name="Cube266"
           position={[127.761, 2.569, -25.528]}
           rotation={[0, -1.548, 0]}
-          scale={2.215}
-        >
+          scale={2.215}>
           <mesh
             name="Cube515"
             castShadow
@@ -28819,15 +28213,14 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Cube515_4.geometry}
-            material={materials["Material.014"]}
+            material={materials['Material.014']}
           />
         </group>
         <group
           name="Cube267"
           position={[125.117, 2.569, -25.528]}
           rotation={[0, -1.548, 0]}
-          scale={2.215}
-        >
+          scale={2.215}>
           <mesh
             name="Cube516"
             castShadow
@@ -28861,15 +28254,14 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Cube516_4.geometry}
-            material={materials["Material.014"]}
+            material={materials['Material.014']}
           />
         </group>
         <group
           name="Cube269"
           position={[135.875, 2.569, -31.195]}
           rotation={[0, -1.548, 0]}
-          scale={2.215}
-        >
+          scale={2.215}>
           <mesh
             name="Cube518"
             castShadow
@@ -28903,15 +28295,14 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Cube518_4.geometry}
-            material={materials["Material.014"]}
+            material={materials['Material.014']}
           />
         </group>
         <group
           name="Cube270"
           position={[133.134, 2.569, -31.195]}
           rotation={[0, -1.548, 0]}
-          scale={2.215}
-        >
+          scale={2.215}>
           <mesh
             name="Cube519"
             castShadow
@@ -28945,15 +28336,14 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Cube519_4.geometry}
-            material={materials["Material.014"]}
+            material={materials['Material.014']}
           />
         </group>
         <group
           name="Cube271"
           position={[130.446, 2.569, -31.195]}
           rotation={[0, -1.548, 0]}
-          scale={2.215}
-        >
+          scale={2.215}>
           <mesh
             name="Cube520"
             castShadow
@@ -28987,15 +28377,14 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Cube520_4.geometry}
-            material={materials["Material.014"]}
+            material={materials['Material.014']}
           />
         </group>
         <group
           name="Cube272"
           position={[127.761, 2.569, -31.195]}
           rotation={[0, -1.548, 0]}
-          scale={2.215}
-        >
+          scale={2.215}>
           <mesh
             name="Cube521"
             castShadow
@@ -29029,15 +28418,14 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Cube521_4.geometry}
-            material={materials["Material.014"]}
+            material={materials['Material.014']}
           />
         </group>
         <group
           name="Cube273"
           position={[125.117, 2.569, -31.195]}
           rotation={[0, -1.548, 0]}
-          scale={2.215}
-        >
+          scale={2.215}>
           <mesh
             name="Cube522"
             castShadow
@@ -29071,15 +28459,14 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Cube522_4.geometry}
-            material={materials["Material.014"]}
+            material={materials['Material.014']}
           />
         </group>
         <group
           name="Cube275"
           position={[135.875, 2.569, -36.932]}
           rotation={[0, -1.548, 0]}
-          scale={2.215}
-        >
+          scale={2.215}>
           <mesh
             name="Cube524"
             castShadow
@@ -29113,15 +28500,14 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Cube524_4.geometry}
-            material={materials["Material.014"]}
+            material={materials['Material.014']}
           />
         </group>
         <group
           name="Cube276"
           position={[133.134, 2.569, -36.932]}
           rotation={[0, -1.548, 0]}
-          scale={2.215}
-        >
+          scale={2.215}>
           <mesh
             name="Cube525"
             castShadow
@@ -29155,15 +28541,14 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Cube525_4.geometry}
-            material={materials["Material.014"]}
+            material={materials['Material.014']}
           />
         </group>
         <group
           name="Cube277"
           position={[130.446, 2.569, -36.932]}
           rotation={[0, -1.548, 0]}
-          scale={2.215}
-        >
+          scale={2.215}>
           <mesh
             name="Cube526"
             castShadow
@@ -29197,15 +28582,14 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Cube526_4.geometry}
-            material={materials["Material.014"]}
+            material={materials['Material.014']}
           />
         </group>
         <group
           name="Cube278"
           position={[127.761, 2.569, -36.932]}
           rotation={[0, -1.548, 0]}
-          scale={2.215}
-        >
+          scale={2.215}>
           <mesh
             name="Cube527"
             castShadow
@@ -29239,15 +28623,14 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Cube527_4.geometry}
-            material={materials["Material.014"]}
+            material={materials['Material.014']}
           />
         </group>
         <group
           name="Cube279"
           position={[125.117, 2.569, -36.932]}
           rotation={[0, -1.548, 0]}
-          scale={2.215}
-        >
+          scale={2.215}>
           <mesh
             name="Cube528"
             castShadow
@@ -29281,15 +28664,14 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Cube528_4.geometry}
-            material={materials["Material.014"]}
+            material={materials['Material.014']}
           />
         </group>
         <group
           name="Cube281"
           position={[135.875, 2.569, -42.724]}
           rotation={[0, -1.548, 0]}
-          scale={2.215}
-        >
+          scale={2.215}>
           <mesh
             name="Cube530"
             castShadow
@@ -29323,15 +28705,14 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Cube530_4.geometry}
-            material={materials["Material.014"]}
+            material={materials['Material.014']}
           />
         </group>
         <group
           name="Cube282"
           position={[133.134, 2.569, -42.724]}
           rotation={[0, -1.548, 0]}
-          scale={2.215}
-        >
+          scale={2.215}>
           <mesh
             name="Cube531"
             castShadow
@@ -29365,15 +28746,14 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Cube531_4.geometry}
-            material={materials["Material.014"]}
+            material={materials['Material.014']}
           />
         </group>
         <group
           name="Cube283"
           position={[130.446, 2.569, -42.724]}
           rotation={[0, -1.548, 0]}
-          scale={2.215}
-        >
+          scale={2.215}>
           <mesh
             name="Cube532"
             castShadow
@@ -29407,15 +28787,14 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Cube532_4.geometry}
-            material={materials["Material.014"]}
+            material={materials['Material.014']}
           />
         </group>
         <group
           name="Cube284"
           position={[127.761, 2.569, -42.724]}
           rotation={[0, -1.548, 0]}
-          scale={2.215}
-        >
+          scale={2.215}>
           <mesh
             name="Cube533"
             castShadow
@@ -29449,15 +28828,14 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Cube533_4.geometry}
-            material={materials["Material.014"]}
+            material={materials['Material.014']}
           />
         </group>
         <group
           name="Cube285"
           position={[125.117, 2.569, -42.724]}
           rotation={[0, -1.548, 0]}
-          scale={2.215}
-        >
+          scale={2.215}>
           <mesh
             name="Cube534"
             castShadow
@@ -29491,15 +28869,14 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Cube534_4.geometry}
-            material={materials["Material.014"]}
+            material={materials['Material.014']}
           />
         </group>
         <group
           name="support_pipe_1070"
           position={[-0.172, 33.213, 75.201]}
           rotation={[-3.098, 0.21, 0.001]}
-          scale={[0.835, 0.466, 0.466]}
-        >
+          scale={[0.835, 0.466, 0.466]}>
           <mesh
             name="BezierCurve175_1"
             castShadow
@@ -29519,8 +28896,7 @@ export function Modelo3D_Universidad(props) {
           name="support_pipe_1071"
           position={[-11.772, 33.077, 77.547]}
           rotation={[-3.135, 0.248, 0.015]}
-          scale={[0.989, 0.552, 0.552]}
-        >
+          scale={[0.989, 0.552, 0.552]}>
           <mesh
             name="BezierCurve176_1"
             castShadow
@@ -29540,8 +28916,7 @@ export function Modelo3D_Universidad(props) {
           name="Cylinder012"
           position={[2.965, 33.08, 70.67]}
           rotation={[0, -0.244, 0]}
-          scale={0.073}
-        >
+          scale={0.073}>
           <mesh
             name="Cylinder028"
             castShadow
@@ -29575,8 +28950,7 @@ export function Modelo3D_Universidad(props) {
           name="Cylinder013"
           position={[-18.81, 32.992, 76.496]}
           rotation={[0, -0.244, 0]}
-          scale={0.073}
-        >
+          scale={0.073}>
           <mesh
             name="Cylinder029"
             castShadow
@@ -29610,8 +28984,7 @@ export function Modelo3D_Universidad(props) {
           name="Cylinder014"
           position={[0.825, 33.607, 88.087]}
           rotation={[-Math.PI, 0.244, -Math.PI]}
-          scale={0.609}
-        >
+          scale={0.609}>
           <mesh
             name="Cylinder030"
             castShadow
@@ -29685,8 +29058,7 @@ export function Modelo3D_Universidad(props) {
           name="Circle005"
           position={[-13.216, 33.028, 69.183]}
           rotation={[-Math.PI, 0.244, -Math.PI]}
-          scale={2.685}
-        >
+          scale={2.685}>
           <mesh
             name="Circle007_1"
             castShadow
@@ -29716,8 +29088,7 @@ export function Modelo3D_Universidad(props) {
           name="Circle003"
           position={[-14.077, 32.993, 79.139]}
           rotation={[-Math.PI, 0.244, -Math.PI]}
-          scale={0.97}
-        >
+          scale={0.97}>
           <mesh
             name="Circle008_1"
             castShadow
@@ -29737,8 +29108,7 @@ export function Modelo3D_Universidad(props) {
           name="Circle002"
           position={[-12.016, 33.026, 81.184]}
           rotation={[-Math.PI, 0.244, -Math.PI]}
-          scale={0.97}
-        >
+          scale={0.97}>
           <mesh
             name="Circle009_1"
             castShadow
@@ -29768,8 +29138,7 @@ export function Modelo3D_Universidad(props) {
           name="Upright001"
           position={[8.988, 33.531, 81.8]}
           rotation={[-Math.PI, -1.481, -Math.PI / 2]}
-          scale={0.017}
-        >
+          scale={0.017}>
           <mesh
             name="Mesh012"
             castShadow
@@ -29782,35 +29151,35 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Mesh012_1.geometry}
-            material={materials["BasureroCabeza.002"]}
+            material={materials['BasureroCabeza.002']}
           />
           <mesh
             name="Mesh012_2"
             castShadow
             receiveShadow
             geometry={nodes.Mesh012_2.geometry}
-            material={materials["BlackBack.002"]}
+            material={materials['BlackBack.002']}
           />
           <mesh
             name="Mesh012_3"
             castShadow
             receiveShadow
             geometry={nodes.Mesh012_3.geometry}
-            material={materials["BasureroBase.002"]}
+            material={materials['BasureroBase.002']}
           />
           <mesh
             name="Mesh012_4"
             castShadow
             receiveShadow
             geometry={nodes.Mesh012_4.geometry}
-            material={materials["Down_RecycleBin.002"]}
+            material={materials['Down_RecycleBin.002']}
           />
           <mesh
             name="Mesh012_5"
             castShadow
             receiveShadow
             geometry={nodes.Mesh012_5.geometry}
-            material={materials["ReflectBack.002"]}
+            material={materials['ReflectBack.002']}
           />
         </group>
         <mesh
@@ -29838,7 +29207,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.Shink005.geometry}
-          material={materials["PastillaUrinal.001"]}
+          material={materials['PastillaUrinal.001']}
           position={[7.889, 34.692, 81.561]}
           rotation={[0, -0.051, 3.142]}
           scale={0.054}
@@ -29848,7 +29217,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.Shink.geometry}
-          material={materials["PastillaUrinal.001"]}
+          material={materials['PastillaUrinal.001']}
           position={[6.778, 34.692, 80.797]}
           rotation={[-Math.PI, -1.497, 0]}
           scale={0.054}
@@ -29857,42 +29226,40 @@ export function Modelo3D_Universidad(props) {
           name="Seat005"
           position={[8.947, 33.907, 69.893]}
           rotation={[Math.PI / 2, 0, -1.381]}
-          scale={0.02}
-        >
+          scale={0.02}>
           <mesh
             name="Seat005_1"
             castShadow
             receiveShadow
             geometry={nodes.Seat005_1.geometry}
-            material={materials["Baño.001"]}
+            material={materials['Baño.001']}
           />
           <mesh
             name="Seat005_2"
             castShadow
             receiveShadow
             geometry={nodes.Seat005_2.geometry}
-            material={materials["Agua.001"]}
+            material={materials['Agua.001']}
           />
         </group>
         <group
           name="Plane017"
           position={[14.033, 33.008, 73.587]}
           rotation={[0.003, -0.202, -0.017]}
-          scale={1.559}
-        >
+          scale={1.559}>
           <mesh
             name="Plane122"
             castShadow
             receiveShadow
             geometry={nodes.Plane122.geometry}
-            material={materials["Puerta.001"]}
+            material={materials['Puerta.001']}
           />
           <mesh
             name="Plane122_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane122_1.geometry}
-            material={materials["Glossy.001"]}
+            material={materials['Glossy.001']}
           />
           <mesh
             name="Plane122_2"
@@ -29907,7 +29274,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.Plane016.geometry}
-          material={materials["Baño.001"]}
+          material={materials['Baño.001']}
           position={[9.196, 34.956, 77.155]}
           rotation={[1.571, -0.002, 1.768]}
           scale={0.547}
@@ -29917,7 +29284,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.Plane018.geometry}
-          material={materials["Baño.001"]}
+          material={materials['Baño.001']}
           position={[8.91, 34.956, 78.653]}
           rotation={[1.571, -0.002, 1.768]}
           scale={0.547}
@@ -29926,29 +29293,27 @@ export function Modelo3D_Universidad(props) {
           name="Lid"
           position={[17.251, 33.907, 71.553]}
           rotation={[Math.PI / 2, 0, 1.743]}
-          scale={0.02}
-        >
+          scale={0.02}>
           <mesh
             name="Lid_1"
             castShadow
             receiveShadow
             geometry={nodes.Lid_1.geometry}
-            material={materials["Baño.001"]}
+            material={materials['Baño.001']}
           />
           <mesh
             name="Lid_2"
             castShadow
             receiveShadow
             geometry={nodes.Lid_2.geometry}
-            material={materials["Agua.001"]}
+            material={materials['Agua.001']}
           />
         </group>
         <group
           name="Horizontally_Up001"
           position={[18.219, 34.155, 72.997]}
           rotation={[-1.552, -0.075, 1.25]}
-          scale={0.023}
-        >
+          scale={0.023}>
           <mesh
             name="Mesh017"
             castShadow
@@ -29961,35 +29326,35 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Mesh017_1.geometry}
-            material={materials["BasureroCabeza.002"]}
+            material={materials['BasureroCabeza.002']}
           />
           <mesh
             name="Mesh017_2"
             castShadow
             receiveShadow
             geometry={nodes.Mesh017_2.geometry}
-            material={materials["BlackBack.002"]}
+            material={materials['BlackBack.002']}
           />
           <mesh
             name="Mesh017_3"
             castShadow
             receiveShadow
             geometry={nodes.Mesh017_3.geometry}
-            material={materials["BasureroBase.002"]}
+            material={materials['BasureroBase.002']}
           />
           <mesh
             name="Mesh017_4"
             castShadow
             receiveShadow
             geometry={nodes.Mesh017_4.geometry}
-            material={materials["Down_RecycleBin.002"]}
+            material={materials['Down_RecycleBin.002']}
           />
           <mesh
             name="Mesh017_5"
             castShadow
             receiveShadow
             geometry={nodes.Mesh017_5.geometry}
-            material={materials["ReflectBack.002"]}
+            material={materials['ReflectBack.002']}
           />
         </group>
         <mesh
@@ -29997,7 +29362,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.Cylinder016.geometry}
-          material={materials["Valve.002"]}
+          material={materials['Valve.002']}
           position={[6.685, 36.045, 76.633]}
           rotation={[Math.PI, -1.373, Math.PI]}
           scale={0.05}
@@ -30007,7 +29372,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.Cylinder017.geometry}
-          material={materials["Valve.002"]}
+          material={materials['Valve.002']}
           position={[6.399, 36.045, 78.13]}
           rotation={[Math.PI, -1.373, Math.PI]}
           scale={0.05}
@@ -30016,42 +29381,41 @@ export function Modelo3D_Universidad(props) {
           name="Cylinder018"
           position={[15.418, 35.024, 84.071]}
           rotation={[-1.577, -0.031, 1.361]}
-          scale={[0.043, 0.161, 0.043]}
-        >
+          scale={[0.043, 0.161, 0.043]}>
           <mesh
             name="Cylinder038"
             castShadow
             receiveShadow
             geometry={nodes.Cylinder038.geometry}
-            material={materials["Valve.003"]}
+            material={materials['Valve.003']}
           />
           <mesh
             name="Cylinder038_1"
             castShadow
             receiveShadow
             geometry={nodes.Cylinder038_1.geometry}
-            material={materials["Color M00.001"]}
+            material={materials['Color M00.001']}
           />
           <mesh
             name="Cylinder038_2"
             castShadow
             receiveShadow
             geometry={nodes.Cylinder038_2.geometry}
-            material={materials["Vidrio.002"]}
+            material={materials['Vidrio.002']}
           />
           <mesh
             name="Cylinder038_3"
             castShadow
             receiveShadow
             geometry={nodes.Cylinder038_3.geometry}
-            material={materials["Marco.001"]}
+            material={materials['Marco.001']}
           />
           <mesh
             name="Cylinder038_4"
             castShadow
             receiveShadow
             geometry={nodes.Cylinder038_4.geometry}
-            material={materials["Mesa.003"]}
+            material={materials['Mesa.003']}
           />
         </group>
         <mesh
@@ -30059,29 +29423,25 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.Cylinder019.geometry}
-          material={materials["Valve.002"]}
+          material={materials['Valve.002']}
           position={[6.689, 35.971, 80.779]}
           rotation={[Math.PI, -1.497, Math.PI]}
           scale={0.043}
         />
-        <group
-          name="Circle008"
-          position={[10.916, 34.696, 72.915]}
-          scale={3.854}
-        >
+        <group name="Circle008" position={[10.916, 34.696, 72.915]} scale={3.854}>
           <mesh
             name="Circle011_1"
             castShadow
             receiveShadow
             geometry={nodes.Circle011_1.geometry}
-            material={materials["Puerta.001"]}
+            material={materials['Puerta.001']}
           />
           <mesh
             name="Circle011_2"
             castShadow
             receiveShadow
             geometry={nodes.Circle011_2.geometry}
-            material={materials["Glossy.001"]}
+            material={materials['Glossy.001']}
           />
           <mesh
             name="Circle011_3"
@@ -30095,14 +29455,13 @@ export function Modelo3D_Universidad(props) {
           name="Circle"
           position={[12.016, 37.729, 77.79]}
           rotation={[-1.745, -1.231, 1.418]}
-          scale={1.065}
-        >
+          scale={1.065}>
           <mesh
             name="Circle012"
             castShadow
             receiveShadow
             geometry={nodes.Circle012.geometry}
-            material={materials["Baño.001"]}
+            material={materials['Baño.001']}
           />
           <mesh
             name="Circle012_1"
@@ -30123,8 +29482,7 @@ export function Modelo3D_Universidad(props) {
           name="Upright002"
           position={[-29.008, 33.318, 64.252]}
           rotation={[-Math.PI, -0.122, -Math.PI / 2]}
-          scale={0.011}
-        >
+          scale={0.011}>
           <mesh
             name="Mesh018"
             castShadow
@@ -30137,77 +29495,75 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Mesh018_1.geometry}
-            material={materials["BasureroCabeza.002"]}
+            material={materials['BasureroCabeza.002']}
           />
           <mesh
             name="Mesh018_2"
             castShadow
             receiveShadow
             geometry={nodes.Mesh018_2.geometry}
-            material={materials["BlackBack.002"]}
+            material={materials['BlackBack.002']}
           />
           <mesh
             name="Mesh018_3"
             castShadow
             receiveShadow
             geometry={nodes.Mesh018_3.geometry}
-            material={materials["BasureroBase.002"]}
+            material={materials['BasureroBase.002']}
           />
           <mesh
             name="Mesh018_4"
             castShadow
             receiveShadow
             geometry={nodes.Mesh018_4.geometry}
-            material={materials["Down_RecycleBin.002"]}
+            material={materials['Down_RecycleBin.002']}
           />
           <mesh
             name="Mesh018_5"
             castShadow
             receiveShadow
             geometry={nodes.Mesh018_5.geometry}
-            material={materials["ReflectBack.002"]}
+            material={materials['ReflectBack.002']}
           />
         </group>
         <group
           name="Seat006"
           position={[-21.565, 33.869, 64.372]}
           rotation={[Math.PI / 2, 0, 1.807]}
-          scale={0.016}
-        >
+          scale={0.016}>
           <mesh
             name="Seat006_1"
             castShadow
             receiveShadow
             geometry={nodes.Seat006_1.geometry}
-            material={materials["Baño.001"]}
+            material={materials['Baño.001']}
           />
           <mesh
             name="Seat006_2"
             castShadow
             receiveShadow
             geometry={nodes.Seat006_2.geometry}
-            material={materials["Agua.001"]}
+            material={materials['Agua.001']}
           />
         </group>
         <group
           name="Plane021"
           position={[-27.611, 33.204, 68.032]}
           rotation={[3.14, 0.301, -3.141]}
-          scale={1.507}
-        >
+          scale={1.507}>
           <mesh
             name="Plane128"
             castShadow
             receiveShadow
             geometry={nodes.Plane128.geometry}
-            material={materials["Puerta.001"]}
+            material={materials['Puerta.001']}
           />
           <mesh
             name="Plane128_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane128_1.geometry}
-            material={materials["Glossy.001"]}
+            material={materials['Glossy.001']}
           />
           <mesh
             name="Plane128_2"
@@ -30221,29 +29577,27 @@ export function Modelo3D_Universidad(props) {
           name="Lid006"
           position={[-28.291, 33.938, 62.994]}
           rotation={[Math.PI / 2, 0, -1.337]}
-          scale={0.015}
-        >
+          scale={0.015}>
           <mesh
             name="Lid006_1"
             castShadow
             receiveShadow
             geometry={nodes.Lid006_1.geometry}
-            material={materials["Baño.001"]}
+            material={materials['Baño.001']}
           />
           <mesh
             name="Lid006_2"
             castShadow
             receiveShadow
             geometry={nodes.Lid006_2.geometry}
-            material={materials["Agua.001"]}
+            material={materials['Agua.001']}
           />
         </group>
         <group
           name="Horizontally_Up002"
           position={[-24.913, 33.597, 75.788]}
           rotation={[-Math.PI / 2, 0, 1.533]}
-          scale={0.011}
-        >
+          scale={0.011}>
           <mesh
             name="Mesh019"
             castShadow
@@ -30256,35 +29610,35 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Mesh019_1.geometry}
-            material={materials["BasureroCabeza.002"]}
+            material={materials['BasureroCabeza.002']}
           />
           <mesh
             name="Mesh019_2"
             castShadow
             receiveShadow
             geometry={nodes.Mesh019_2.geometry}
-            material={materials["BlackBack.002"]}
+            material={materials['BlackBack.002']}
           />
           <mesh
             name="Mesh019_3"
             castShadow
             receiveShadow
             geometry={nodes.Mesh019_3.geometry}
-            material={materials["BasureroBase.002"]}
+            material={materials['BasureroBase.002']}
           />
           <mesh
             name="Mesh019_4"
             castShadow
             receiveShadow
             geometry={nodes.Mesh019_4.geometry}
-            material={materials["Down_RecycleBin.002"]}
+            material={materials['Down_RecycleBin.002']}
           />
           <mesh
             name="Mesh019_5"
             castShadow
             receiveShadow
             geometry={nodes.Mesh019_5.geometry}
-            material={materials["ReflectBack.002"]}
+            material={materials['ReflectBack.002']}
           />
         </group>
         <mesh
@@ -30301,62 +29655,57 @@ export function Modelo3D_Universidad(props) {
           name="Cylinder023"
           position={[-31.483, 34.766, 73.326]}
           rotation={[-1.569, 0.032, -1.634]}
-          scale={[0.041, 0.151, 0.041]}
-        >
+          scale={[0.041, 0.151, 0.041]}>
           <mesh
             name="Cylinder047"
             castShadow
             receiveShadow
             geometry={nodes.Cylinder047.geometry}
-            material={materials["Valve.003"]}
+            material={materials['Valve.003']}
           />
           <mesh
             name="Cylinder047_1"
             castShadow
             receiveShadow
             geometry={nodes.Cylinder047_1.geometry}
-            material={materials["Color M00.001"]}
+            material={materials['Color M00.001']}
           />
           <mesh
             name="Cylinder047_2"
             castShadow
             receiveShadow
             geometry={nodes.Cylinder047_2.geometry}
-            material={materials["Vidrio.002"]}
+            material={materials['Vidrio.002']}
           />
           <mesh
             name="Cylinder047_3"
             castShadow
             receiveShadow
             geometry={nodes.Cylinder047_3.geometry}
-            material={materials["Marco.001"]}
+            material={materials['Marco.001']}
           />
           <mesh
             name="Cylinder047_4"
             castShadow
             receiveShadow
             geometry={nodes.Cylinder047_4.geometry}
-            material={materials["Mesa.003"]}
+            material={materials['Mesa.003']}
           />
         </group>
-        <group
-          name="Circle009"
-          position={[-23.749, 34.617, 68.889]}
-          scale={3.946}
-        >
+        <group name="Circle009" position={[-23.749, 34.617, 68.889]} scale={3.946}>
           <mesh
             name="Circle013"
             castShadow
             receiveShadow
             geometry={nodes.Circle013.geometry}
-            material={materials["Puerta.001"]}
+            material={materials['Puerta.001']}
           />
           <mesh
             name="Circle013_1"
             castShadow
             receiveShadow
             geometry={nodes.Circle013_1.geometry}
-            material={materials["Glossy.001"]}
+            material={materials['Glossy.001']}
           />
           <mesh
             name="Circle013_2"
@@ -30370,14 +29719,13 @@ export function Modelo3D_Universidad(props) {
           name="Circle010"
           position={[-28.173, 36.773, 78.822]}
           rotation={[-0.843, 1.116, -2.32]}
-          scale={0.586}
-        >
+          scale={0.586}>
           <mesh
             name="Circle014"
             castShadow
             receiveShadow
             geometry={nodes.Circle014.geometry}
-            material={materials["Baño.001"]}
+            material={materials['Baño.001']}
           />
           <mesh
             name="Circle014_1"
@@ -30398,8 +29746,7 @@ export function Modelo3D_Universidad(props) {
           name="Upright003"
           position={[-29.008, 33.318, 64.252]}
           rotation={[-Math.PI, -0.122, -Math.PI / 2]}
-          scale={0.011}
-        >
+          scale={0.011}>
           <mesh
             name="Mesh020"
             castShadow
@@ -30412,43 +29759,42 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Mesh020_1.geometry}
-            material={materials["BasureroCabeza.002"]}
+            material={materials['BasureroCabeza.002']}
           />
           <mesh
             name="Mesh020_2"
             castShadow
             receiveShadow
             geometry={nodes.Mesh020_2.geometry}
-            material={materials["BlackBack.002"]}
+            material={materials['BlackBack.002']}
           />
           <mesh
             name="Mesh020_3"
             castShadow
             receiveShadow
             geometry={nodes.Mesh020_3.geometry}
-            material={materials["BasureroBase.002"]}
+            material={materials['BasureroBase.002']}
           />
           <mesh
             name="Mesh020_4"
             castShadow
             receiveShadow
             geometry={nodes.Mesh020_4.geometry}
-            material={materials["Down_RecycleBin.002"]}
+            material={materials['Down_RecycleBin.002']}
           />
           <mesh
             name="Mesh020_5"
             castShadow
             receiveShadow
             geometry={nodes.Mesh020_5.geometry}
-            material={materials["ReflectBack.002"]}
+            material={materials['ReflectBack.002']}
           />
         </group>
         <group
           name="Upright004"
-          position={[-20.661, 33.341, 65.433]}
+          position={[-20.66, 33.341, 65.433]}
           rotation={[0, -0.343, Math.PI / 2]}
-          scale={0.012}
-        >
+          scale={0.012}>
           <mesh
             name="Mesh021"
             castShadow
@@ -30461,43 +29807,42 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Mesh021_1.geometry}
-            material={materials["BasureroCabeza.002"]}
+            material={materials['BasureroCabeza.002']}
           />
           <mesh
             name="Mesh021_2"
             castShadow
             receiveShadow
             geometry={nodes.Mesh021_2.geometry}
-            material={materials["BlackBack.002"]}
+            material={materials['BlackBack.002']}
           />
           <mesh
             name="Mesh021_3"
             castShadow
             receiveShadow
             geometry={nodes.Mesh021_3.geometry}
-            material={materials["BasureroBase.002"]}
+            material={materials['BasureroBase.002']}
           />
           <mesh
             name="Mesh021_4"
             castShadow
             receiveShadow
             geometry={nodes.Mesh021_4.geometry}
-            material={materials["Down_RecycleBin.002"]}
+            material={materials['Down_RecycleBin.002']}
           />
           <mesh
             name="Mesh021_5"
             castShadow
             receiveShadow
             geometry={nodes.Mesh021_5.geometry}
-            material={materials["ReflectBack.002"]}
+            material={materials['ReflectBack.002']}
           />
         </group>
         <group
           name="Horizontally_Up003"
           position={[7.488, 34.13, 70.941]}
           rotation={[-Math.PI / 2, 0, -1.764]}
-          scale={0.023}
-        >
+          scale={0.023}>
           <mesh
             name="Mesh022"
             castShadow
@@ -30510,35 +29855,35 @@ export function Modelo3D_Universidad(props) {
             castShadow
             receiveShadow
             geometry={nodes.Mesh022_1.geometry}
-            material={materials["BasureroCabeza.002"]}
+            material={materials['BasureroCabeza.002']}
           />
           <mesh
             name="Mesh022_2"
             castShadow
             receiveShadow
             geometry={nodes.Mesh022_2.geometry}
-            material={materials["BlackBack.002"]}
+            material={materials['BlackBack.002']}
           />
           <mesh
             name="Mesh022_3"
             castShadow
             receiveShadow
             geometry={nodes.Mesh022_3.geometry}
-            material={materials["BasureroBase.002"]}
+            material={materials['BasureroBase.002']}
           />
           <mesh
             name="Mesh022_4"
             castShadow
             receiveShadow
             geometry={nodes.Mesh022_4.geometry}
-            material={materials["Down_RecycleBin.002"]}
+            material={materials['Down_RecycleBin.002']}
           />
           <mesh
             name="Mesh022_5"
             castShadow
             receiveShadow
             geometry={nodes.Mesh022_5.geometry}
-            material={materials["ReflectBack.002"]}
+            material={materials['ReflectBack.002']}
           />
         </group>
         <mesh
@@ -30546,7 +29891,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.Plane015.geometry}
-          material={materials["Baño.001"]}
+          material={materials['Baño.001']}
           position={[7.752, 34.956, 77.95]}
           rotation={[1.568, 0, 0.069]}
           scale={0.547}
@@ -30556,7 +29901,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.Cylinder015.geometry}
-          material={materials["Valve.002"]}
+          material={materials['Valve.002']}
           position={[7.556, 36.045, 80.507]}
           rotation={[0, -0.069, 0]}
           scale={0.05}
@@ -30565,63 +29910,60 @@ export function Modelo3D_Universidad(props) {
           name="SILLA_LAB001"
           position={[-60.39, 33.047, 102.619]}
           rotation={[Math.PI, -1.348, Math.PI]}
-          scale={0.933}
-        >
+          scale={0.933}>
           <mesh
             name="Vert007"
             castShadow
             receiveShadow
             geometry={nodes.Vert007.geometry}
-            material={materials["Patas.003"]}
+            material={materials['Patas.003']}
           />
           <mesh
             name="Vert007_1"
             castShadow
             receiveShadow
             geometry={nodes.Vert007_1.geometry}
-            material={materials["Plastico.003"]}
+            material={materials['Plastico.003']}
           />
         </group>
         <group
           name="SILLA_LAB"
           position={[-60.992, 33.047, 105.325]}
           rotation={[Math.PI, -1.348, Math.PI]}
-          scale={0.933}
-        >
+          scale={0.933}>
           <mesh
             name="Vert008"
             castShadow
             receiveShadow
             geometry={nodes.Vert008.geometry}
-            material={materials["Patas.003"]}
+            material={materials['Patas.003']}
           />
           <mesh
             name="Vert008_1"
             castShadow
             receiveShadow
             geometry={nodes.Vert008_1.geometry}
-            material={materials["Plastico.003"]}
+            material={materials['Plastico.003']}
           />
         </group>
         <group
           name="Puerta_Lab"
           position={[-70.778, 33.477, 86.236]}
           rotation={[Math.PI, -1.351, Math.PI]}
-          scale={1.359}
-        >
+          scale={1.359}>
           <mesh
             name="Plane134"
             castShadow
             receiveShadow
             geometry={nodes.Plane134.geometry}
-            material={materials["Material.018"]}
+            material={materials['Material.018']}
           />
           <mesh
             name="Plane134_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane134_1.geometry}
-            material={materials["Marco.002"]}
+            material={materials['Marco.002']}
           />
           <mesh
             name="Plane134_2"
@@ -30642,42 +29984,40 @@ export function Modelo3D_Universidad(props) {
           name="Plane020"
           position={[-61.089, 35.651, 101.65]}
           rotation={[0, 1.346, 0]}
-          scale={[0.897, 0.193, 0.193]}
-        >
+          scale={[0.897, 0.193, 0.193]}>
           <mesh
             name="Plane135"
             castShadow
             receiveShadow
             geometry={nodes.Plane135.geometry}
-            material={materials["BAse.002"]}
+            material={materials['BAse.002']}
           />
           <mesh
             name="Plane135_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane135_1.geometry}
-            material={materials["Teclas.002"]}
+            material={materials['Teclas.002']}
           />
         </group>
         <group
           name="Plane023"
           position={[-61.757, 35.651, 104.652]}
           rotation={[0, 1.346, 0]}
-          scale={[0.897, 0.193, 0.193]}
-        >
+          scale={[0.897, 0.193, 0.193]}>
           <mesh
             name="Plane136"
             castShadow
             receiveShadow
             geometry={nodes.Plane136.geometry}
-            material={materials["BAse.002"]}
+            material={materials['BAse.002']}
           />
           <mesh
             name="Plane136_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane136_1.geometry}
-            material={materials["Teclas.002"]}
+            material={materials['Teclas.002']}
           />
         </group>
         <mesh
@@ -30685,248 +30025,238 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.Mesa_Docente004.geometry}
-          material={materials["Mesa.004"]}
+          material={materials['Mesa.004']}
           position={[-62.392, 35.546, 102.657]}
           rotation={[-Math.PI, 0.219, -Math.PI]}
           scale={[1.754, 1.076, 3.264]}
         />
         <group
           name="Focos009"
-          position={[-45.854, 46.132, 106.2]}
+          position={[-45.854, 46.132, 106.199]}
           rotation={[-1.586, -0.035, 2.952]}
-          scale={[0.114, 2.205, 0.114]}
-        >
+          scale={[0.114, 2.205, 0.114]}>
           <mesh
             name="Cilindro017"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro017.geometry}
-            material={materials["Plastico.004"]}
+            material={materials['Plastico.004']}
           />
           <mesh
             name="Cilindro017_1"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro017_1.geometry}
-            material={materials["Vidrio.003"]}
+            material={materials['Vidrio.003']}
           />
           <mesh
             name="Cilindro017_2"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro017_2.geometry}
-            material={materials["Goma.001"]}
+            material={materials['Goma.001']}
           />
         </group>
         <group
           name="dispensadorAlchol045"
           position={[-66.804, 38.665, 87.13]}
           rotation={[0, 1.305, 0]}
-          scale={0.016}
-        >
+          scale={0.016}>
           <mesh
             name="Sphere055"
             castShadow
             receiveShadow
             geometry={nodes.Sphere055.geometry}
-            material={materials["Base.004"]}
+            material={materials['Base.004']}
           />
           <mesh
             name="Sphere055_1"
             castShadow
             receiveShadow
             geometry={nodes.Sphere055_1.geometry}
-            material={materials["HuecoMedio.001"]}
+            material={materials['HuecoMedio.001']}
           />
           <mesh
             name="Sphere055_2"
             castShadow
             receiveShadow
             geometry={nodes.Sphere055_2.geometry}
-            material={materials["Centro.001"]}
+            material={materials['Centro.001']}
           />
           <mesh
             name="Sphere055_3"
             castShadow
             receiveShadow
             geometry={nodes.Sphere055_3.geometry}
-            material={materials["Amarillo.002"]}
+            material={materials['Amarillo.002']}
           />
           <mesh
             name="Sphere055_4"
             castShadow
             receiveShadow
             geometry={nodes.Sphere055_4.geometry}
-            material={materials["Rojo.002"]}
+            material={materials['Rojo.002']}
           />
         </group>
         <group
           name="Cylinder020"
           position={[-73.43, 40.64, 89.384]}
           rotation={[Math.PI, -1.494, Math.PI / 2]}
-          scale={[0.026, 0.02, 0.026]}
-        >
+          scale={[0.026, 0.02, 0.026]}>
           <mesh
             name="Cylinder050"
             castShadow
             receiveShadow
             geometry={nodes.Cylinder050.geometry}
-            material={materials["Trompa.001"]}
+            material={materials['Trompa.001']}
           />
           <mesh
             name="Cylinder050_1"
             castShadow
             receiveShadow
             geometry={nodes.Cylinder050_1.geometry}
-            material={materials["Extintor_agarre1.001"]}
+            material={materials['Extintor_agarre1.001']}
           />
           <mesh
             name="Cylinder050_2"
             castShadow
             receiveShadow
             geometry={nodes.Cylinder050_2.geometry}
-            material={materials["Extintor_Agarre2.001"]}
+            material={materials['Extintor_Agarre2.001']}
           />
           <mesh
             name="Cylinder050_3"
             castShadow
             receiveShadow
             geometry={nodes.Cylinder050_3.geometry}
-            material={materials["Pico.001"]}
+            material={materials['Pico.001']}
           />
         </group>
         <group
           name="Cubo005"
           position={[-76.6, 40.836, 100.133]}
           rotation={[0, 1.266, 0]}
-          scale={[0.117, 3.147, 0.117]}
-        >
+          scale={[0.117, 3.147, 0.117]}>
           <mesh
             name="Cubo005_1"
             castShadow
             receiveShadow
             geometry={nodes.Cubo005_1.geometry}
-            material={materials["Borde.002"]}
+            material={materials['Borde.002']}
           />
           <mesh
             name="Cubo005_2"
             castShadow
             receiveShadow
             geometry={nodes.Cubo005_2.geometry}
-            material={materials["Material.019"]}
+            material={materials['Material.019']}
           />
         </group>
         <group
           name="Cubo006"
           position={[-62.414, 36.039, 101.118]}
           rotation={[Math.PI, -1.334, Math.PI]}
-          scale={[0.094, 0.061, 0.148]}
-        >
+          scale={[0.094, 0.061, 0.148]}>
           <mesh
             name="Cubo006_1"
             castShadow
             receiveShadow
             geometry={nodes.Cubo006_1.geometry}
-            material={materials["Plastico.005"]}
+            material={materials['Plastico.005']}
           />
           <mesh
             name="Cubo006_2"
             castShadow
             receiveShadow
             geometry={nodes.Cubo006_2.geometry}
-            material={materials["Material.020"]}
+            material={materials['Material.020']}
           />
         </group>
         <group
           name="Cubo007"
           position={[-61.158, 35.73, 100.433]}
           rotation={[-Math.PI, 0.219, -Math.PI]}
-          scale={0.13}
-        >
+          scale={0.13}>
           <mesh
             name="Cubo007_1"
             castShadow
             receiveShadow
             geometry={nodes.Cubo007_1.geometry}
-            material={materials["Material.021"]}
+            material={materials['Material.021']}
           />
           <mesh
             name="Cubo007_2"
             castShadow
             receiveShadow
             geometry={nodes.Cubo007_2.geometry}
-            material={materials["Material.022"]}
+            material={materials['Material.022']}
           />
         </group>
         <group
           name="Cubo008"
           position={[-61.826, 35.73, 103.435]}
           rotation={[-Math.PI, 0.219, -Math.PI]}
-          scale={0.13}
-        >
+          scale={0.13}>
           <mesh
             name="Cubo008_1"
             castShadow
             receiveShadow
             geometry={nodes.Cubo008_1.geometry}
-            material={materials["Material.021"]}
+            material={materials['Material.021']}
           />
           <mesh
             name="Cubo008_2"
             castShadow
             receiveShadow
             geometry={nodes.Cubo008_2.geometry}
-            material={materials["Material.022"]}
+            material={materials['Material.022']}
           />
         </group>
         <group
           name="Cubo"
           position={[-63.082, 36.039, 104.12]}
           rotation={[Math.PI, -1.334, Math.PI]}
-          scale={[0.094, 0.061, 0.148]}
-        >
+          scale={[0.094, 0.061, 0.148]}>
           <mesh
             name="Cubo_1"
             castShadow
             receiveShadow
             geometry={nodes.Cubo_1.geometry}
-            material={materials["Plastico.005"]}
+            material={materials['Plastico.005']}
           />
           <mesh
             name="Cubo_2"
             castShadow
             receiveShadow
             geometry={nodes.Cubo_2.geometry}
-            material={materials["Material.020"]}
+            material={materials['Material.020']}
           />
         </group>
         <group
           name="Cube268"
           position={[-74.101, 43.304, 95.625]}
           rotation={[0, -0.275, 0]}
-          scale={[0.541, 0.541, 4.711]}
-        >
+          scale={[0.541, 0.541, 4.711]}>
           <mesh
             name="Cube505"
             castShadow
             receiveShadow
             geometry={nodes.Cube505.geometry}
-            material={materials["pantalla.001"]}
+            material={materials['pantalla.001']}
           />
           <mesh
             name="Cube505_1"
             castShadow
             receiveShadow
             geometry={nodes.Cube505_1.geometry}
-            material={materials["PLastico.001"]}
+            material={materials['PLastico.001']}
           />
         </group>
         <group
           name="Cube274"
           position={[-28.76, 44.579, 103.743]}
           rotation={[Math.PI, -1.433, Math.PI]}
-          scale={[3.289, 1.071, 1.071]}
-        >
+          scale={[3.289, 1.071, 1.071]}>
           <mesh
             name="Cube511"
             castShadow
@@ -30967,287 +30297,277 @@ export function Modelo3D_Universidad(props) {
           name="Circle011"
           position={[-60.625, 46.018, 98.297]}
           rotation={[-Math.PI / 2, 0, -1.862]}
-          scale={0.268}
-        >
+          scale={0.268}>
           <mesh
             name="Circle015"
             castShadow
             receiveShadow
             geometry={nodes.Circle015.geometry}
-            material={materials["Proyectora.001"]}
+            material={materials['Proyectora.001']}
           />
           <mesh
             name="Circle015_1"
             castShadow
             receiveShadow
             geometry={nodes.Circle015_1.geometry}
-            material={materials["LentesPlasticos.001"]}
+            material={materials['LentesPlasticos.001']}
           />
           <mesh
             name="Circle015_2"
             castShadow
             receiveShadow
             geometry={nodes.Circle015_2.geometry}
-            material={materials["Luz.001"]}
+            material={materials['Luz.001']}
           />
           <mesh
             name="Circle015_3"
             castShadow
             receiveShadow
             geometry={nodes.Circle015_3.geometry}
-            material={materials["EchufeEntrada.001"]}
+            material={materials['EchufeEntrada.001']}
           />
           <mesh
             name="Circle015_4"
             castShadow
             receiveShadow
             geometry={nodes.Circle015_4.geometry}
-            material={materials["Rojo.003"]}
+            material={materials['Rojo.003']}
           />
           <mesh
             name="Circle015_5"
             castShadow
             receiveShadow
             geometry={nodes.Circle015_5.geometry}
-            material={materials["Amarillo.003"]}
+            material={materials['Amarillo.003']}
           />
           <mesh
             name="Circle015_6"
             castShadow
             receiveShadow
             geometry={nodes.Circle015_6.geometry}
-            material={materials["AzulEnchufe.001"]}
+            material={materials['AzulEnchufe.001']}
           />
           <mesh
             name="Circle015_7"
             castShadow
             receiveShadow
             geometry={nodes.Circle015_7.geometry}
-            material={materials["Material.023"]}
+            material={materials['Material.023']}
           />
         </group>
         <group
           name="Focos016"
           position={[-43.415, 46.132, 96.321]}
           rotation={[-1.586, -0.035, 2.952]}
-          scale={[0.114, 2.205, 0.114]}
-        >
+          scale={[0.114, 2.205, 0.114]}>
           <mesh
             name="Cilindro023"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro023.geometry}
-            material={materials["Plastico.004"]}
+            material={materials['Plastico.004']}
           />
           <mesh
             name="Cilindro023_1"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro023_1.geometry}
-            material={materials["Vidrio.003"]}
+            material={materials['Vidrio.003']}
           />
           <mesh
             name="Cilindro023_2"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro023_2.geometry}
-            material={materials["Goma.001"]}
+            material={materials['Goma.001']}
           />
         </group>
         <group
           name="Focos022"
           position={[-55.811, 46.132, 104.62]}
           rotation={[-1.586, -0.035, 2.952]}
-          scale={[0.114, 2.205, 0.114]}
-        >
+          scale={[0.114, 2.205, 0.114]}>
           <mesh
             name="Cilindro024"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro024.geometry}
-            material={materials["Plastico.004"]}
+            material={materials['Plastico.004']}
           />
           <mesh
             name="Cilindro024_1"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro024_1.geometry}
-            material={materials["Vidrio.003"]}
+            material={materials['Vidrio.003']}
           />
           <mesh
             name="Cilindro024_2"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro024_2.geometry}
-            material={materials["Goma.001"]}
+            material={materials['Goma.001']}
           />
         </group>
         <group
           name="Focos023"
           position={[-53.372, 46.132, 94.741]}
           rotation={[-1.586, -0.035, 2.952]}
-          scale={[0.114, 2.205, 0.114]}
-        >
+          scale={[0.114, 2.205, 0.114]}>
           <mesh
             name="Cilindro034"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro034.geometry}
-            material={materials["Plastico.004"]}
+            material={materials['Plastico.004']}
           />
           <mesh
             name="Cilindro034_1"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro034_1.geometry}
-            material={materials["Vidrio.003"]}
+            material={materials['Vidrio.003']}
           />
           <mesh
             name="Cilindro034_2"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro034_2.geometry}
-            material={materials["Goma.001"]}
+            material={materials['Goma.001']}
           />
         </group>
         <group
           name="Focos033"
           position={[-63.849, 46.132, 103.174]}
           rotation={[-1.586, -0.035, 2.952]}
-          scale={[0.114, 2.205, 0.114]}
-        >
+          scale={[0.114, 2.205, 0.114]}>
           <mesh
             name="Cilindro035"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro035.geometry}
-            material={materials["Plastico.004"]}
+            material={materials['Plastico.004']}
           />
           <mesh
             name="Cilindro035_1"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro035_1.geometry}
-            material={materials["Vidrio.003"]}
+            material={materials['Vidrio.003']}
           />
           <mesh
             name="Cilindro035_2"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro035_2.geometry}
-            material={materials["Goma.001"]}
+            material={materials['Goma.001']}
           />
         </group>
         <group
           name="Focos034"
           position={[-61.41, 46.132, 93.296]}
           rotation={[-1.586, -0.035, 2.952]}
-          scale={[0.114, 2.205, 0.114]}
-        >
+          scale={[0.114, 2.205, 0.114]}>
           <mesh
             name="Cilindro036"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro036.geometry}
-            material={materials["Plastico.004"]}
+            material={materials['Plastico.004']}
           />
           <mesh
             name="Cilindro036_1"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro036_1.geometry}
-            material={materials["Vidrio.003"]}
+            material={materials['Vidrio.003']}
           />
           <mesh
             name="Cilindro036_2"
             castShadow
             receiveShadow
             geometry={nodes.Cilindro036_2.geometry}
-            material={materials["Goma.001"]}
+            material={materials['Goma.001']}
           />
         </group>
         <group
           name="SILLA_LAB002"
           position={[-57.942, 33.047, 92.957]}
           rotation={[Math.PI, -1.348, Math.PI]}
-          scale={0.933}
-        >
+          scale={0.933}>
           <mesh
             name="Vert009"
             castShadow
             receiveShadow
             geometry={nodes.Vert009.geometry}
-            material={materials["Patas.003"]}
+            material={materials['Patas.003']}
           />
           <mesh
             name="Vert009_1"
             castShadow
             receiveShadow
             geometry={nodes.Vert009_1.geometry}
-            material={materials["Plastico.003"]}
+            material={materials['Plastico.003']}
           />
         </group>
         <group
           name="SILLA_LAB003"
           position={[-58.544, 33.047, 95.662]}
           rotation={[Math.PI, -1.348, Math.PI]}
-          scale={0.933}
-        >
+          scale={0.933}>
           <mesh
             name="Vert010"
             castShadow
             receiveShadow
             geometry={nodes.Vert010.geometry}
-            material={materials["Patas.003"]}
+            material={materials['Patas.003']}
           />
           <mesh
             name="Vert010_1"
             castShadow
             receiveShadow
             geometry={nodes.Vert010_1.geometry}
-            material={materials["Plastico.003"]}
+            material={materials['Plastico.003']}
           />
         </group>
         <group
           name="Plane024"
           position={[-58.641, 35.651, 91.987]}
           rotation={[0, 1.346, 0]}
-          scale={[0.897, 0.193, 0.193]}
-        >
+          scale={[0.897, 0.193, 0.193]}>
           <mesh
             name="Plane138"
             castShadow
             receiveShadow
             geometry={nodes.Plane138.geometry}
-            material={materials["BAse.002"]}
+            material={materials['BAse.002']}
           />
           <mesh
             name="Plane138_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane138_1.geometry}
-            material={materials["Teclas.002"]}
+            material={materials['Teclas.002']}
           />
         </group>
         <group
           name="Plane025"
           position={[-59.309, 35.651, 94.989]}
           rotation={[0, 1.346, 0]}
-          scale={[0.897, 0.193, 0.193]}
-        >
+          scale={[0.897, 0.193, 0.193]}>
           <mesh
             name="Plane139"
             castShadow
             receiveShadow
             geometry={nodes.Plane139.geometry}
-            material={materials["BAse.002"]}
+            material={materials['BAse.002']}
           />
           <mesh
             name="Plane139_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane139_1.geometry}
-            material={materials["Teclas.002"]}
+            material={materials['Teclas.002']}
           />
         </group>
         <mesh
@@ -31255,7 +30575,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.Mesa_Docente005.geometry}
-          material={materials["Mesa.004"]}
+          material={materials['Mesa.004']}
           position={[-59.944, 35.546, 92.995]}
           rotation={[-Math.PI, 0.219, -Math.PI]}
           scale={[1.754, 1.076, 3.264]}
@@ -31264,168 +30584,160 @@ export function Modelo3D_Universidad(props) {
           name="Cubo009"
           position={[-59.965, 36.039, 91.455]}
           rotation={[Math.PI, -1.334, Math.PI]}
-          scale={[0.094, 0.061, 0.148]}
-        >
+          scale={[0.094, 0.061, 0.148]}>
           <mesh
             name="Cubo009_1"
             castShadow
             receiveShadow
             geometry={nodes.Cubo009_1.geometry}
-            material={materials["Plastico.005"]}
+            material={materials['Plastico.005']}
           />
           <mesh
             name="Cubo009_2"
             castShadow
             receiveShadow
             geometry={nodes.Cubo009_2.geometry}
-            material={materials["Material.020"]}
+            material={materials['Material.020']}
           />
         </group>
         <group
           name="Cubo010"
-          position={[-58.709, 35.73, 90.771]}
+          position={[-58.709, 35.73, 90.77]}
           rotation={[-Math.PI, 0.219, -Math.PI]}
-          scale={0.13}
-        >
+          scale={0.13}>
           <mesh
             name="Cubo010_1"
             castShadow
             receiveShadow
             geometry={nodes.Cubo010_1.geometry}
-            material={materials["Material.021"]}
+            material={materials['Material.021']}
           />
           <mesh
             name="Cubo010_2"
             castShadow
             receiveShadow
             geometry={nodes.Cubo010_2.geometry}
-            material={materials["Material.022"]}
+            material={materials['Material.022']}
           />
         </group>
         <group
           name="Cubo011"
           position={[-59.378, 35.73, 93.772]}
           rotation={[-Math.PI, 0.219, -Math.PI]}
-          scale={0.13}
-        >
+          scale={0.13}>
           <mesh
             name="Cubo011_1"
             castShadow
             receiveShadow
             geometry={nodes.Cubo011_1.geometry}
-            material={materials["Material.021"]}
+            material={materials['Material.021']}
           />
           <mesh
             name="Cubo011_2"
             castShadow
             receiveShadow
             geometry={nodes.Cubo011_2.geometry}
-            material={materials["Material.022"]}
+            material={materials['Material.022']}
           />
         </group>
         <group
           name="Cubo012"
           position={[-60.634, 36.039, 94.457]}
           rotation={[Math.PI, -1.334, Math.PI]}
-          scale={[0.094, 0.061, 0.148]}
-        >
+          scale={[0.094, 0.061, 0.148]}>
           <mesh
             name="Cubo012_1"
             castShadow
             receiveShadow
             geometry={nodes.Cubo012_1.geometry}
-            material={materials["Plastico.005"]}
+            material={materials['Plastico.005']}
           />
           <mesh
             name="Cubo012_2"
             castShadow
             receiveShadow
             geometry={nodes.Cubo012_2.geometry}
-            material={materials["Material.020"]}
+            material={materials['Material.020']}
           />
         </group>
         <group
           name="SILLA_LAB004"
           position={[-48.601, 33.047, 94.375]}
           rotation={[Math.PI, -1.348, Math.PI]}
-          scale={0.933}
-        >
+          scale={0.933}>
           <mesh
             name="Vert011"
             castShadow
             receiveShadow
             geometry={nodes.Vert011.geometry}
-            material={materials["Patas.003"]}
+            material={materials['Patas.003']}
           />
           <mesh
             name="Vert011_1"
             castShadow
             receiveShadow
             geometry={nodes.Vert011_1.geometry}
-            material={materials["Plastico.003"]}
+            material={materials['Plastico.003']}
           />
         </group>
         <group
           name="SILLA_LAB005"
           position={[-49.204, 33.047, 97.08]}
           rotation={[Math.PI, -1.348, Math.PI]}
-          scale={0.933}
-        >
+          scale={0.933}>
           <mesh
             name="Vert012"
             castShadow
             receiveShadow
             geometry={nodes.Vert012.geometry}
-            material={materials["Patas.003"]}
+            material={materials['Patas.003']}
           />
           <mesh
             name="Vert012_1"
             castShadow
             receiveShadow
             geometry={nodes.Vert012_1.geometry}
-            material={materials["Plastico.003"]}
+            material={materials['Plastico.003']}
           />
         </group>
         <group
           name="Plane026"
           position={[-49.3, 35.651, 93.405]}
           rotation={[0, 1.346, 0]}
-          scale={[0.897, 0.193, 0.193]}
-        >
+          scale={[0.897, 0.193, 0.193]}>
           <mesh
             name="Plane141"
             castShadow
             receiveShadow
             geometry={nodes.Plane141.geometry}
-            material={materials["BAse.002"]}
+            material={materials['BAse.002']}
           />
           <mesh
             name="Plane141_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane141_1.geometry}
-            material={materials["Teclas.002"]}
+            material={materials['Teclas.002']}
           />
         </group>
         <group
           name="Plane027"
           position={[-49.969, 35.651, 96.407]}
           rotation={[0, 1.346, 0]}
-          scale={[0.897, 0.193, 0.193]}
-        >
+          scale={[0.897, 0.193, 0.193]}>
           <mesh
             name="Plane142"
             castShadow
             receiveShadow
             geometry={nodes.Plane142.geometry}
-            material={materials["BAse.002"]}
+            material={materials['BAse.002']}
           />
           <mesh
             name="Plane142_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane142_1.geometry}
-            material={materials["Teclas.002"]}
+            material={materials['Teclas.002']}
           />
         </group>
         <mesh
@@ -31433,7 +30745,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.Mesa_Docente006.geometry}
-          material={materials["Mesa.004"]}
+          material={materials['Mesa.004']}
           position={[-50.603, 35.546, 94.413]}
           rotation={[-Math.PI, 0.219, -Math.PI]}
           scale={[1.754, 1.076, 3.264]}
@@ -31442,168 +30754,160 @@ export function Modelo3D_Universidad(props) {
           name="Cubo013"
           position={[-50.625, 36.039, 92.873]}
           rotation={[Math.PI, -1.334, Math.PI]}
-          scale={[0.094, 0.061, 0.148]}
-        >
+          scale={[0.094, 0.061, 0.148]}>
           <mesh
             name="Cubo013_1"
             castShadow
             receiveShadow
             geometry={nodes.Cubo013_1.geometry}
-            material={materials["Plastico.005"]}
+            material={materials['Plastico.005']}
           />
           <mesh
             name="Cubo013_2"
             castShadow
             receiveShadow
             geometry={nodes.Cubo013_2.geometry}
-            material={materials["Material.020"]}
+            material={materials['Material.020']}
           />
         </group>
         <group
           name="Cubo014"
           position={[-49.369, 35.73, 92.188]}
           rotation={[-Math.PI, 0.219, -Math.PI]}
-          scale={0.13}
-        >
+          scale={0.13}>
           <mesh
             name="Cubo014_1"
             castShadow
             receiveShadow
             geometry={nodes.Cubo014_1.geometry}
-            material={materials["Material.021"]}
+            material={materials['Material.021']}
           />
           <mesh
             name="Cubo014_2"
             castShadow
             receiveShadow
             geometry={nodes.Cubo014_2.geometry}
-            material={materials["Material.022"]}
+            material={materials['Material.022']}
           />
         </group>
         <group
           name="Cubo015"
           position={[-50.038, 35.73, 95.19]}
           rotation={[-Math.PI, 0.219, -Math.PI]}
-          scale={0.13}
-        >
+          scale={0.13}>
           <mesh
             name="Cubo015_1"
             castShadow
             receiveShadow
             geometry={nodes.Cubo015_1.geometry}
-            material={materials["Material.021"]}
+            material={materials['Material.021']}
           />
           <mesh
             name="Cubo015_2"
             castShadow
             receiveShadow
             geometry={nodes.Cubo015_2.geometry}
-            material={materials["Material.022"]}
+            material={materials['Material.022']}
           />
         </group>
         <group
           name="Cubo016"
           position={[-51.293, 36.039, 95.875]}
           rotation={[Math.PI, -1.334, Math.PI]}
-          scale={[0.094, 0.061, 0.148]}
-        >
+          scale={[0.094, 0.061, 0.148]}>
           <mesh
             name="Cubo016_1"
             castShadow
             receiveShadow
             geometry={nodes.Cubo016_1.geometry}
-            material={materials["Plastico.005"]}
+            material={materials['Plastico.005']}
           />
           <mesh
             name="Cubo016_2"
             castShadow
             receiveShadow
             geometry={nodes.Cubo016_2.geometry}
-            material={materials["Material.020"]}
+            material={materials['Material.020']}
           />
         </group>
         <group
           name="SILLA_LAB006"
           position={[-51.476, 33.047, 104.661]}
           rotation={[Math.PI, -1.348, Math.PI]}
-          scale={0.933}
-        >
+          scale={0.933}>
           <mesh
             name="Vert013"
             castShadow
             receiveShadow
             geometry={nodes.Vert013.geometry}
-            material={materials["Patas.003"]}
+            material={materials['Patas.003']}
           />
           <mesh
             name="Vert013_1"
             castShadow
             receiveShadow
             geometry={nodes.Vert013_1.geometry}
-            material={materials["Plastico.003"]}
+            material={materials['Plastico.003']}
           />
         </group>
         <group
           name="SILLA_LAB007"
           position={[-52.078, 33.047, 107.366]}
           rotation={[Math.PI, -1.348, Math.PI]}
-          scale={0.933}
-        >
+          scale={0.933}>
           <mesh
             name="Vert014"
             castShadow
             receiveShadow
             geometry={nodes.Vert014.geometry}
-            material={materials["Patas.003"]}
+            material={materials['Patas.003']}
           />
           <mesh
             name="Vert014_1"
             castShadow
             receiveShadow
             geometry={nodes.Vert014_1.geometry}
-            material={materials["Plastico.003"]}
+            material={materials['Plastico.003']}
           />
         </group>
         <group
           name="Plane028"
           position={[-52.175, 35.651, 103.692]}
           rotation={[0, 1.346, 0]}
-          scale={[0.897, 0.193, 0.193]}
-        >
+          scale={[0.897, 0.193, 0.193]}>
           <mesh
             name="Plane144"
             castShadow
             receiveShadow
             geometry={nodes.Plane144.geometry}
-            material={materials["BAse.002"]}
+            material={materials['BAse.002']}
           />
           <mesh
             name="Plane144_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane144_1.geometry}
-            material={materials["Teclas.002"]}
+            material={materials['Teclas.002']}
           />
         </group>
         <group
           name="Plane029"
           position={[-52.843, 35.651, 106.694]}
           rotation={[0, 1.346, 0]}
-          scale={[0.897, 0.193, 0.193]}
-        >
+          scale={[0.897, 0.193, 0.193]}>
           <mesh
             name="Plane145"
             castShadow
             receiveShadow
             geometry={nodes.Plane145.geometry}
-            material={materials["BAse.002"]}
+            material={materials['BAse.002']}
           />
           <mesh
             name="Plane145_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane145_1.geometry}
-            material={materials["Teclas.002"]}
+            material={materials['Teclas.002']}
           />
         </group>
         <mesh
@@ -31611,7 +30915,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.Mesa_Docente007.geometry}
-          material={materials["Mesa.004"]}
+          material={materials['Mesa.004']}
           position={[-53.478, 35.546, 104.699]}
           rotation={[-Math.PI, 0.219, -Math.PI]}
           scale={[1.754, 1.076, 3.264]}
@@ -31620,168 +30924,160 @@ export function Modelo3D_Universidad(props) {
           name="Cubo017"
           position={[-53.499, 36.039, 103.16]}
           rotation={[Math.PI, -1.334, Math.PI]}
-          scale={[0.094, 0.061, 0.148]}
-        >
+          scale={[0.094, 0.061, 0.148]}>
           <mesh
             name="Cubo017_1"
             castShadow
             receiveShadow
             geometry={nodes.Cubo017_1.geometry}
-            material={materials["Plastico.005"]}
+            material={materials['Plastico.005']}
           />
           <mesh
             name="Cubo017_2"
             castShadow
             receiveShadow
             geometry={nodes.Cubo017_2.geometry}
-            material={materials["Material.020"]}
+            material={materials['Material.020']}
           />
         </group>
         <group
           name="Cubo018"
           position={[-52.243, 35.73, 102.475]}
           rotation={[-Math.PI, 0.219, -Math.PI]}
-          scale={0.13}
-        >
+          scale={0.13}>
           <mesh
             name="Cubo018_1"
             castShadow
             receiveShadow
             geometry={nodes.Cubo018_1.geometry}
-            material={materials["Material.021"]}
+            material={materials['Material.021']}
           />
           <mesh
             name="Cubo018_2"
             castShadow
             receiveShadow
             geometry={nodes.Cubo018_2.geometry}
-            material={materials["Material.022"]}
+            material={materials['Material.022']}
           />
         </group>
         <group
           name="Cubo019"
           position={[-52.912, 35.73, 105.477]}
           rotation={[-Math.PI, 0.219, -Math.PI]}
-          scale={0.13}
-        >
+          scale={0.13}>
           <mesh
             name="Cubo019_1"
             castShadow
             receiveShadow
             geometry={nodes.Cubo019_1.geometry}
-            material={materials["Material.021"]}
+            material={materials['Material.021']}
           />
           <mesh
             name="Cubo019_2"
             castShadow
             receiveShadow
             geometry={nodes.Cubo019_2.geometry}
-            material={materials["Material.022"]}
+            material={materials['Material.022']}
           />
         </group>
         <group
           name="Cubo020"
           position={[-54.168, 36.039, 106.162]}
           rotation={[Math.PI, -1.334, Math.PI]}
-          scale={[0.094, 0.061, 0.148]}
-        >
+          scale={[0.094, 0.061, 0.148]}>
           <mesh
             name="Cubo020_1"
             castShadow
             receiveShadow
             geometry={nodes.Cubo020_1.geometry}
-            material={materials["Plastico.005"]}
+            material={materials['Plastico.005']}
           />
           <mesh
             name="Cubo020_2"
             castShadow
             receiveShadow
             geometry={nodes.Cubo020_2.geometry}
-            material={materials["Material.020"]}
+            material={materials['Material.020']}
           />
         </group>
         <group
           name="SILLA_LAB008"
           position={[-41.628, 33.047, 106.667]}
           rotation={[Math.PI, -1.348, Math.PI]}
-          scale={0.933}
-        >
+          scale={0.933}>
           <mesh
             name="Vert015"
             castShadow
             receiveShadow
             geometry={nodes.Vert015.geometry}
-            material={materials["Patas.003"]}
+            material={materials['Patas.003']}
           />
           <mesh
             name="Vert015_1"
             castShadow
             receiveShadow
             geometry={nodes.Vert015_1.geometry}
-            material={materials["Plastico.003"]}
+            material={materials['Plastico.003']}
           />
         </group>
         <group
           name="SILLA_LAB009"
           position={[-42.23, 33.047, 109.373]}
           rotation={[Math.PI, -1.348, Math.PI]}
-          scale={0.933}
-        >
+          scale={0.933}>
           <mesh
             name="Vert016"
             castShadow
             receiveShadow
             geometry={nodes.Vert016.geometry}
-            material={materials["Patas.003"]}
+            material={materials['Patas.003']}
           />
           <mesh
             name="Vert016_1"
             castShadow
             receiveShadow
             geometry={nodes.Vert016_1.geometry}
-            material={materials["Plastico.003"]}
+            material={materials['Plastico.003']}
           />
         </group>
         <group
           name="Plane030"
           position={[-42.327, 35.651, 105.698]}
           rotation={[0, 1.346, 0]}
-          scale={[0.897, 0.193, 0.193]}
-        >
+          scale={[0.897, 0.193, 0.193]}>
           <mesh
             name="Plane147"
             castShadow
             receiveShadow
             geometry={nodes.Plane147.geometry}
-            material={materials["BAse.002"]}
+            material={materials['BAse.002']}
           />
           <mesh
             name="Plane147_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane147_1.geometry}
-            material={materials["Teclas.002"]}
+            material={materials['Teclas.002']}
           />
         </group>
         <group
           name="Plane031"
           position={[-42.995, 35.651, 108.7]}
           rotation={[0, 1.346, 0]}
-          scale={[0.897, 0.193, 0.193]}
-        >
+          scale={[0.897, 0.193, 0.193]}>
           <mesh
             name="Plane148"
             castShadow
             receiveShadow
             geometry={nodes.Plane148.geometry}
-            material={materials["BAse.002"]}
+            material={materials['BAse.002']}
           />
           <mesh
             name="Plane148_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane148_1.geometry}
-            material={materials["Teclas.002"]}
+            material={materials['Teclas.002']}
           />
         </group>
         <mesh
@@ -31789,7 +31085,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.Mesa_Docente008.geometry}
-          material={materials["Mesa.004"]}
+          material={materials['Mesa.004']}
           position={[-43.63, 35.546, 106.705]}
           rotation={[-Math.PI, 0.219, -Math.PI]}
           scale={[1.754, 1.076, 3.264]}
@@ -31798,168 +31094,160 @@ export function Modelo3D_Universidad(props) {
           name="Cubo021"
           position={[-43.652, 36.039, 105.166]}
           rotation={[Math.PI, -1.334, Math.PI]}
-          scale={[0.094, 0.061, 0.148]}
-        >
+          scale={[0.094, 0.061, 0.148]}>
           <mesh
             name="Cubo021_1"
             castShadow
             receiveShadow
             geometry={nodes.Cubo021_1.geometry}
-            material={materials["Plastico.005"]}
+            material={materials['Plastico.005']}
           />
           <mesh
             name="Cubo021_2"
             castShadow
             receiveShadow
             geometry={nodes.Cubo021_2.geometry}
-            material={materials["Material.020"]}
+            material={materials['Material.020']}
           />
         </group>
         <group
           name="Cubo022"
           position={[-42.396, 35.73, 104.481]}
           rotation={[-Math.PI, 0.219, -Math.PI]}
-          scale={0.13}
-        >
+          scale={0.13}>
           <mesh
             name="Cubo022_1"
             castShadow
             receiveShadow
             geometry={nodes.Cubo022_1.geometry}
-            material={materials["Material.021"]}
+            material={materials['Material.021']}
           />
           <mesh
             name="Cubo022_2"
             castShadow
             receiveShadow
             geometry={nodes.Cubo022_2.geometry}
-            material={materials["Material.022"]}
+            material={materials['Material.022']}
           />
         </group>
         <group
           name="Cubo023"
           position={[-43.064, 35.73, 107.483]}
           rotation={[-Math.PI, 0.219, -Math.PI]}
-          scale={0.13}
-        >
+          scale={0.13}>
           <mesh
             name="Cubo023_1"
             castShadow
             receiveShadow
             geometry={nodes.Cubo023_1.geometry}
-            material={materials["Material.021"]}
+            material={materials['Material.021']}
           />
           <mesh
             name="Cubo023_2"
             castShadow
             receiveShadow
             geometry={nodes.Cubo023_2.geometry}
-            material={materials["Material.022"]}
+            material={materials['Material.022']}
           />
         </group>
         <group
           name="Cubo024"
           position={[-44.32, 36.039, 108.168]}
           rotation={[Math.PI, -1.334, Math.PI]}
-          scale={[0.094, 0.061, 0.148]}
-        >
+          scale={[0.094, 0.061, 0.148]}>
           <mesh
             name="Cubo024_1"
             castShadow
             receiveShadow
             geometry={nodes.Cubo024_1.geometry}
-            material={materials["Plastico.005"]}
+            material={materials['Plastico.005']}
           />
           <mesh
             name="Cubo024_2"
             castShadow
             receiveShadow
             geometry={nodes.Cubo024_2.geometry}
-            material={materials["Material.020"]}
+            material={materials['Material.020']}
           />
         </group>
         <group
           name="SILLA_LAB010"
           position={[-39.641, 33.047, 95.798]}
           rotation={[Math.PI, -1.348, Math.PI]}
-          scale={0.933}
-        >
+          scale={0.933}>
           <mesh
             name="Vert017"
             castShadow
             receiveShadow
             geometry={nodes.Vert017.geometry}
-            material={materials["Patas.003"]}
+            material={materials['Patas.003']}
           />
           <mesh
             name="Vert017_1"
             castShadow
             receiveShadow
             geometry={nodes.Vert017_1.geometry}
-            material={materials["Plastico.003"]}
+            material={materials['Plastico.003']}
           />
         </group>
         <group
           name="SILLA_LAB011"
           position={[-40.244, 33.047, 98.503]}
           rotation={[Math.PI, -1.348, Math.PI]}
-          scale={0.933}
-        >
+          scale={0.933}>
           <mesh
             name="Vert018"
             castShadow
             receiveShadow
             geometry={nodes.Vert018.geometry}
-            material={materials["Patas.003"]}
+            material={materials['Patas.003']}
           />
           <mesh
             name="Vert018_1"
             castShadow
             receiveShadow
             geometry={nodes.Vert018_1.geometry}
-            material={materials["Plastico.003"]}
+            material={materials['Plastico.003']}
           />
         </group>
         <group
           name="Plane032"
           position={[-40.34, 35.651, 94.828]}
           rotation={[0, 1.346, 0]}
-          scale={[0.897, 0.193, 0.193]}
-        >
+          scale={[0.897, 0.193, 0.193]}>
           <mesh
             name="Plane150"
             castShadow
             receiveShadow
             geometry={nodes.Plane150.geometry}
-            material={materials["BAse.002"]}
+            material={materials['BAse.002']}
           />
           <mesh
             name="Plane150_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane150_1.geometry}
-            material={materials["Teclas.002"]}
+            material={materials['Teclas.002']}
           />
         </group>
         <group
           name="Plane033"
           position={[-41.009, 35.651, 97.83]}
           rotation={[0, 1.346, 0]}
-          scale={[0.897, 0.193, 0.193]}
-        >
+          scale={[0.897, 0.193, 0.193]}>
           <mesh
             name="Plane151"
             castShadow
             receiveShadow
             geometry={nodes.Plane151.geometry}
-            material={materials["BAse.002"]}
+            material={materials['BAse.002']}
           />
           <mesh
             name="Plane151_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane151_1.geometry}
-            material={materials["Teclas.002"]}
+            material={materials['Teclas.002']}
           />
         </group>
         <mesh
@@ -31967,7 +31255,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.Mesa_Docente009.geometry}
-          material={materials["Mesa.004"]}
+          material={materials['Mesa.004']}
           position={[-41.643, 35.546, 95.836]}
           rotation={[-Math.PI, 0.219, -Math.PI]}
           scale={[1.754, 1.076, 3.264]}
@@ -31976,168 +31264,160 @@ export function Modelo3D_Universidad(props) {
           name="Cubo025"
           position={[-41.665, 36.039, 94.296]}
           rotation={[Math.PI, -1.334, Math.PI]}
-          scale={[0.094, 0.061, 0.148]}
-        >
+          scale={[0.094, 0.061, 0.148]}>
           <mesh
             name="Cubo025_1"
             castShadow
             receiveShadow
             geometry={nodes.Cubo025_1.geometry}
-            material={materials["Plastico.005"]}
+            material={materials['Plastico.005']}
           />
           <mesh
             name="Cubo025_2"
             castShadow
             receiveShadow
             geometry={nodes.Cubo025_2.geometry}
-            material={materials["Material.020"]}
+            material={materials['Material.020']}
           />
         </group>
         <group
           name="Cubo026"
           position={[-40.409, 35.73, 93.611]}
           rotation={[-Math.PI, 0.219, -Math.PI]}
-          scale={0.13}
-        >
+          scale={0.13}>
           <mesh
             name="Cubo026_1"
             castShadow
             receiveShadow
             geometry={nodes.Cubo026_1.geometry}
-            material={materials["Material.021"]}
+            material={materials['Material.021']}
           />
           <mesh
             name="Cubo026_2"
             castShadow
             receiveShadow
             geometry={nodes.Cubo026_2.geometry}
-            material={materials["Material.022"]}
+            material={materials['Material.022']}
           />
         </group>
         <group
           name="Cubo027"
           position={[-41.078, 35.73, 96.613]}
           rotation={[-Math.PI, 0.219, -Math.PI]}
-          scale={0.13}
-        >
+          scale={0.13}>
           <mesh
             name="Cubo027_1"
             castShadow
             receiveShadow
             geometry={nodes.Cubo027_1.geometry}
-            material={materials["Material.021"]}
+            material={materials['Material.021']}
           />
           <mesh
             name="Cubo027_2"
             castShadow
             receiveShadow
             geometry={nodes.Cubo027_2.geometry}
-            material={materials["Material.022"]}
+            material={materials['Material.022']}
           />
         </group>
         <group
           name="Cubo028"
           position={[-42.334, 36.039, 97.298]}
           rotation={[Math.PI, -1.334, Math.PI]}
-          scale={[0.094, 0.061, 0.148]}
-        >
+          scale={[0.094, 0.061, 0.148]}>
           <mesh
             name="Cubo028_1"
             castShadow
             receiveShadow
             geometry={nodes.Cubo028_1.geometry}
-            material={materials["Plastico.005"]}
+            material={materials['Plastico.005']}
           />
           <mesh
             name="Cubo028_2"
             castShadow
             receiveShadow
             geometry={nodes.Cubo028_2.geometry}
-            material={materials["Material.020"]}
+            material={materials['Material.020']}
           />
         </group>
         <group
           name="SILLA_LAB012"
           position={[-30.022, 33.047, 97.73]}
           rotation={[Math.PI, -1.348, Math.PI]}
-          scale={0.933}
-        >
+          scale={0.933}>
           <mesh
             name="Vert019"
             castShadow
             receiveShadow
             geometry={nodes.Vert019.geometry}
-            material={materials["Patas.003"]}
+            material={materials['Patas.003']}
           />
           <mesh
             name="Vert019_1"
             castShadow
             receiveShadow
             geometry={nodes.Vert019_1.geometry}
-            material={materials["Plastico.003"]}
+            material={materials['Plastico.003']}
           />
         </group>
         <group
           name="SILLA_LAB013"
           position={[-30.624, 33.047, 100.435]}
           rotation={[Math.PI, -1.348, Math.PI]}
-          scale={0.933}
-        >
+          scale={0.933}>
           <mesh
             name="Vert020"
             castShadow
             receiveShadow
             geometry={nodes.Vert020.geometry}
-            material={materials["Patas.003"]}
+            material={materials['Patas.003']}
           />
           <mesh
             name="Vert020_1"
             castShadow
             receiveShadow
             geometry={nodes.Vert020_1.geometry}
-            material={materials["Plastico.003"]}
+            material={materials['Plastico.003']}
           />
         </group>
         <group
           name="Plane034"
           position={[-30.721, 35.651, 96.76]}
           rotation={[0, 1.346, 0]}
-          scale={[0.897, 0.193, 0.193]}
-        >
+          scale={[0.897, 0.193, 0.193]}>
           <mesh
             name="Plane153"
             castShadow
             receiveShadow
             geometry={nodes.Plane153.geometry}
-            material={materials["BAse.002"]}
+            material={materials['BAse.002']}
           />
           <mesh
             name="Plane153_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane153_1.geometry}
-            material={materials["Teclas.002"]}
+            material={materials['Teclas.002']}
           />
         </group>
         <group
           name="Plane035"
           position={[-31.389, 35.651, 99.762]}
           rotation={[0, 1.346, 0]}
-          scale={[0.897, 0.193, 0.193]}
-        >
+          scale={[0.897, 0.193, 0.193]}>
           <mesh
             name="Plane154"
             castShadow
             receiveShadow
             geometry={nodes.Plane154.geometry}
-            material={materials["BAse.002"]}
+            material={materials['BAse.002']}
           />
           <mesh
             name="Plane154_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane154_1.geometry}
-            material={materials["Teclas.002"]}
+            material={materials['Teclas.002']}
           />
         </group>
         <mesh
@@ -32145,7 +31425,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.Mesa_Docente010.geometry}
-          material={materials["Mesa.004"]}
+          material={materials['Mesa.004']}
           position={[-32.024, 35.546, 97.768]}
           rotation={[-Math.PI, 0.219, -Math.PI]}
           scale={[1.754, 1.076, 3.264]}
@@ -32154,168 +31434,160 @@ export function Modelo3D_Universidad(props) {
           name="Cubo029"
           position={[-32.046, 36.039, 96.228]}
           rotation={[Math.PI, -1.334, Math.PI]}
-          scale={[0.094, 0.061, 0.148]}
-        >
+          scale={[0.094, 0.061, 0.148]}>
           <mesh
             name="Cubo029_1"
             castShadow
             receiveShadow
             geometry={nodes.Cubo029_1.geometry}
-            material={materials["Plastico.005"]}
+            material={materials['Plastico.005']}
           />
           <mesh
             name="Cubo029_2"
             castShadow
             receiveShadow
             geometry={nodes.Cubo029_2.geometry}
-            material={materials["Material.020"]}
+            material={materials['Material.020']}
           />
         </group>
         <group
           name="Cubo030"
           position={[-30.79, 35.73, 95.543]}
           rotation={[-Math.PI, 0.219, -Math.PI]}
-          scale={0.13}
-        >
+          scale={0.13}>
           <mesh
             name="Cubo030_1"
             castShadow
             receiveShadow
             geometry={nodes.Cubo030_1.geometry}
-            material={materials["Material.021"]}
+            material={materials['Material.021']}
           />
           <mesh
             name="Cubo030_2"
             castShadow
             receiveShadow
             geometry={nodes.Cubo030_2.geometry}
-            material={materials["Material.022"]}
+            material={materials['Material.022']}
           />
         </group>
         <group
           name="Cubo031"
           position={[-31.458, 35.73, 98.545]}
           rotation={[-Math.PI, 0.219, -Math.PI]}
-          scale={0.13}
-        >
+          scale={0.13}>
           <mesh
             name="Cubo031_1"
             castShadow
             receiveShadow
             geometry={nodes.Cubo031_1.geometry}
-            material={materials["Material.021"]}
+            material={materials['Material.021']}
           />
           <mesh
             name="Cubo031_2"
             castShadow
             receiveShadow
             geometry={nodes.Cubo031_2.geometry}
-            material={materials["Material.022"]}
+            material={materials['Material.022']}
           />
         </group>
         <group
           name="Cubo032"
           position={[-32.714, 36.039, 99.23]}
           rotation={[Math.PI, -1.334, Math.PI]}
-          scale={[0.094, 0.061, 0.148]}
-        >
+          scale={[0.094, 0.061, 0.148]}>
           <mesh
             name="Cubo032_1"
             castShadow
             receiveShadow
             geometry={nodes.Cubo032_1.geometry}
-            material={materials["Plastico.005"]}
+            material={materials['Plastico.005']}
           />
           <mesh
             name="Cubo032_2"
             castShadow
             receiveShadow
             geometry={nodes.Cubo032_2.geometry}
-            material={materials["Material.020"]}
+            material={materials['Material.020']}
           />
         </group>
         <group
           name="SILLA_LAB014"
           position={[-32.764, 33.047, 108.698]}
           rotation={[Math.PI, -1.348, Math.PI]}
-          scale={0.933}
-        >
+          scale={0.933}>
           <mesh
             name="Vert021"
             castShadow
             receiveShadow
             geometry={nodes.Vert021.geometry}
-            material={materials["Patas.003"]}
+            material={materials['Patas.003']}
           />
           <mesh
             name="Vert021_1"
             castShadow
             receiveShadow
             geometry={nodes.Vert021_1.geometry}
-            material={materials["Plastico.003"]}
+            material={materials['Plastico.003']}
           />
         </group>
         <group
           name="SILLA_LAB015"
           position={[-33.366, 33.047, 111.403]}
           rotation={[Math.PI, -1.348, Math.PI]}
-          scale={0.933}
-        >
+          scale={0.933}>
           <mesh
             name="Vert022"
             castShadow
             receiveShadow
             geometry={nodes.Vert022.geometry}
-            material={materials["Patas.003"]}
+            material={materials['Patas.003']}
           />
           <mesh
             name="Vert022_1"
             castShadow
             receiveShadow
             geometry={nodes.Vert022_1.geometry}
-            material={materials["Plastico.003"]}
+            material={materials['Plastico.003']}
           />
         </group>
         <group
           name="Plane036"
           position={[-33.463, 35.651, 107.728]}
           rotation={[0, 1.346, 0]}
-          scale={[0.897, 0.193, 0.193]}
-        >
+          scale={[0.897, 0.193, 0.193]}>
           <mesh
             name="Plane156"
             castShadow
             receiveShadow
             geometry={nodes.Plane156.geometry}
-            material={materials["BAse.002"]}
+            material={materials['BAse.002']}
           />
           <mesh
             name="Plane156_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane156_1.geometry}
-            material={materials["Teclas.002"]}
+            material={materials['Teclas.002']}
           />
         </group>
         <group
           name="Plane037"
           position={[-34.131, 35.651, 110.73]}
           rotation={[0, 1.346, 0]}
-          scale={[0.897, 0.193, 0.193]}
-        >
+          scale={[0.897, 0.193, 0.193]}>
           <mesh
             name="Plane157"
             castShadow
             receiveShadow
             geometry={nodes.Plane157.geometry}
-            material={materials["BAse.002"]}
+            material={materials['BAse.002']}
           />
           <mesh
             name="Plane157_1"
             castShadow
             receiveShadow
             geometry={nodes.Plane157_1.geometry}
-            material={materials["Teclas.002"]}
+            material={materials['Teclas.002']}
           />
         </group>
         <mesh
@@ -32323,7 +31595,7 @@ export function Modelo3D_Universidad(props) {
           castShadow
           receiveShadow
           geometry={nodes.Mesa_Docente011.geometry}
-          material={materials["Mesa.004"]}
+          material={materials['Mesa.004']}
           position={[-34.766, 35.546, 108.736]}
           rotation={[-Math.PI, 0.219, -Math.PI]}
           scale={[1.754, 1.076, 3.264]}
@@ -32332,89 +31604,1241 @@ export function Modelo3D_Universidad(props) {
           name="Cubo033"
           position={[-34.788, 36.039, 107.197]}
           rotation={[Math.PI, -1.334, Math.PI]}
-          scale={[0.094, 0.061, 0.148]}
-        >
+          scale={[0.094, 0.061, 0.148]}>
           <mesh
             name="Cubo033_1"
             castShadow
             receiveShadow
             geometry={nodes.Cubo033_1.geometry}
-            material={materials["Plastico.005"]}
+            material={materials['Plastico.005']}
           />
           <mesh
             name="Cubo033_2"
             castShadow
             receiveShadow
             geometry={nodes.Cubo033_2.geometry}
-            material={materials["Material.020"]}
+            material={materials['Material.020']}
           />
         </group>
         <group
           name="Cubo034"
           position={[-33.532, 35.73, 106.512]}
           rotation={[-Math.PI, 0.219, -Math.PI]}
-          scale={0.13}
-        >
+          scale={0.13}>
           <mesh
             name="Cubo034_1"
             castShadow
             receiveShadow
             geometry={nodes.Cubo034_1.geometry}
-            material={materials["Material.021"]}
+            material={materials['Material.021']}
           />
           <mesh
             name="Cubo034_2"
             castShadow
             receiveShadow
             geometry={nodes.Cubo034_2.geometry}
-            material={materials["Material.022"]}
+            material={materials['Material.022']}
           />
         </group>
         <group
           name="Cubo035"
           position={[-34.2, 35.73, 109.514]}
           rotation={[-Math.PI, 0.219, -Math.PI]}
-          scale={0.13}
-        >
+          scale={0.13}>
           <mesh
             name="Cubo035_1"
             castShadow
             receiveShadow
             geometry={nodes.Cubo035_1.geometry}
-            material={materials["Material.021"]}
+            material={materials['Material.021']}
           />
           <mesh
             name="Cubo035_2"
             castShadow
             receiveShadow
             geometry={nodes.Cubo035_2.geometry}
-            material={materials["Material.022"]}
+            material={materials['Material.022']}
           />
         </group>
         <group
           name="Cubo036"
-          position={[-35.456, 36.039, 110.199]}
+          position={[-35.456, 36.039, 110.198]}
           rotation={[Math.PI, -1.334, Math.PI]}
-          scale={[0.094, 0.061, 0.148]}
-        >
+          scale={[0.094, 0.061, 0.148]}>
           <mesh
             name="Cubo036_1"
             castShadow
             receiveShadow
             geometry={nodes.Cubo036_1.geometry}
-            material={materials["Plastico.005"]}
+            material={materials['Plastico.005']}
           />
           <mesh
             name="Cubo036_2"
             castShadow
             receiveShadow
             geometry={nodes.Cubo036_2.geometry}
-            material={materials["Material.020"]}
+            material={materials['Material.020']}
+          />
+        </group>
+        <mesh
+          name="U004"
+          castShadow
+          receiveShadow
+          geometry={nodes.U004.geometry}
+          material={materials['LetraUpds.001']}
+          position={[18.854, 37.161, -63.42]}
+          rotation={[0, 0.691, 0]}
+          scale={[14.146, 10.113, 12.389]}
+        />
+        <mesh
+          name="S004"
+          castShadow
+          receiveShadow
+          geometry={nodes.S004.geometry}
+          material={materials['LetraUpds.001']}
+          position={[31.596, 15.954, -74.908]}
+          rotation={[Math.PI, -0.731, Math.PI]}
+          scale={[14.146, 10.113, 12.389]}
+        />
+        <group name="palmera" position={[-11.552, 0.196, -80.015]} scale={2.841}>
+          <mesh
+            name="free_palm"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm.geometry}
+            material={nodes.free_palm.material}
+          />
+          <mesh
+            name="free_palm_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm_1.geometry}
+            material={materials['hOJAS.001']}
+          />
+          <mesh
+            name="free_palm_2"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm_2.geometry}
+            material={materials['Tallos.001']}
+          />
+        </group>
+        <mesh
+          name="P004"
+          castShadow
+          receiveShadow
+          geometry={nodes.P004.geometry}
+          material={materials['LetraUpds.001']}
+          position={[46.454, 22.416, -86.906]}
+          rotation={[Math.PI, -0.714, Math.PI]}
+          scale={[14.146, 10.113, 12.389]}
+        />
+        <mesh
+          name="Mastil"
+          castShadow
+          receiveShadow
+          geometry={nodes.Mastil.geometry}
+          material={materials.mastil}
+          position={[4.359, 10.913, 16.756]}
+          scale={0.208}
+        />
+        <group name="masetaUPDS" position={[30.549, 0.1, 38.762]} scale={0.231}>
+          <mesh
+            name="Circle016"
+            castShadow
+            receiveShadow
+            geometry={nodes.Circle016.geometry}
+            material={materials['Maseta.001']}
+          />
+          <mesh
+            name="Circle016_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.Circle016_1.geometry}
+            material={materials.tALLOS}
+          />
+          <mesh
+            name="Circle016_2"
+            castShadow
+            receiveShadow
+            geometry={nodes.Circle016_2.geometry}
+            material={materials.hOJAS}
+          />
+        </group>
+        <group name="Lampara" position={[147.903, 3.411, 30.262]} scale={[0.29, 3.788, 0.29]}>
+          <mesh
+            name="Cylinder032"
+            castShadow
+            receiveShadow
+            geometry={nodes.Cylinder032.geometry}
+            material={materials.poste}
+          />
+          <mesh
+            name="Cylinder032_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.Cylinder032_1.geometry}
+            material={materials.focos}
+          />
+        </group>
+        <mesh
+          name="D004"
+          castShadow
+          receiveShadow
+          geometry={nodes.D004.geometry}
+          material={materials['LetraUpds.001']}
+          position={[38.454, 1.487, -81.104]}
+          rotation={[Math.PI, -0.772, Math.PI]}
+          scale={[14.146, 10.113, 12.389]}
+        />
+        <group
+          name="CarritoSomos"
+          position={[13.682, 1.178, -118.68]}
+          rotation={[-Math.PI, 1.52, -Math.PI]}
+          scale={1.619}>
+          <mesh
+            name="Sphere006"
+            castShadow
+            receiveShadow
+            geometry={nodes.Sphere006.geometry}
+            material={materials.Spoon}
+          />
+          <mesh
+            name="Sphere006_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.Sphere006_1.geometry}
+            material={materials.Bola}
+          />
+          <mesh
+            name="Sphere006_2"
+            castShadow
+            receiveShadow
+            geometry={nodes.Sphere006_2.geometry}
+            material={materials.LLantas}
+          />
+          <mesh
+            name="Sphere006_3"
+            castShadow
+            receiveShadow
+            geometry={nodes.Sphere006_3.geometry}
+            material={materials.Perno}
+          />
+          <mesh
+            name="Sphere006_4"
+            castShadow
+            receiveShadow
+            geometry={nodes.Sphere006_4.geometry}
+            material={materials['LLantas.001']}
+          />
+          <mesh
+            name="Sphere006_5"
+            castShadow
+            receiveShadow
+            geometry={nodes.Sphere006_5.geometry}
+            material={materials.LLaantas2}
+          />
+          <mesh
+            name="Sphere006_6"
+            castShadow
+            receiveShadow
+            geometry={nodes.Sphere006_6.geometry}
+            material={materials.Tubo}
+          />
+          <mesh
+            name="Sphere006_7"
+            castShadow
+            receiveShadow
+            geometry={nodes.Sphere006_7.geometry}
+            material={materials.Estructura}
+          />
+          <mesh
+            name="Sphere006_8"
+            castShadow
+            receiveShadow
+            geometry={nodes.Sphere006_8.geometry}
+            material={materials.ColorBasos1}
+          />
+          <mesh
+            name="Sphere006_9"
+            castShadow
+            receiveShadow
+            geometry={nodes.Sphere006_9.geometry}
+            material={materials['Material.024']}
+          />
+        </group>
+        <mesh
+          name="BrasoLamp"
+          castShadow
+          receiveShadow
+          geometry={nodes.BrasoLamp.geometry}
+          material={materials.poste}
+          position={[149.65, 9.525, 30.262]}
+          rotation={[-Math.PI, 0, -Math.PI]}
+          scale={0.707}
+        />
+        <group
+          name="BasureroDoble008"
+          position={[250.892, 0.927, -83.57]}
+          rotation={[-Math.PI, 0.646, -Math.PI]}
+          scale={[0.185, 0.67, 0.67]}>
+          <mesh
+            name="Plane130"
+            castShadow
+            receiveShadow
+            geometry={nodes.Plane130.geometry}
+            material={materials['basurero azul.001']}
+          />
+          <mesh
+            name="Plane130_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.Plane130_1.geometry}
+            material={materials['basurero amarillo.001']}
+          />
+          <mesh
+            name="Plane130_2"
+            castShadow
+            receiveShadow
+            geometry={nodes.Plane130_2.geometry}
+            material={materials['base basurero.001']}
+          />
+        </group>
+        <group name="palmera001" position={[-20.319, 0.196, -79.002]} scale={2.409}>
+          <mesh
+            name="free_palm001"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm001.geometry}
+            material={nodes.free_palm001.material}
+          />
+          <mesh
+            name="free_palm001_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm001_1.geometry}
+            material={materials['hOJAS.001']}
+          />
+          <mesh
+            name="free_palm001_2"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm001_2.geometry}
+            material={materials['Tallos.001']}
+          />
+        </group>
+        <group name="palmera002" position={[-28.57, 0.196, -81.339]} scale={3.283}>
+          <mesh
+            name="free_palm002"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm002.geometry}
+            material={nodes.free_palm002.material}
+          />
+          <mesh
+            name="free_palm002_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm002_1.geometry}
+            material={materials['hOJAS.001']}
+          />
+          <mesh
+            name="free_palm002_2"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm002_2.geometry}
+            material={materials['Tallos.001']}
+          />
+        </group>
+        <group name="palmera003" position={[-36.963, 0.196, -80.622]} scale={3.059}>
+          <mesh
+            name="free_palm003"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm003.geometry}
+            material={nodes.free_palm003.material}
+          />
+          <mesh
+            name="free_palm003_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm003_1.geometry}
+            material={materials['hOJAS.001']}
+          />
+          <mesh
+            name="free_palm003_2"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm003_2.geometry}
+            material={materials['Tallos.001']}
+          />
+        </group>
+        <group name="palmera004" position={[-45.804, 0.196, -80.101]} scale={2.984}>
+          <mesh
+            name="free_palm004"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm004.geometry}
+            material={nodes.free_palm004.material}
+          />
+          <mesh
+            name="free_palm004_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm004_1.geometry}
+            material={materials['hOJAS.001']}
+          />
+          <mesh
+            name="free_palm004_2"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm004_2.geometry}
+            material={materials['Tallos.001']}
+          />
+        </group>
+        <group name="palmera005" position={[-55.291, 0.196, -81.252]} scale={3.377}>
+          <mesh
+            name="free_palm005"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm005.geometry}
+            material={nodes.free_palm005.material}
+          />
+          <mesh
+            name="free_palm005_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm005_1.geometry}
+            material={materials['hOJAS.001']}
+          />
+          <mesh
+            name="free_palm005_2"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm005_2.geometry}
+            material={materials['Tallos.001']}
+          />
+        </group>
+        <group name="palmera006" position={[-66.729, 0.196, -79.363]} scale={2.578}>
+          <mesh
+            name="free_palm006"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm006.geometry}
+            material={nodes.free_palm006.material}
+          />
+          <mesh
+            name="free_palm006_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm006_1.geometry}
+            material={materials['hOJAS.001']}
+          />
+          <mesh
+            name="free_palm006_2"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm006_2.geometry}
+            material={materials['Tallos.001']}
+          />
+        </group>
+        <group name="palmera007" position={[42.731, 0.196, -80.775]} scale={2.577}>
+          <mesh
+            name="free_palm007"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm007.geometry}
+            material={nodes.free_palm007.material}
+          />
+          <mesh
+            name="free_palm007_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm007_1.geometry}
+            material={materials['hOJAS.001']}
+          />
+          <mesh
+            name="free_palm007_2"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm007_2.geometry}
+            material={materials['Tallos.001']}
+          />
+        </group>
+        <group name="palmera008" position={[55.854, 0.196, -81.621]} scale={3.301}>
+          <mesh
+            name="free_palm008"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm008.geometry}
+            material={nodes.free_palm008.material}
+          />
+          <mesh
+            name="free_palm008_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm008_1.geometry}
+            material={materials['hOJAS.001']}
+          />
+          <mesh
+            name="free_palm008_2"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm008_2.geometry}
+            material={materials['Tallos.001']}
+          />
+        </group>
+        <group name="palmera009" position={[69.672, 0.196, -81.558]} scale={3.301}>
+          <mesh
+            name="free_palm009"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm009.geometry}
+            material={nodes.free_palm009.material}
+          />
+          <mesh
+            name="free_palm009_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm009_1.geometry}
+            material={materials['hOJAS.001']}
+          />
+          <mesh
+            name="free_palm009_2"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm009_2.geometry}
+            material={materials['Tallos.001']}
+          />
+        </group>
+        <group name="palmera010" position={[86.539, 0.196, -83.11]} scale={3.946}>
+          <mesh
+            name="free_palm010"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm010.geometry}
+            material={nodes.free_palm010.material}
+          />
+          <mesh
+            name="free_palm010_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm010_1.geometry}
+            material={materials['hOJAS.001']}
+          />
+          <mesh
+            name="free_palm010_2"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm010_2.geometry}
+            material={materials['Tallos.001']}
+          />
+        </group>
+        <group name="palmera012" position={[114.951, 0.196, -82.679]} scale={3.632}>
+          <mesh
+            name="free_palm012"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm012.geometry}
+            material={nodes.free_palm012.material}
+          />
+          <mesh
+            name="free_palm012_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm012_1.geometry}
+            material={materials['hOJAS.001']}
+          />
+          <mesh
+            name="free_palm012_2"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm012_2.geometry}
+            material={materials['Tallos.001']}
+          />
+        </group>
+        <group name="palmera013" position={[141.422, 0.196, -82.51]} scale={3.552}>
+          <mesh
+            name="free_palm013"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm013.geometry}
+            material={nodes.free_palm013.material}
+          />
+          <mesh
+            name="free_palm013_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm013_1.geometry}
+            material={materials['hOJAS.001']}
+          />
+          <mesh
+            name="free_palm013_2"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm013_2.geometry}
+            material={materials['Tallos.001']}
+          />
+        </group>
+        <group name="palmera014" position={[156.822, 0.196, -84.005]} scale={3.718}>
+          <mesh
+            name="free_palm014"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm014.geometry}
+            material={nodes.free_palm014.material}
+          />
+          <mesh
+            name="free_palm014_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm014_1.geometry}
+            material={materials['hOJAS.001']}
+          />
+          <mesh
+            name="free_palm014_2"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm014_2.geometry}
+            material={materials['Tallos.001']}
+          />
+        </group>
+        <group name="palmera015" position={[180.302, 0.196, -82.391]} scale={3.157}>
+          <mesh
+            name="free_palm015"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm015.geometry}
+            material={nodes.free_palm015.material}
+          />
+          <mesh
+            name="free_palm015_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm015_1.geometry}
+            material={materials['hOJAS.001']}
+          />
+          <mesh
+            name="free_palm015_2"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm015_2.geometry}
+            material={materials['Tallos.001']}
+          />
+        </group>
+        <group name="palmera016" position={[207.267, 0.196, -80.978]} scale={3.393}>
+          <mesh
+            name="free_palm016"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm016.geometry}
+            material={nodes.free_palm016.material}
+          />
+          <mesh
+            name="free_palm016_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm016_1.geometry}
+            material={materials['hOJAS.001']}
+          />
+          <mesh
+            name="free_palm016_2"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm016_2.geometry}
+            material={materials['Tallos.001']}
+          />
+        </group>
+        <group name="palmera017" position={[236.728, 0.196, -84.297]} scale={3.282}>
+          <mesh
+            name="free_palm017"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm017.geometry}
+            material={nodes.free_palm017.material}
+          />
+          <mesh
+            name="free_palm017_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm017_1.geometry}
+            material={materials['hOJAS.001']}
+          />
+          <mesh
+            name="free_palm017_2"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm017_2.geometry}
+            material={materials['Tallos.001']}
+          />
+        </group>
+        <group name="palmera018" position={[193.403, 0.196, -81.45]} scale={3.19}>
+          <mesh
+            name="free_palm018"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm018.geometry}
+            material={nodes.free_palm018.material}
+          />
+          <mesh
+            name="free_palm018_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm018_1.geometry}
+            material={materials['hOJAS.001']}
+          />
+          <mesh
+            name="free_palm018_2"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm018_2.geometry}
+            material={materials['Tallos.001']}
+          />
+        </group>
+        <group name="palmera019" position={[193.403, 0.196, -81.45]} scale={3.19}>
+          <mesh
+            name="free_palm019"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm019.geometry}
+            material={nodes.free_palm019.material}
+          />
+          <mesh
+            name="free_palm019_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm019_1.geometry}
+            material={materials['hOJAS.001']}
+          />
+          <mesh
+            name="free_palm019_2"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm019_2.geometry}
+            material={materials['Tallos.001']}
+          />
+        </group>
+        <group name="palmera020" position={[222.581, 0.196, -82.855]} scale={3.592}>
+          <mesh
+            name="free_palm020"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm020.geometry}
+            material={nodes.free_palm020.material}
+          />
+          <mesh
+            name="free_palm020_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm020_1.geometry}
+            material={materials['hOJAS.001']}
+          />
+          <mesh
+            name="free_palm020_2"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm020_2.geometry}
+            material={materials['Tallos.001']}
+          />
+        </group>
+        <group name="palmera021" position={[265.852, 0.196, -48.851]} scale={3.452}>
+          <mesh
+            name="free_palm021"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm021.geometry}
+            material={nodes.free_palm021.material}
+          />
+          <mesh
+            name="free_palm021_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm021_1.geometry}
+            material={materials['hOJAS.001']}
+          />
+          <mesh
+            name="free_palm021_2"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm021_2.geometry}
+            material={materials['Tallos.001']}
+          />
+        </group>
+        <group name="palmera022" position={[262.847, 0.196, -21.709]} scale={3.521}>
+          <mesh
+            name="free_palm022"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm022.geometry}
+            material={nodes.free_palm022.material}
+          />
+          <mesh
+            name="free_palm022_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm022_1.geometry}
+            material={materials['hOJAS.001']}
+          />
+          <mesh
+            name="free_palm022_2"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm022_2.geometry}
+            material={materials['Tallos.001']}
+          />
+        </group>
+        <group name="palmera023" position={[263.389, 0.196, -35.776]} scale={3.282}>
+          <mesh
+            name="free_palm023"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm023.geometry}
+            material={nodes.free_palm023.material}
+          />
+          <mesh
+            name="free_palm023_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm023_1.geometry}
+            material={materials['hOJAS.001']}
+          />
+          <mesh
+            name="free_palm023_2"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm023_2.geometry}
+            material={materials['Tallos.001']}
+          />
+        </group>
+        <group name="palmera024" position={[261.731, 0.196, -9.112]} scale={3.201}>
+          <mesh
+            name="free_palm024"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm024.geometry}
+            material={nodes.free_palm024.material}
+          />
+          <mesh
+            name="free_palm024_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm024_1.geometry}
+            material={materials['hOJAS.001']}
+          />
+          <mesh
+            name="free_palm024_2"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm024_2.geometry}
+            material={materials['Tallos.001']}
+          />
+        </group>
+        <group name="palmera025" position={[261.353, 0.196, 3.951]} scale={3.47}>
+          <mesh
+            name="free_palm025"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm025.geometry}
+            material={nodes.free_palm025.material}
+          />
+          <mesh
+            name="free_palm025_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm025_1.geometry}
+            material={materials['hOJAS.001']}
+          />
+          <mesh
+            name="free_palm025_2"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm025_2.geometry}
+            material={materials['Tallos.001']}
+          />
+        </group>
+        <group name="palmera026" position={[260.842, 0.196, 16.42]} scale={3.766}>
+          <mesh
+            name="free_palm026"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm026.geometry}
+            material={nodes.free_palm026.material}
+          />
+          <mesh
+            name="free_palm026_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm026_1.geometry}
+            material={materials['hOJAS.001']}
+          />
+          <mesh
+            name="free_palm026_2"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm026_2.geometry}
+            material={materials['Tallos.001']}
+          />
+        </group>
+        <group name="palmera027" position={[260.624, 0.196, 28.762]} scale={3.552}>
+          <mesh
+            name="free_palm027"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm027.geometry}
+            material={nodes.free_palm027.material}
+          />
+          <mesh
+            name="free_palm027_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm027_1.geometry}
+            material={materials['hOJAS.001']}
+          />
+          <mesh
+            name="free_palm027_2"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm027_2.geometry}
+            material={materials['Tallos.001']}
+          />
+        </group>
+        <group name="palmera028" position={[258.415, 0.196, 43.566]} scale={3.552}>
+          <mesh
+            name="free_palm028"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm028.geometry}
+            material={nodes.free_palm028.material}
+          />
+          <mesh
+            name="free_palm028_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm028_1.geometry}
+            material={materials['hOJAS.001']}
+          />
+          <mesh
+            name="free_palm028_2"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm028_2.geometry}
+            material={materials['Tallos.001']}
+          />
+        </group>
+        <group name="palmera029" position={[258.774, 0.196, 55.832]} scale={3.65}>
+          <mesh
+            name="free_palm029"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm029.geometry}
+            material={nodes.free_palm029.material}
+          />
+          <mesh
+            name="free_palm029_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm029_1.geometry}
+            material={materials['hOJAS.001']}
+          />
+          <mesh
+            name="free_palm029_2"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm029_2.geometry}
+            material={materials['Tallos.001']}
+          />
+        </group>
+        <group name="palmera030" position={[257.396, 0.196, 68.288]} scale={3.668}>
+          <mesh
+            name="free_palm030"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm030.geometry}
+            material={nodes.free_palm030.material}
+          />
+          <mesh
+            name="free_palm030_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm030_1.geometry}
+            material={materials['hOJAS.001']}
+          />
+          <mesh
+            name="free_palm030_2"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm030_2.geometry}
+            material={materials['Tallos.001']}
+          />
+        </group>
+        <group
+          name="CarritoSomos001"
+          position={[32.062, 1.178, -118.68]}
+          rotation={[0, -1.414, 0]}
+          scale={1.619}>
+          <mesh
+            name="Sphere051"
+            castShadow
+            receiveShadow
+            geometry={nodes.Sphere051.geometry}
+            material={materials.Spoon}
+          />
+          <mesh
+            name="Sphere051_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.Sphere051_1.geometry}
+            material={materials.Bola}
+          />
+          <mesh
+            name="Sphere051_2"
+            castShadow
+            receiveShadow
+            geometry={nodes.Sphere051_2.geometry}
+            material={materials.LLantas}
+          />
+          <mesh
+            name="Sphere051_3"
+            castShadow
+            receiveShadow
+            geometry={nodes.Sphere051_3.geometry}
+            material={materials.Perno}
+          />
+          <mesh
+            name="Sphere051_4"
+            castShadow
+            receiveShadow
+            geometry={nodes.Sphere051_4.geometry}
+            material={materials['LLantas.001']}
+          />
+          <mesh
+            name="Sphere051_5"
+            castShadow
+            receiveShadow
+            geometry={nodes.Sphere051_5.geometry}
+            material={materials.LLaantas2}
+          />
+          <mesh
+            name="Sphere051_6"
+            castShadow
+            receiveShadow
+            geometry={nodes.Sphere051_6.geometry}
+            material={materials.Tubo}
+          />
+          <mesh
+            name="Sphere051_7"
+            castShadow
+            receiveShadow
+            geometry={nodes.Sphere051_7.geometry}
+            material={materials.Estructura}
+          />
+          <mesh
+            name="Sphere051_8"
+            castShadow
+            receiveShadow
+            geometry={nodes.Sphere051_8.geometry}
+            material={materials.ColorBasos1}
+          />
+          <mesh
+            name="Sphere051_9"
+            castShadow
+            receiveShadow
+            geometry={nodes.Sphere051_9.geometry}
+            material={materials['Material.024']}
+          />
+        </group>
+        <mesh
+          name="U005"
+          castShadow
+          receiveShadow
+          geometry={nodes.U005.geometry}
+          material={materials['LetraUpds.001']}
+          position={[110.071, -2.851, 83.318]}
+          rotation={[-Math.PI, 0.169, -Math.PI]}
+          scale={[10.78, 7.707, 9.442]}
+        />
+        <mesh
+          name="S005"
+          castShadow
+          receiveShadow
+          geometry={nodes.S005.geometry}
+          material={materials['LetraUpds.001']}
+          position={[80.921, -2.842, 78.52]}
+          rotation={[-Math.PI, 0.169, -Math.PI]}
+          scale={[10.78, 7.707, 9.442]}
+        />
+        <mesh
+          name="P005"
+          castShadow
+          receiveShadow
+          geometry={nodes.P005.geometry}
+          material={materials['LetraUpds.001']}
+          position={[106.291, -8.179, 82.713]}
+          rotation={[-Math.PI, 0.169, -Math.PI]}
+          scale={[10.78, 7.707, 9.442]}
+        />
+        <mesh
+          name="D005"
+          castShadow
+          receiveShadow
+          geometry={nodes.D005.geometry}
+          material={materials['LetraUpds.001']}
+          position={[93.611, -18.996, 80.541]}
+          rotation={[-Math.PI, 0.169, -Math.PI]}
+          scale={[10.78, 7.707, 9.442]}
+        />
+        <group name="masetaUPDS001" position={[103.979, 1.067, 50.53]} scale={0.255}>
+          <mesh
+            name="Circle017"
+            castShadow
+            receiveShadow
+            geometry={nodes.Circle017.geometry}
+            material={materials['Maseta.001']}
+          />
+          <mesh
+            name="Circle017_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.Circle017_1.geometry}
+            material={materials.tALLOS}
+          />
+          <mesh
+            name="Circle017_2"
+            castShadow
+            receiveShadow
+            geometry={nodes.Circle017_2.geometry}
+            material={materials.hOJAS}
+          />
+        </group>
+        <group name="Lampara001" position={[118.134, 3.411, 30.262]} scale={[0.29, 3.788, 0.29]}>
+          <mesh
+            name="Cylinder033"
+            castShadow
+            receiveShadow
+            geometry={nodes.Cylinder033.geometry}
+            material={materials.poste}
+          />
+          <mesh
+            name="Cylinder033_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.Cylinder033_1.geometry}
+            material={materials.focos}
+          />
+        </group>
+        <mesh
+          name="BrasoLamp001"
+          castShadow
+          receiveShadow
+          geometry={nodes.BrasoLamp001.geometry}
+          material={materials.poste}
+          position={[119.881, 9.525, 30.262]}
+          rotation={[-Math.PI, 0, -Math.PI]}
+          scale={0.707}
+        />
+        <group
+          name="BasureroDoble009"
+          position={[117.936, -0.47, 5.116]}
+          rotation={[Math.PI, -0.753, Math.PI]}
+          scale={[0.134, 0.486, 0.486]}>
+          <mesh
+            name="Plane131"
+            castShadow
+            receiveShadow
+            geometry={nodes.Plane131.geometry}
+            material={materials['basurero azul']}
+          />
+          <mesh
+            name="Plane131_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.Plane131_1.geometry}
+            material={materials['basurero amarillo']}
+          />
+          <mesh
+            name="Plane131_2"
+            castShadow
+            receiveShadow
+            geometry={nodes.Plane131_2.geometry}
+            material={materials['base basurero']}
+          />
+        </group>
+        <group
+          name="BasureroDoble010"
+          position={[42.842, -0.47, -5.189]}
+          rotation={[0, 0.015, 0]}
+          scale={[0.134, 0.486, 0.486]}>
+          <mesh
+            name="Plane132"
+            castShadow
+            receiveShadow
+            geometry={nodes.Plane132.geometry}
+            material={materials['basurero azul']}
+          />
+          <mesh
+            name="Plane132_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.Plane132_1.geometry}
+            material={materials['basurero amarillo']}
+          />
+          <mesh
+            name="Plane132_2"
+            castShadow
+            receiveShadow
+            geometry={nodes.Plane132_2.geometry}
+            material={materials['base basurero']}
+          />
+        </group>
+        <group name="palmera011" position={[180.302, 0.196, -82.391]} scale={3.157}>
+          <mesh
+            name="free_palm031"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm031.geometry}
+            material={nodes.free_palm031.material}
+          />
+          <mesh
+            name="free_palm031_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm031_1.geometry}
+            material={materials['hOJAS.001']}
+          />
+          <mesh
+            name="free_palm031_2"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm031_2.geometry}
+            material={materials['Tallos.001']}
+          />
+        </group>
+        <group name="palmera031" position={[127.541, 0.196, -82.391]} scale={3.157}>
+          <mesh
+            name="free_palm032"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm032.geometry}
+            material={nodes.free_palm032.material}
+          />
+          <mesh
+            name="free_palm032_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm032_1.geometry}
+            material={materials['hOJAS.001']}
+          />
+          <mesh
+            name="free_palm032_2"
+            castShadow
+            receiveShadow
+            geometry={nodes.free_palm032_2.geometry}
+            material={materials['Tallos.001']}
           />
         </group>
       </group>
     </group>
-  );
+  )
 }
 
 useGLTF.preload("/Modelo3D_Universidad.glb");
