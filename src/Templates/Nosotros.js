@@ -1,154 +1,70 @@
 import React from "react";
-import facebook_ico from "../assets/icons/facebook_ico.png";
-import git_ico from "../assets/icons/git_ico.png";
-import gmail_ico from "../assets/icons/gmail_ico.webp";
-import telefono_ico from "../assets/icons/telefono_ico.webp";
-import ubi_ico from "../assets/icons/ubi_ico.webp";
-import upds_ico from "../assets/icons/upds_ico.png";
-import whatsapp_ico from "../assets/icons/whatsapp_ico.webp";
-import instagram_ico from "../assets/icons/instagram_ico.png";
 
 const teamMembers = [
-  // Desarollo miembros del equipo...
-
   {
-    name: "Jose Dario Gonzales",
+    name: "Jose Gonzales",
     instagram: "https://x.com/usuariO1298677",
-    whatsapp: "https://wa.me/59172129166",
-    git: "",
-    facebook: "",
-    gmail: "",
-    role: "Desarrollador Web",
-    group: "Desarrollo Web",
-    image:
-      "https://pbs.twimg.com/profile_images/1800770087898525697/2uRQDqnQ_400x400.png",
-  },
-  {
-    name: "Jaime Junior Aguilar Leaños",
-    instagram: "https://x.com/usuariO1298677",
-    whatsapp: "https://wa.me/59172129166",
-    git: "",
-    facebook: "",
-    gmail: "",
-    role: "Desarrollador Web",
-    group: "Desarrollo Web",
+    role: "Desarollador Web",
     image:
       "https://pbs.twimg.com/profile_images/1800770087898525697/2uRQDqnQ_400x400.png",
   },
   {
     name: "Mario Eduardo Terrazas",
     instagram: "https://x.com/usuariO1298677",
-    whatsapp: "https://wa.me/59172129166",
-    git: "",
-    facebook: "",
-    gmail: "",
-    role: "Desarrollador Web",
-    group: "Desarrollo Web",
-    image:
-      "https://pbs.twimg.com/profile_images/1800770087898525697/2uRQDqnQ_400x400.png",
-  },
-  // Modelado miembros del equipo...
-
-  {
-    name: "Luis José aramayo Tellez",
-    instagram: "https://www.instagram.com/luisaramayo08?igsh=bnpnZWhkNjl6cm4=",
-    whatsapp: "",
-    git: "https://github.com/NotoriousLATO",
-    facebook: "https://www.facebook.com/luis.aramayo.77?mibextid=ZbWKwL",
-    gmail: "Aramayo901@gmail.com",
-    role: "Modelador 3D de Objetos",
-    group: "Modelado 3D",
-    image:
-      "https://pbs.twimg.com/profile_images/1800770087898525697/2uRQDqnQ_400x400.png",
+    role: "Desarollador Web",
+    image: "https://tailone.tailwindtemplate.net/src/img/dummy/avatar2.png",
   },
   {
-    name: "Giorgio Sebastián Lopez Poiqui",
-    instagram: "https://www.instagram.com/yoryo0702/",
-    whatsapp: "https://wa.me/59172129166",
-    git: "https://github.com/Yoryo0702",
-    facebook: "https://www.facebook.com/yoryo0702?locale=es_LA",
-    gmail: "",
-    role: "Modelador 3D de Objetos",
-    group: "Modelado 3D",
-    image:
-      "https://pbs.twimg.com/profile_images/1800770087898525697/2uRQDqnQ_400x400.png",
+    name: "Alejandro Leaños",
+    instagram: "https://x.com/usuariO1298677",
+    role: "Desarollador Web",
+    image: "https://tailone.tailwindtemplate.net/src/img/dummy/avatar4.png",
   },
   {
-    name: "Juan Carlos Ramirez Pedraza ",
-    instagram:
-      "https://www.instagram.com/_juancaramirez?igsh=MTFsZjk4eTBxY2JtNg%3D%3D&utm_source=qr ",
-    whatsapp: "",
-    git: "https://github.com/JuanCa241002",
-    facebook:
-      "https://www.facebook.com/share/kfi21uktknA7TgNn/?mibextid=LQQJ4d",
-    gmail: "",
-    role: "Modelador 3D de Objetos",
-    group: "Modelado 3D",
-    image:
-      "https://pbs.twimg.com/profile_images/1800770087898525697/2uRQDqnQ_400x400.png",
+    name: "Cristrina Aguirre",
+    instagram: "https://x.com/usuariO1298677",
+    role: "Designer",
+    image: "https://tailone.tailwindtemplate.net/src/img/dummy/avatar3.png",
   },
   {
-    name: "Elmar Choré Tomichá ",
-    instagram: "https://www.instagram.com/elmandermarone ",
-    whatsapp: "",
-    git: "https://github.com/ELMARCHORE",
-    facebook: "https://www.facebook.com/sergiomaronejr?mibextid=ZbWKwL",
-    gmail: "",
-    role: "Modelador 3D de Objetos",
-    group: "Modelado 3D",
-    image:
-      "https://pbs.twimg.com/profile_images/1800770087898525697/2uRQDqnQ_400x400.png",
+    name: "Jose Gonzales",
+    instagram: "https://x.com/usuariO1298677",
+    role: "Founder CEO",
+    image: "https://tailone.tailwindtemplate.net/src/img/dummy/avatar1.png",
+  },
+  {
+    name: "Mario Eduardo Terrazas",
+    instagram: "https://x.com/usuariO1298677",
+    role: "CTO",
+    image: "https://tailone.tailwindtemplate.net/src/img/dummy/avatar2.png",
+  },
+  {
+    name: "Alejandro Leaños",
+    instagram: "https://x.com/usuariO1298677",
+    role: "Designer",
+    image: "https://tailone.tailwindtemplate.net/src/img/dummy/avatar4.png",
+  },
+  {
+    name: "Cristrina Aguirre",
+    instagram: "https://x.com/usuariO1298677",
+    role: "Designer",
+    image: "https://tailone.tailwindtemplate.net/src/img/dummy/avatar3.png",
+  },
+  {
+    name: "Alejandro Leaños",
+    instagram: "https://x.com/usuariO1298677",
+    role: "Designer",
+    image: "https://tailone.tailwindtemplate.net/src/img/dummy/avatar4.png",
+  },
+  {
+    name: "Cristrina Aguirre",
+    instagram: "https://x.com/usuariO1298677",
+    role: "Designer",
+    image: "https://tailone.tailwindtemplate.net/src/img/dummy/avatar3.png",
   },
 
-  // Materiales miembros del equipo...
-  {
-    name: "Fernando Montaño Flores",
-    instagram: "",
-    whatsapp: "",
-    git: "",
-    facebook: "",
-    gmail: "www.fernandomf@gmail.com",
-    role: "Texturizador",
-    group: "Materiales",
-    image:
-      "https://pbs.twimg.com/profile_images/1800770087898525697/2uRQDqnQ_400x400.png",
-  },
-  {
-    name: "Eduardo Arredondo Saavedra",
-    instagram: "",
-    whatsapp: "",
-    git: "https://github.com/edu6500https://www.facebook.com/profile.php?id=100078781325160&mibextid=LQQJ4dhttps://www.instagram.com/edu_arredondo22?igsh=MXNzaHlzYm1uZnR3dQ%3D%3D&utm_source=qr",
-    facebook: "",
-    gmail: "",
-    role: "Texturizador",
-    group: "Materiales",
-    image:
-      "https://pbs.twimg.com/profile_images/1800770087898525697/2uRQDqnQ_400x400.png",
-  },
-
-  // UNITY miembros del equipo...
-
-  {
-    name: "Samuel Cardenas",
-    instagram: "",
-    whatsapp: "",
-    git: "",
-    facebook: "",
-    gmail: "",
-    role: "Desarollador",
-    group: "Desarollador Unity",
-    image:
-      "https://pbs.twimg.com/profile_images/1800770087898525697/2uRQDqnQ_400x400.png",
-  },
+  // Añade aquí más miembros del equipo...
 ];
-
-const groupedTeamMembers = teamMembers.reduce((groups, member) => {
-  if (!groups[member.group]) {
-    groups[member.group] = [];
-  }
-  groups[member.group].push(member);
-  return groups;
-}, {});
 
 export default function Nosotros() {
   return (
@@ -164,86 +80,41 @@ export default function Nosotros() {
         </h2>
       </header>
       {/* End section header */}
-      {/* Grouped team members */}
-      {Object.keys(groupedTeamMembers).map((group, index) => (
-        <div key={index}>
-          <h3 className="text-xl leading-normal mb-4 font-bold text-gray-700 dark:text-gray-300 text-center">
-            {group}
-          </h3>
-          <div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
-            {groupedTeamMembers[group].map((member, index) => (
-              <div key={index} className="flex-shrink max-w-full px-4">
-                <div className="relative overflow-hidden bg-white dark:bg-gray-800 mb-12 hover-grayscale-0 wow fadeInUp">
-                  {/* Team block */}
-                  <div className="relative overflow-hidden px-6 flex items-center justify-center">
-                    <img
-                      src={member.image}
-                      className="h-[200px] w-[200px] rounded-full bg-gray-50 "
-                      alt={member.name}
-                    />
-                  </div>
-                  <div className="pt-8 text-center">
-                    <h1 className="text-white text-2xl">{member.name}</h1>
-                    <p className="text-gray-500 leading-relaxed font-light">
-                      {member.role}
-                    </p>
-                    {/* Social icons */}
-                    <div className="mt-2 mb-5 space-x-2 flex items-center justify-center">
-                      {member.instagram && (
-                        <a href={member.instagram}>
-                          <img
-                            src={instagram_ico}
-                            className="h-[30px] w-[30px]"
-                            alt="Instagram"
-                          />
-                        </a>
-                      )}
-                      {member.whatsapp && (
-                        <a href={member.whatsapp}>
-                          <img
-                            src={whatsapp_ico}
-                            className="h-[30px] w-[30px]"
-                            alt="WhatsApp"
-                          />
-                        </a>
-                      )}
-                      {member.git && (
-                        <a href={member.git}>
-                          <img
-                            src={git_ico}
-                            className="h-[30px] w-[30px]"
-                            alt="GitHub"
-                          />
-                        </a>
-                      )}
-                      {member.facebook && (
-                        <a href={member.facebook}>
-                          <img
-                            src={facebook_ico}
-                            className="h-[30px] w-[30px]"
-                            alt="Facebook"
-                          />
-                        </a>
-                      )}
-                      {member.gmail && (
-                        <a href={member.gmail}>
-                          <img
-                            src={gmail_ico}
-                            className="h-[30px] w-[30px]"
-                            alt="Gmail"
-                          />
-                        </a>
-                      )}
-                      {/* Añade más íconos según sea necesario */}
-                    </div>
-                  </div>
+
+      {/* Team members grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 ">
+        {teamMembers.map((member, index) => (
+          <div key={index} className="flex-shrink max-w-full px-4">
+            <div className="relative overflow-hidden bg-white dark:bg-gray-800 mb-12 hover-grayscale-0 wow fadeInUp">
+              {/* Team block */}
+              <div className="relative overflow-hidden px-6  flex items-center justify-center">
+                <img
+                  src={member.image}
+                  className="h-[200px] w-[200px] rounded-full bg-gray-50 "
+                  alt={member.name}
+                />
+              </div>
+              <div className="pt-8 text-center">
+                <h1 className="text-white text-2xl">{member.name}</h1>
+                <p className="text-gray-500 leading-relaxed font-light">
+                  {member.role}
+                </p>
+                {/* Social icons */}
+                <div className="mt-2 mb-5 space-x-2 flex items-center justify-center">
+                  <img
+                    src="https://cdn.icon-icons.com/icons2/836/PNG/512/Instagram_icon-icons.com_66804.png"
+                    className="h-[30px] w-[30px] dark:bg-gray-800 hover:text-blue-700"
+                    aria-label="Instagram link"
+                    href={member.instagram}
+                  ></img>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
-        </div>
-      ))}
-      {/* End grouped team members */}
+        ))}
+      </div>
+
+      {/* End team members grid */}
       <div class="bg-gray-100 dark:bg-gray-900 flex items-center justify-center min-h-screen">
         <div class="w-full max-w-4xl p-6 bg-gray-800 text-white rounded-lg shadow-md">
           <h2 class="text-2xl font-bold mb-4">Descripción del Proyecto</h2>
@@ -395,8 +266,7 @@ export default function Nosotros() {
             Savio. Todos los derechos reservados.
           </p>
         </div>
-      </footer>{" "}
+      </footer>
     </div>
   );
 }
-g
